@@ -9,4 +9,5 @@ export { Input, type InputProps } from './Input';
 export { ProgramCard, type ProgramCardProps } from './ProgramCard';
 export { VideoCard, type VideoCardProps } from './VideoCard';
 export { AnimatedSection } from './AnimatedSection';
+export { Breadcrumb, type BreadcrumbProps, type BreadcrumbItem } from './Breadcrumb';
 

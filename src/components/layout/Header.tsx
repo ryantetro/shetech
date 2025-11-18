@@ -2,31 +2,71 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { cn } from '@/lib/utils/cn';
+import { NAVIGATION } from '@/lib/constants/navigation';
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isOverHero, setIsOverHero] = useState(true);
+  const [isOverHero, setIsOverHero] = useState(false); // Default to false for safety
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileOpenMenus, setMobileOpenMenus] = useState<Set<string>>(new Set());
+  const closeTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      setIsOverHero(window.scrollY < 600);
+      
+      // Check if we're over a colorful hero section
+      // If the hero has bg-white or bg-gray, we should show solid header immediately
+      const heroElement = document.querySelector('main > section');
+      const heroHasWhiteBg = heroElement?.classList.contains('bg-white') || 
+                             heroElement?.classList.contains('border-b');
+      
+      // If hero has white background, don't use transparent header
+      // Otherwise, use transparent header for first 600px
+      setIsOverHero(!heroHasWhiteBg && window.scrollY < 600);
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check initial state
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      // Clear timeout on unmount
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
   }, []);
 
-  const navItems = [
-    { label: 'Programs', hasDropdown: true },
-    { label: 'Newsroom', hasDropdown: true },
-    { label: 'Scholarships', hasDropdown: false },
-    { label: 'Partners', hasDropdown: true },
-    { label: 'About', hasDropdown: true },
-  ];
+  const toggleMobileMenu = (label: string) => {
+    setMobileOpenMenus((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(label)) {
+        newSet.delete(label);
+      } else {
+        newSet.add(label);
+      }
+      return newSet;
+    });
+  };
+
+  const handleMouseEnter = (label: string) => {
+    // Clear any pending close timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    // Delay closing the dropdown to allow mouse movement to dropdown
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150); // 150ms delay
+  };
 
   // Dynamic styles based on scroll position
   const headerStyles = {
@@ -71,7 +111,7 @@ export const Header = () => {
           }}
         >
           {/* Logo */}
-          <a href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group">
             <div
               style={{
                 width: isScrolled ? '140px' : '180px',
@@ -93,92 +133,118 @@ export const Header = () => {
                 }}
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <button
+          <nav className="hidden lg:flex items-center space-x-1">
+            {NAVIGATION.map((item) => (
+              <div
                 key={item.label}
-                className={cn(
-                  'px-4 py-2 text-sm font-medium',
-                  'transition-all duration-200',
-                  'relative group flex items-center gap-1',
-                  'rounded-lg'
-                )}
-                style={{
-                  color: textColor,
-                  transition: 'color 0.3s ease, background-color 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = hoverTextColor;
-                  e.currentTarget.style.backgroundColor = hoverBgColor;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = textColor;
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                }}
+                className="relative"
+                onMouseEnter={() => item.items && handleMouseEnter(item.label)}
+                onMouseLeave={handleMouseLeave}
               >
-                <span className="relative z-10">{item.label}</span>
-                {item.hasDropdown && (
-                  <svg
-                    className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      'px-4 py-2 text-sm font-medium',
+                      'transition-all duration-200',
+                      'relative group flex items-center gap-1',
+                      'rounded-lg'
+                    )}
+                    style={{
+                      color: textColor,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = hoverTextColor;
+                      e.currentTarget.style.backgroundColor = hoverBgColor;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = textColor;
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
+                    <span className="relative z-10">{item.label}</span>
+                  </Link>
+                ) : (
+                  <button
+                    className={cn(
+                      'px-4 py-2 text-sm font-medium',
+                      'transition-all duration-200',
+                      'relative group flex items-center gap-1',
+                      'rounded-lg'
+                    )}
+                    style={{
+                      color: textColor,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = hoverTextColor;
+                      e.currentTarget.style.backgroundColor = hoverBgColor;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = textColor;
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    }}
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    {item.items && (
+                      <svg
+                        className={cn(
+                          'w-3.5 h-3.5 transition-transform duration-200',
+                          activeDropdown === item.label && 'rotate-180'
+                        )}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    )}
+                  </button>
                 )}
-              </button>
+
+                {/* Dropdown Menu */}
+                {item.items && activeDropdown === item.label && (
+                  <div
+                    className="absolute left-0 mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-2xl py-2 z-50"
+                    style={{
+                      animation: 'fadeInDown 0.2s ease-out',
+                    }}
+                    onMouseEnter={() => handleMouseEnter(item.label)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {item.items.map((subItem) => (
+                      <Link
+                        key={subItem.href}
+                        href={subItem.href}
+                        className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <div className="font-medium text-gray-900 text-sm group-hover:text-primary-600 transition-colors">
+                          {subItem.label}
+                        </div>
+                        {subItem.description && (
+                          <div className="text-xs text-gray-500 mt-0.5">
+                            {subItem.description}
+                          </div>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
-            <div 
-              className="ml-6 h-6 w-px"
-              style={{
-                backgroundColor: isOverHero ? 'rgba(255, 255, 255, 0.3)' : '#d1d5db',
-                transition: 'background-color 0.3s ease',
-              }}
-            ></div>
-            <button
-              className="ml-4 p-2 rounded-lg transition-all duration-200"
-              style={{
-                color: textColor,
-                transition: 'color 0.3s ease, background-color 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = hoverTextColor;
-                e.currentTarget.style.backgroundColor = hoverBgColor;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = textColor;
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-              aria-label="Search"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg transition-all duration-200"
+            className="lg:hidden p-2 rounded-lg transition-all duration-200"
             style={{
               color: textColor,
               transition: 'color 0.3s ease, background-color 0.3s ease',
@@ -229,8 +295,8 @@ export const Header = () => {
         {/* Mobile Menu */}
         <div
           className={cn(
-            'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
-            isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            'lg:hidden overflow-y-auto transition-all duration-300 ease-in-out',
+            isMobileMenuOpen ? 'max-h-[70vh] opacity-100' : 'max-h-0 opacity-0'
           )}
         >
           <div 
@@ -243,45 +309,107 @@ export const Header = () => {
             }}
           >
             <nav className="flex flex-col space-y-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  className={cn(
-                    'px-4 py-3 text-left text-sm font-medium',
-                    'transition-all duration-200',
-                    'rounded-lg flex items-center justify-between',
-                  )}
-                  style={{
-                    color: textColor,
-                    transition: 'color 0.3s ease, background-color 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = hoverTextColor;
-                    e.currentTarget.style.backgroundColor = hoverBgColor;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = textColor;
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                  {item.hasDropdown && (
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+              {NAVIGATION.map((item) => (
+                <div key={item.label}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        'px-4 py-3 text-left text-sm font-medium',
+                        'transition-all duration-200',
+                        'rounded-lg flex items-center justify-between',
+                      )}
+                      style={{
+                        color: textColor,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = hoverTextColor;
+                        e.currentTarget.style.backgroundColor = hoverBgColor;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = textColor;
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                      }}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <>
+                      <button
+                        className={cn(
+                          'w-full px-4 py-3 text-left text-sm font-medium',
+                          'transition-all duration-200',
+                          'rounded-lg flex items-center justify-between',
+                        )}
+                        style={{
+                          color: textColor,
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.color = hoverTextColor;
+                          e.currentTarget.style.backgroundColor = hoverBgColor;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.color = textColor;
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                        }}
+                        onClick={() => toggleMobileMenu(item.label)}
+                      >
+                        {item.label}
+                        {item.items && (
+                          <svg
+                            className={cn(
+                              'w-4 h-4 transition-transform duration-200',
+                              mobileOpenMenus.has(item.label) && 'rotate-180'
+                            )}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        )}
+                      </button>
+                      {item.items && mobileOpenMenus.has(item.label) && (
+                        <div className="pl-4 mt-1 space-y-1">
+                          {item.items.map((subItem) => (
+                            <Link
+                              key={subItem.href}
+                              href={subItem.href}
+                              className={cn(
+                                'block px-4 py-2 text-sm',
+                                'transition-all duration-200',
+                                'rounded-lg',
+                              )}
+                              style={{
+                                color: textColor,
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.color = hoverTextColor;
+                                e.currentTarget.style.backgroundColor = hoverBgColor;
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.color = textColor;
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                              }}
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setMobileOpenMenus(new Set());
+                              }}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
                   )}
-                </button>
+                </div>
               ))}
             </nav>
           </div>
