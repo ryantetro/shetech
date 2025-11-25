@@ -17,13 +17,13 @@ export const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      
+
       // Check if we're over a colorful hero section
       // If the hero has bg-white or bg-gray, we should show solid header immediately
       const heroElement = document.querySelector('main > section');
-      const heroHasWhiteBg = heroElement?.classList.contains('bg-white') || 
-                             heroElement?.classList.contains('border-b');
-      
+      const heroHasWhiteBg = heroElement?.classList.contains('bg-white') ||
+        heroElement?.classList.contains('border-b');
+
       // If hero has white background, don't use transparent header
       // Otherwise, use transparent header for first 600px
       setIsOverHero(!heroHasWhiteBg && window.scrollY < 600);
@@ -70,19 +70,19 @@ export const Header = () => {
 
   // Dynamic styles based on scroll position
   const headerStyles = {
-    backgroundColor: isOverHero 
-      ? 'transparent' 
+    backgroundColor: isOverHero
+      ? 'transparent'
       : 'rgba(255, 255, 255, 0.95)',
     backdropFilter: isOverHero ? 'none' : 'blur(20px)',
     WebkitBackdropFilter: isOverHero ? 'none' : 'blur(20px)',
-    borderBottom: isOverHero 
-      ? 'none' 
+    borderBottom: isOverHero
+      ? 'none'
       : '1px solid rgba(229, 231, 235, 0.5)',
     boxShadow: isOverHero
       ? 'none'
       : isScrolled
-      ? '0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03)'
-      : '0 2px 10px rgba(0, 0, 0, 0.05)',
+        ? '0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03)'
+        : '0 2px 10px rgba(0, 0, 0, 0.05)',
     paddingTop: isScrolled ? '0.5rem' : '0.75rem',
     paddingBottom: isScrolled ? '0.5rem' : '0.75rem',
     transition: 'box-shadow 0.3s ease, padding 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease',
@@ -90,8 +90,8 @@ export const Header = () => {
 
   // Text color based on position
   const textColor = isOverHero ? '#ffffff' : '#374151';
-  const hoverBgColor = isOverHero 
-    ? 'rgba(255, 255, 255, 0.15)' 
+  const hoverBgColor = isOverHero
+    ? 'rgba(255, 255, 255, 0.15)'
     : 'rgba(0, 166, 206, 0.1)';
   const hoverTextColor = isOverHero ? '#ffffff' : '#00a6ce';
 
@@ -137,7 +137,7 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
-            {NAVIGATION.map((item) => (
+            {NAVIGATION.map((item, index) => (
               <div
                 key={item.label}
                 className="relative"
@@ -212,7 +212,10 @@ export const Header = () => {
                 {/* Dropdown Menu */}
                 {item.items && activeDropdown === item.label && (
                   <div
-                    className="absolute left-0 mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-2xl py-2 z-50"
+                    className={cn(
+                      'absolute mt-2 w-72 bg-white border border-gray-200 rounded-xl shadow-2xl py-2 z-50',
+                      index >= NAVIGATION.length - 2 ? 'right-0' : 'left-0'
+                    )}
                     style={{
                       animation: 'fadeInDown 0.2s ease-out',
                     }}
@@ -299,11 +302,11 @@ export const Header = () => {
             isMobileMenuOpen ? 'max-h-[70vh] opacity-100' : 'max-h-0 opacity-0'
           )}
         >
-          <div 
+          <div
             className="py-4 mt-2"
             style={{
-              borderTop: isOverHero 
-                ? '1px solid rgba(255, 255, 255, 0.2)' 
+              borderTop: isOverHero
+                ? '1px solid rgba(255, 255, 255, 0.2)'
                 : '1px solid #e5e7eb',
               transition: 'border-color 0.3s ease',
             }}
