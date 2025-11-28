@@ -11,3 +11,4 @@ export { VideoCard, type VideoCardProps } from './VideoCard';
 export { AnimatedSection } from './AnimatedSection';
 export { Breadcrumb, type BreadcrumbProps, type BreadcrumbItem } from './Breadcrumb';
 
+export { Badge, type BadgeProps } from './Badge';

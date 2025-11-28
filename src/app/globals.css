@@ -420,3 +420,65 @@ button, a {
 section {
   transition: opacity 0.3s ease-in-out;
 }
+
+/* --- School Theme Utilities --- */
+
+/* Graph Paper Background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.bg-grid-pattern-white {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+/* Highlighter Effect */
+.text-highlight {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.text-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: -4px;
+  right: -4px;
+  height: 35%;
+  background-color: var(--secondary-200);
+  opacity: 0.6;
+  z-index: -1;
+  transform: rotate(-1deg);
+  border-radius: 4px;
+}
+
+.text-highlight-primary::after {
+  background-color: var(--primary-200);
+}
+
+.text-highlight-yellow::after {
+  background-color: #fde047; /* Yellow-300 */
+}
+
+/* Sticker Shadow */
+.shadow-sticker {
+  box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-sticker-hover:hover {
+  transform: translateY(-2px) rotate(1deg);
+  box-shadow: 4px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Hand-drawn borders (simulated) */
+.border-sketch {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+

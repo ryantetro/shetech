@@ -182,74 +182,74 @@ export default function AboutWomenTechCouncilPage() {
       <Header />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden min-h-screen flex items-center justify-center">
-          {/* Background Image with Gradient Overlay */}
+        {/* Hero Section - Modern Editorial */}
+        <section className="relative min-h-screen bg-slate-900 text-white overflow-hidden flex items-center">
+          {/* Abstract Geometric Background */}
           <div className="absolute inset-0 z-0">
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: 'url(/about/shetech.png)',
-              }}
-            ></div>
-            {/* Gradient Overlays for Depth and Readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/90"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-900/40 via-transparent to-secondary-900/40 mix-blend-overlay"></div>
+            <div className="absolute top-0 right-0 w-2/3 h-full bg-slate-800 transform skew-x-12 translate-x-1/4"></div>
+            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary-900 to-transparent opacity-50"></div>
+            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-secondary-900/20 rounded-full blur-3xl"></div>
           </div>
 
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
-          </div>
-
-          {/* Content */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
-            <div className="max-w-5xl mx-auto text-center">
-              <AnimatedSection initialLoad direction="up" delay={0}>
-                <div className="mb-8 flex justify-center">
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white text-sm font-medium tracking-wide shadow-lg">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
-                    #ImagineThePossibilities
-                  </span>
-                </div>
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-8">
+                <AnimatedSection initialLoad direction="right" delay={0}>
+                  <div className="border-l-4 border-primary-500 pl-6 mb-8">
+                    <span className="block text-primary-400 font-bold tracking-widest uppercase text-sm mb-2">
+                      Women Tech Council
+                    </span>
+                    <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tighter text-white mb-6">
+                      SHE<span className="text-primary-500">TECH</span>
+                    </h1>
+                  </div>
 
-                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight">
-                  <span className="block text-white mb-2 drop-shadow-xl">SheTech</span>
-                  <span className="block text-3xl sm:text-4xl lg:text-5xl font-medium text-primary-200 mb-4 tracking-normal">
-                    The Largest Industry-Led
-                  </span>
-                  <span className="block bg-gradient-to-r from-primary-300 via-white to-secondary-300 bg-clip-text text-transparent drop-shadow-lg">
-                    STEM Platform for High School Girls
-                  </span>
-                </h1>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-300 mb-8 leading-tight">
+                    The Largest Industry-Led <br />
+                    <span className="font-bold text-white">STEM Platform for High School Girls</span>
+                  </h2>
 
-                <p className="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed max-w-3xl mx-auto font-light">
-                  Women Tech Council&apos;s SheTech program is the largest industry-led STEM program to <strong className="text-white font-semibold">activate, engage and inspire</strong> high school girls into STEM degrees and successful careers.
-                </p>
+                  <p className="text-lg text-slate-400 mb-10 max-w-2xl leading-relaxed">
+                    We are activating, engaging, and inspiring the next generation of female leaders. Through hands-on experiences and mentorship, we turn "I can't" into "I will".
+                  </p>
 
-                <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                  <a
-                    href="#programs"
-                    className="group relative inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold rounded-full bg-white text-slate-900 hover:bg-primary-50 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-1"
-                  >
-                    Explore Programs
-                    <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <a
-                    href="#contact"
-                    className="group inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold rounded-full bg-transparent text-white border border-white/30 hover:bg-white/10 hover:border-white transition-all duration-300"
-                  >
-                    Partner With Us
-                  </a>
-                </div>
-              </AnimatedSection>
+                  <div className="flex flex-wrap gap-6">
+                    <a
+                      href="#programs"
+                      className="inline-flex items-center gap-2 text-white font-bold border-b-2 border-primary-500 hover:text-primary-400 transition-colors pb-1"
+                    >
+                      Explore Programs
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </a>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-2 text-slate-400 font-medium hover:text-white transition-colors pb-1"
+                    >
+                      Partner With Us
+                    </a>
+                  </div>
+                </AnimatedSection>
+              </div>
+
+              {/* Decorative Statistic/Element */}
+              <div className="lg:col-span-4 hidden lg:block">
+                <AnimatedSection initialLoad direction="left" delay={200}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-500 blur-2xl opacity-20 transform rotate-6"></div>
+                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-2xl">
+                      <div className="text-5xl font-black text-white mb-2">12K+</div>
+                      <div className="text-sm text-slate-400 uppercase tracking-wider font-bold">Active Participants</div>
+                      <div className="mt-6 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-full w-3/4 bg-primary-500"></div>
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </div>
           </div>
-
-
         </section>
 
         {/* Combined Stats & Challenge Section */}
