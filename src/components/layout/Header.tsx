@@ -305,41 +305,31 @@ export const Header = () => {
         {/* Mobile Menu */}
         <div
           className={cn(
-            'lg:hidden overflow-y-auto transition-all duration-300 ease-in-out',
-            isMobileMenuOpen ? 'max-h-[70vh] opacity-100' : 'max-h-0 opacity-0'
+            'lg:hidden overflow-hidden transition-all duration-300 ease-in-out',
+            isMobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
           )}
         >
           <div
-            className="py-4 mt-2"
-            style={{
-              borderTop: isOverHero
-                ? '1px solid rgba(255, 255, 255, 0.2)'
-                : '1px solid #e5e7eb',
-              transition: 'border-color 0.3s ease',
-            }}
+            className={cn(
+              'py-4 mt-2 bg-white rounded-xl shadow-lg mx-2 mb-2 transform transition-all duration-300 ease-out',
+              isMobileMenuOpen ? 'translate-y-0 scale-100' : '-translate-y-4 scale-95'
+            )}
           >
-            <nav className="flex flex-col space-y-1">
-              {NAVIGATION.map((item) => (
-                <div key={item.label}>
+            <nav className="flex flex-col space-y-1 px-2">
+              {NAVIGATION.map((item, index) => (
+                <div 
+                  key={item.label}
+                  className="transform transition-all duration-300 ease-out"
+                  style={{
+                    transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms',
+                    opacity: isMobileMenuOpen ? 1 : 0,
+                    transform: isMobileMenuOpen ? 'translateX(0)' : 'translateX(-10px)',
+                  }}
+                >
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className={cn(
-                        'px-4 py-3 text-left text-sm font-medium',
-                        'transition-all duration-200',
-                        'rounded-lg flex items-center justify-between',
-                      )}
-                      style={{
-                        color: textColor,
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = hoverTextColor;
-                        e.currentTarget.style.backgroundColor = hoverBgColor;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = textColor;
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                      }}
+                      className="px-4 py-3 text-left text-sm font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 active:bg-cyan-100 active:scale-[0.98] transition-all duration-200 rounded-lg flex items-center justify-between"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}
@@ -348,29 +338,17 @@ export const Header = () => {
                     <>
                       <button
                         className={cn(
-                          'w-full px-4 py-3 text-left text-sm font-medium',
-                          'transition-all duration-200',
-                          'rounded-lg flex items-center justify-between',
+                          'w-full px-4 py-3 text-left text-sm font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 active:bg-cyan-100 active:scale-[0.98] transition-all duration-200 rounded-lg flex items-center justify-between',
+                          mobileOpenMenus.has(item.label) && 'text-cyan-600 bg-cyan-50'
                         )}
-                        style={{
-                          color: textColor,
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.color = hoverTextColor;
-                          e.currentTarget.style.backgroundColor = hoverBgColor;
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.color = textColor;
-                          e.currentTarget.style.backgroundColor = 'transparent';
-                        }}
                         onClick={() => toggleMobileMenu(item.label)}
                       >
                         {item.label}
                         {item.items && (
                           <svg
                             className={cn(
-                              'w-4 h-4 transition-transform duration-200',
-                              mobileOpenMenus.has(item.label) && 'rotate-180'
+                              'w-4 h-4 transition-transform duration-300 ease-out text-gray-400',
+                              mobileOpenMenus.has(item.label) && 'rotate-180 text-cyan-500'
                             )}
                             fill="none"
                             stroke="currentColor"
@@ -385,27 +363,20 @@ export const Header = () => {
                           </svg>
                         )}
                       </button>
-                      {item.items && mobileOpenMenus.has(item.label) && (
-                        <div className="pl-4 mt-1 space-y-1">
-                          {item.items.map((subItem) => (
+                      <div
+                        className={cn(
+                          'overflow-hidden transition-all duration-300 ease-out',
+                          mobileOpenMenus.has(item.label) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                        )}
+                      >
+                        <div className="pl-4 mt-1 space-y-1 bg-gray-50 rounded-lg py-2 mx-2">
+                          {item.items?.map((subItem, subIndex) => (
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className={cn(
-                                'block px-4 py-2 text-sm',
-                                'transition-all duration-200',
-                                'rounded-lg',
-                              )}
+                              className="block px-4 py-2.5 text-sm text-gray-600 hover:text-cyan-600 hover:bg-white active:bg-cyan-50 active:scale-[0.98] transition-all duration-200 rounded-lg"
                               style={{
-                                color: textColor,
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.color = hoverTextColor;
-                                e.currentTarget.style.backgroundColor = hoverBgColor;
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.color = textColor;
-                                e.currentTarget.style.backgroundColor = 'transparent';
+                                transitionDelay: mobileOpenMenus.has(item.label) ? `${subIndex * 30}ms` : '0ms',
                               }}
                               onClick={() => {
                                 setIsMobileMenuOpen(false);
@@ -416,7 +387,7 @@ export const Header = () => {
                             </Link>
                           ))}
                         </div>
-                      )}
+                      </div>
                     </>
                   )}
                 </div>

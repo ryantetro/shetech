@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/ui';
+import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
+
+type Benefit = {
+    text: string;
+    color: string;
+};
 
 type Program = {
     title: string;
@@ -8,63 +13,94 @@ type Program = {
     ctaText: string;
     ctaHref: string;
     icon: React.ReactNode;
+    benefits: Benefit[];
 };
 
 const PROGRAMS_DATA: Program[] = [
     {
         title: 'Explorer Day',
-        description: 'A hands-on tech conference for high school girls designed to spark interest in STEM through interactive workshops and real-world challenges.',
+        description: 'A hands-on tech conference for high school girls designed to spark interest in STEM through interactive workshops, tech challenges, and connections with industry professionals.',
         ctaText: 'Register Now',
-        ctaHref: '#explorer-day',
+        ctaHref: '/students/explorer-day',
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
         ),
+        benefits: [
+            { text: 'Interactive workshops', color: 'bg-yellow-50 border-yellow-200 text-yellow-800' },
+            { text: 'Tech Challenge competition', color: 'bg-green-50 border-green-200 text-green-800' },
+            { text: 'Meet industry professionals', color: 'bg-blue-50 border-blue-200 text-blue-800' },
+            { text: 'Free for all students', color: 'bg-purple-50 border-purple-200 text-purple-800' },
+        ],
     },
     {
         title: 'Student Board',
-        description: 'Join the SheTech Student Board and help shape programs for girls in STEM. Open to students in grades 9-12.',
+        description: 'Join the SheTech Student Board and help shape programs for girls in STEM. Develop leadership skills, plan events, and make a real impact in your school community.',
         ctaText: 'Apply Now',
-        ctaHref: '#student-board',
+        ctaHref: '/students/leadership-board',
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
         ),
+        benefits: [
+            { text: 'Leadership development', color: 'bg-cyan-50 border-cyan-200 text-cyan-800' },
+            { text: 'Event planning experience', color: 'bg-pink-50 border-pink-200 text-pink-800' },
+            { text: 'Network with peers', color: 'bg-indigo-50 border-indigo-200 text-indigo-800' },
+            { text: 'College application boost', color: 'bg-amber-50 border-amber-200 text-amber-800' },
+        ],
     },
     {
         title: 'Media Internship',
-        description: 'Get hands-on journalism experience promoting women in technology. Develop skills in writing, interviews, and multimedia content creation.',
+        description: 'Get hands-on journalism experience promoting women in technology. Develop skills in writing, interviews, video production, and multimedia content creation with TechBuzz.',
         ctaText: 'Learn More',
-        ctaHref: '#media-internship',
+        ctaHref: '/students/media-internship',
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
         ),
+        benefits: [
+            { text: 'Video production skills', color: 'bg-rose-50 border-rose-200 text-rose-800' },
+            { text: 'Interview experience', color: 'bg-teal-50 border-teal-200 text-teal-800' },
+            { text: 'Build your portfolio', color: 'bg-orange-50 border-orange-200 text-orange-800' },
+            { text: 'Social media marketing', color: 'bg-violet-50 border-violet-200 text-violet-800' },
+        ],
     },
     {
         title: 'Thanksgiving Point Internship',
-        description: 'Hands-on experience in agriculture technology, entomology, exhibit design, STEM education, and more at Thanksgiving Point.',
+        description: 'Hands-on experience in agriculture technology, entomology, exhibit design, STEM education, and more at Thanksgiving Point museums and gardens.',
         ctaText: 'Apply Now',
-        ctaHref: '#thanksgiving-point',
+        ctaHref: '/students/thanksgiving-point-internship',
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
             </svg>
         ),
+        benefits: [
+            { text: 'Ag-tech exploration', color: 'bg-emerald-50 border-emerald-200 text-emerald-800' },
+            { text: 'Museum exhibit design', color: 'bg-sky-50 border-sky-200 text-sky-800' },
+            { text: 'STEM education training', color: 'bg-lime-50 border-lime-200 text-lime-800' },
+            { text: 'Hands-on research', color: 'bg-fuchsia-50 border-fuchsia-200 text-fuchsia-800' },
+        ],
     },
     {
         title: 'Summer Exploration Internship',
         description: 'Get an inside look at real tech companies. Tour multiple companies, meet women in the field, and explore careers in programming, data science, engineering, and more.',
         ctaText: 'Apply Now',
-        ctaHref: '#summer-internship',
+        ctaHref: '/students/summer-internship',
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
             </svg>
         ),
+        benefits: [
+            { text: 'Company tours', color: 'bg-blue-50 border-blue-200 text-blue-800' },
+            { text: 'Career exploration', color: 'bg-green-50 border-green-200 text-green-800' },
+            { text: 'Women mentor connections', color: 'bg-purple-50 border-purple-200 text-purple-800' },
+            { text: 'Industry networking', color: 'bg-yellow-50 border-yellow-200 text-yellow-800' },
+        ],
     },
 ];
 
@@ -172,14 +208,9 @@ export const ProgramsSection = () => {
                                             </p>
                                         </div>
 
-                                        {/* Benefits - Sticky Notes */}
+                                        {/* Benefits - Sticky Notes (Now unique per program) */}
                                         <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                                            {[
-                                                { text: 'Real-world projects', color: 'bg-yellow-50 border-yellow-200 text-yellow-800' },
-                                                { text: 'Industry mentorship', color: 'bg-green-50 border-green-200 text-green-800' },
-                                                { text: 'Peer networking', color: 'bg-blue-50 border-blue-200 text-blue-800' },
-                                                { text: 'Certificate earned', color: 'bg-purple-50 border-purple-200 text-purple-800' },
-                                            ].map((benefit, idx) => (
+                                            {selectedProgram.benefits.map((benefit, idx) => (
                                                 <div
                                                     key={idx}
                                                     className={`p-3 rounded-lg border-2 ${benefit.color} text-sm font-bold shadow-sm transform hover:-rotate-1 transition-transform duration-200`}
@@ -190,15 +221,15 @@ export const ProgramsSection = () => {
                                         </div>
 
                                         {/* CTA */}
-                                        <a href={selectedProgram.ctaHref} className="inline-block">
-                                            <Button
-                                                variant="primary"
-                                                size="lg"
-                                                className="bg-primary-600 text-white border-2 border-primary-700 shadow-sticker hover:shadow-sticker-hover font-bold rounded-xl px-8"
-                                            >
-                                                {selectedProgram.ctaText}
-                                            </Button>
-                                        </a>
+                                        <Link 
+                                            href={selectedProgram.ctaHref}
+                                            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                                        >
+                                            {selectedProgram.ctaText}
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                            </svg>
+                                        </Link>
                                     </div>
                                 </div>
                             </AnimatedSection>
