@@ -29,27 +29,6 @@ export const HeroSection = () => {
 
             <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 z-10">
                 <div className="max-w-4xl mx-auto text-center">
-                    {/* Announcement Banner */}
-                    <AnimatedSection direction="fade" delay={100} initialLoad={true}>
-                        <div className="flex justify-center mb-8">
-                            <Link 
-                                href="/students/explorer-day"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-medium text-white hover:bg-white/20 transition-all duration-300 group"
-                            >
-                                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                                <span>🎉 Explorer Day 2026 Registration Now Open</span>
-                                <svg
-                                    className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </Link>
-                        </div>
-                    </AnimatedSection>
-
                     {/* Main Heading */}
                     <AnimatedSection direction="up" delay={300} initialLoad={true}>
                         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight text-white">

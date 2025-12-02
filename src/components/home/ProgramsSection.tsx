@@ -129,110 +129,141 @@ export const ProgramsSection = () => {
                 </AnimatedSection>
 
                 <AnimatedSection direction="up" delay={100}>
-                    <div className="grid lg:grid-cols-12 gap-0 max-w-6xl mx-auto">
-                        {/* Left Column - File Folder Tabs */}
-                        <div className="lg:col-span-4 flex flex-col pr-0 lg:-mr-px z-10">
-                            <div className="bg-slate-100 rounded-t-xl lg:rounded-tr-none lg:rounded-l-xl border-2 border-slate-300 border-b-0 lg:border-b-2 lg:border-r-0 p-4 pb-0 lg:pb-4 lg:pr-0 h-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 px-2">
-                                    Select a Program
-                                </p>
-                                <div className="space-y-2">
-                                    {PROGRAMS_DATA.map((program, index) => (
-                                        <button
-                                            key={program.title}
-                                            onClick={() => setSelectedIndex(index)}
-                                            className={`w-full text-left transition-all duration-200 relative group ${selectedIndex === index
-                                                ? 'z-20'
-                                                : 'z-0 hover:bg-slate-200/50'
-                                                }`}
-                                        >
-                                            <div className={`
-                                                flex items-center gap-3 p-4 rounded-l-lg lg:rounded-r-none border-2 
-                                                ${selectedIndex === index
-                                                    ? 'bg-white border-slate-300 border-r-0 shadow-[-4px_4px_0px_rgba(0,0,0,0.05)] lg:shadow-none translate-x-2 lg:translate-x-0 lg:w-[calc(100%+2px)]'
-                                                    : 'border-transparent opacity-70 hover:opacity-100'
-                                                }
-                                            `}>
-                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 border-2 ${selectedIndex === index
-                                                    ? 'bg-primary-100 border-primary-200 text-primary-600'
-                                                    : 'bg-white border-slate-200 text-slate-400'
-                                                    }`}>
-                                                    <span className="text-xs font-bold">{index + 1}</span>
-                                                </div>
-                                                <span className={`font-bold text-sm ${selectedIndex === index ? 'text-slate-900' : 'text-slate-600'}`}>
-                                                    {program.title}
-                                                </span>
-                                            </div>
-                                        </button>
-                                    ))}
-                                </div>
+                    <div className="max-w-6xl mx-auto">
+                        {/* Mobile: Horizontal scrolling tabs */}
+                        <div className="lg:hidden mb-4">
+                            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-1">
+                                Select a Program
+                            </p>
+                            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                                {PROGRAMS_DATA.map((program, index) => (
+                                    <button
+                                        key={program.title}
+                                        onClick={() => setSelectedIndex(index)}
+                                        className={`flex items-center gap-2 px-4 py-2.5 rounded-full border-2 whitespace-nowrap transition-all duration-200 shrink-0 ${
+                                            selectedIndex === index
+                                                ? 'bg-primary-500 border-primary-600 text-white shadow-md'
+                                                : 'bg-white border-slate-200 text-slate-600 hover:border-primary-300'
+                                        }`}
+                                    >
+                                        <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                                            selectedIndex === index
+                                                ? 'bg-white/20 text-white'
+                                                : 'bg-slate-100 text-slate-500'
+                                        }`}>
+                                            {index + 1}
+                                        </span>
+                                        <span className="font-semibold text-sm">{program.title}</span>
+                                    </button>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Right Column - Notebook Content */}
-                        <div className="lg:col-span-8">
-                            <AnimatedSection direction="fade" delay={0} key={selectedIndex}>
-                                <div className="bg-white border-2 border-slate-300 rounded-b-xl lg:rounded-bl-none lg:rounded-r-xl shadow-sticker h-full relative overflow-hidden">
-                                    {/* Notebook Lines Background */}
-                                    <div className="absolute inset-0" style={{
-                                        backgroundImage: 'linear-gradient(#e5e7eb 1px, transparent 1px)',
-                                        backgroundSize: '100% 2rem',
-                                        marginTop: '2rem'
-                                    }}></div>
-
-                                    {/* Red Margin Line */}
-                                    <div className="absolute top-0 bottom-0 left-8 w-px bg-red-200"></div>
-
-                                    <div className="relative p-8 pl-12">
-                                        {/* Header */}
-                                        <div className="flex items-start justify-between gap-6 mb-8">
-                                            <div>
-                                                <div className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-bold rounded-full mb-3 border border-primary-200">
-                                                    PROGRAM FILE #{String(selectedIndex + 1).padStart(2, '0')}
+                        <div className="grid lg:grid-cols-12 gap-0">
+                            {/* Left Column - File Folder Tabs (Desktop only) */}
+                            <div className="hidden lg:flex lg:col-span-4 flex-col pr-0 lg:-mr-px z-10">
+                                <div className="bg-slate-100 rounded-l-xl border-2 border-slate-300 border-r-0 p-4 h-full">
+                                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 px-2">
+                                        Select a Program
+                                    </p>
+                                    <div className="space-y-2">
+                                        {PROGRAMS_DATA.map((program, index) => (
+                                            <button
+                                                key={program.title}
+                                                onClick={() => setSelectedIndex(index)}
+                                                className={`w-full text-left transition-all duration-200 relative group ${selectedIndex === index
+                                                    ? 'z-20'
+                                                    : 'z-0 hover:bg-slate-200/50'
+                                                    }`}
+                                            >
+                                                <div className={`
+                                                    flex items-center gap-3 p-4 rounded-l-lg border-2 
+                                                    ${selectedIndex === index
+                                                        ? 'bg-white border-slate-300 border-r-0 w-[calc(100%+2px)]'
+                                                        : 'border-transparent opacity-70 hover:opacity-100'
+                                                    }
+                                                `}>
+                                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 border-2 ${selectedIndex === index
+                                                        ? 'bg-primary-100 border-primary-200 text-primary-600'
+                                                        : 'bg-white border-slate-200 text-slate-400'
+                                                        }`}>
+                                                        <span className="text-xs font-bold">{index + 1}</span>
+                                                    </div>
+                                                    <span className={`font-bold text-sm ${selectedIndex === index ? 'text-slate-900' : 'text-slate-600'}`}>
+                                                        {program.title}
+                                                    </span>
                                                 </div>
-                                                <h3 className="text-3xl font-black text-slate-900 mb-2">
-                                                    {selectedProgram.title}
-                                                </h3>
-                                            </div>
-                                            <div className="w-16 h-16 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-primary-500 shadow-sm transform rotate-3">
-                                                <div className="w-8 h-8">
-                                                    {selectedProgram.icon}
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Content */}
-                                        <div className="prose prose-slate max-w-none mb-8">
-                                            <p className="text-lg text-slate-700 leading-8 font-medium">
-                                                {selectedProgram.description}
-                                            </p>
-                                        </div>
-
-                                        {/* Benefits - Sticky Notes (Now unique per program) */}
-                                        <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                                            {selectedProgram.benefits.map((benefit, idx) => (
-                                                <div
-                                                    key={idx}
-                                                    className={`p-3 rounded-lg border-2 ${benefit.color} text-sm font-bold shadow-sm transform hover:-rotate-1 transition-transform duration-200`}
-                                                >
-                                                    {benefit.text}
-                                                </div>
-                                            ))}
-                                        </div>
-
-                                        {/* CTA */}
-                                        <Link 
-                                            href={selectedProgram.ctaHref}
-                                            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                                        >
-                                            {selectedProgram.ctaText}
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                            </svg>
-                                        </Link>
+                                            </button>
+                                        ))}
                                     </div>
                                 </div>
-                            </AnimatedSection>
+                            </div>
+
+                            {/* Right Column - Notebook Content */}
+                            <div className="lg:col-span-8">
+                                <AnimatedSection direction="fade" delay={0} key={selectedIndex}>
+                                    <div className="bg-white border-2 border-slate-300 rounded-xl lg:rounded-l-none lg:rounded-r-xl shadow-sticker h-full relative overflow-hidden">
+                                        {/* Notebook Lines Background */}
+                                        <div className="absolute inset-0" style={{
+                                            backgroundImage: 'linear-gradient(#e5e7eb 1px, transparent 1px)',
+                                            backgroundSize: '100% 2rem',
+                                            marginTop: '2rem'
+                                        }}></div>
+
+                                        {/* Red Margin Line */}
+                                        <div className="absolute top-0 bottom-0 left-4 sm:left-8 w-px bg-red-200"></div>
+
+                                        <div className="relative p-5 pl-8 sm:p-8 sm:pl-12">
+                                            {/* Header */}
+                                            <div className="flex items-start justify-between gap-4 mb-6">
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-bold rounded-full mb-2 border border-primary-200">
+                                                        PROGRAM FILE #{String(selectedIndex + 1).padStart(2, '0')}
+                                                    </div>
+                                                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+                                                        {selectedProgram.title}
+                                                    </h3>
+                                                </div>
+                                                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-primary-500 shadow-sm transform rotate-3 shrink-0">
+                                                    <div className="w-6 h-6 sm:w-8 sm:h-8">
+                                                        {selectedProgram.icon}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Content */}
+                                            <div className="prose prose-slate max-w-none mb-6">
+                                                <p className="text-base sm:text-lg text-slate-700 leading-7 sm:leading-8 font-medium">
+                                                    {selectedProgram.description}
+                                                </p>
+                                            </div>
+
+                                            {/* Benefits - Sticky Notes (Now unique per program) */}
+                                            <div className="grid grid-cols-2 gap-3 mb-6">
+                                                {selectedProgram.benefits.map((benefit, idx) => (
+                                                    <div
+                                                        key={idx}
+                                                        className={`p-2.5 sm:p-3 rounded-lg border-2 ${benefit.color} text-xs sm:text-sm font-bold shadow-sm`}
+                                                    >
+                                                        {benefit.text}
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            {/* CTA */}
+                                            <Link 
+                                                href={selectedProgram.ctaHref}
+                                                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+                                            >
+                                                {selectedProgram.ctaText}
+                                                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                                </svg>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </AnimatedSection>
+                            </div>
                         </div>
                     </div>
                 </AnimatedSection>
