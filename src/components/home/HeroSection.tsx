@@ -13,7 +13,7 @@ export const HeroSection = () => {
                     alt="SheTech community"
                     fill
                     priority
-                    className="object-cover opacity-20"
+                    className="object-cover opacity-60"
                     quality={90}
                 />
                 {/* Light gradient overlay */}

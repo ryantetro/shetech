@@ -135,7 +135,7 @@ export default function SummerInternshipPage() {
       
       <main className="flex-1">
         {/* Hero Section - Custom Tech Background */}
-        <section className="relative overflow-hidden pt-20 sm:pt-24 pb-16 sm:pb-20">
+        <section className="relative overflow-hidden pt-16 sm:pt-20 pb-8 sm:pb-12 min-h-[calc(100vh-80px)] flex items-center">
           {/* Base gradient background - Subtle professional gradient */}
           <div className="absolute inset-0">
             <div className="absolute inset-0" 
@@ -310,13 +310,29 @@ export default function SummerInternshipPage() {
 
           {/* Content */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-5xl mx-auto">
-              {/* Main Title */}
-              <div className="text-center mb-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white mb-4 drop-shadow-lg">
-                  Internship Exploration
+            <div className="max-w-6xl mx-auto">
+              {/* SheTech Branding */}
+              {/* <div className="text-center mb-2">
+                <span className="text-white/90 text-sm sm:text-base font-light tracking-wide">SheTech</span>
+              </div> */}
+
+              {/* Main Title - Enhanced with Gradient */}
+              <div className="text-center mb-4">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-3 text-center leading-tight tracking-tight">
+                  <span className="block mb-1 bg-gradient-to-r from-white via-primary-200 to-secondary-200 bg-clip-text text-transparent drop-shadow-2xl">
+                    Summer Internship
+                  </span>
+                  <span className="relative inline-block">
+                    <span className="relative z-10 bg-gradient-to-r from-white via-primary-100 to-white bg-clip-text text-transparent drop-shadow-2xl">Exploration</span>
+                    <svg className="absolute -bottom-1 left-0 w-full h-3 text-secondary-300/60 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="6" fill="none" />
+                    </svg>
+                  </span>
                 </h1>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20 text-xs font-semibold mb-4 shadow-lg">
+                
+                {/* Registration Badge - Enhanced */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary-500/20 via-secondary-500/20 to-primary-500/20 backdrop-blur-md text-white border border-white/30 text-xs font-semibold mb-4 shadow-xl shadow-primary-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
                   <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                   </svg>
@@ -324,39 +340,94 @@ export default function SummerInternshipPage() {
                 </div>
               </div>
 
-              {/* Glassmorphism Description Card */}
-              <div className="mb-8 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl max-w-3xl mx-auto">
-                <p className="text-white/95 text-center text-sm sm:text-base leading-relaxed mb-4">
-                  Registration TBA for the annual <span className="font-semibold text-white">SheTech Summer Internship Exploration program.</span> Discover opportunities with Silicon Slopes tech companies alongside other high school girls. The SheTech Internship Exploration will offer two weeks of in-person and virtual sessions.
-                </p>
-                <p className="text-white/90 text-center text-sm font-medium">
-                  During the summer program, you will:
+              {/* Description - More Prominent */}
+              <div className="mb-5 p-4 sm:p-5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl max-w-4xl mx-auto">
+                <p className="text-white/95 text-center text-sm sm:text-base leading-relaxed">
+                  Discover opportunities with <span className="font-bold text-white">Silicon Slopes tech companies</span> alongside other high school girls. The SheTech Internship Exploration offers two weeks of in-person and virtual sessions.
                 </p>
               </div>
 
-              {/* Benefit Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 max-w-5xl mx-auto">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="group relative p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1"
-                  >
-                    <div className="text-center">
-                      <div className="flex justify-center mb-3 text-white/90 group-hover:text-white transition-colors">
-                        {benefit.icon}
-                      </div>
-                      <h3 className="text-white font-semibold text-sm mb-1">{benefit.title}</h3>
-                      <p className="text-white/80 text-xs leading-relaxed">{benefit.description}</p>
+              {/* Event Info Cards - Similar to Explorer Day */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5 max-w-4xl mx-auto">
+                {/* Duration Card */}
+                <div className="group relative p-4 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+                  <div className="flex items-start gap-2.5">
+                    <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-primary-500/30">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 text-left">
+                      <h3 className="text-[10px] font-semibold text-white/90 uppercase tracking-wide mb-0.5 drop-shadow-sm">Duration</h3>
+                      <p className="text-base font-bold text-white drop-shadow-md">2 Weeks</p>
+                      <p className="text-[10px] text-white/80 mt-0.5 drop-shadow-sm">In-person & virtual</p>
                     </div>
                   </div>
-                ))}
+                </div>
+
+                {/* Format Card */}
+                <div className="group relative p-4 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+                  <div className="flex items-start gap-2.5">
+                    <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-secondary-500 to-secondary-600 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-secondary-500/30">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 text-left">
+                      <h3 className="text-[10px] font-semibold text-white/90 uppercase tracking-wide mb-0.5 drop-shadow-sm">Format</h3>
+                      <p className="text-base font-bold text-white drop-shadow-md">Hybrid</p>
+                      <p className="text-[10px] text-white/80 mt-0.5 drop-shadow-sm">In-person & virtual</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Participants Card */}
+                <div className="group relative p-4 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+                  <div className="flex items-start gap-2.5">
+                    <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-primary-400 to-secondary-400 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-primary-400/30">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 text-left">
+                      <h3 className="text-[10px] font-semibold text-white/90 uppercase tracking-wide mb-0.5 drop-shadow-sm">For</h3>
+                      <p className="text-base font-bold text-white drop-shadow-md">High School</p>
+                      <p className="text-[10px] text-white/80 mt-0.5 drop-shadow-sm">Girls grades 9-12</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* CTA Button */}
+              {/* Benefit Cards - Enhanced */}
+              <div className="mb-5">
+                <p className="text-white/90 text-center text-xs font-semibold mb-3 uppercase tracking-wide">
+                  During the summer program, you will:
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-5xl mx-auto">
+                  {benefits.map((benefit, index) => (
+                    <div
+                      key={index}
+                      className="group relative p-3 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-primary-300/40 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+                    >
+                      <div className="text-center">
+                        <div className="flex justify-center mb-2 text-white/90 group-hover:text-primary-200 transition-colors">
+                          <div className="w-6 h-6">{benefit.icon}</div>
+                        </div>
+                        <h3 className="text-white font-bold text-xs mb-1 group-hover:text-primary-100 transition-colors">{benefit.title}</h3>
+                        <p className="text-white/80 text-[10px] leading-snug">{benefit.description}</p>
+                      </div>
+                      {/* Hover glow effect */}
+                      <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary-500/0 to-secondary-500/0 group-hover:from-primary-500/10 group-hover:to-secondary-500/10 transition-all duration-300 -z-10"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA Button - Enhanced */}
               <div className="text-center">
                 <Button
                   size="lg"
-                  className="bg-primary-600 text-white hover:bg-primary-700 border-0 font-bold shadow-2xl shadow-primary-500/30 px-8 py-4 text-base sm:text-lg transform hover:scale-105 transition-all cursor-pointer"
+                  className="bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-600 hover:from-primary-700 hover:via-primary-600 hover:to-secondary-700 text-white border-0 font-bold shadow-2xl shadow-primary-500/40 px-8 py-3.5 text-base sm:text-lg transform hover:scale-105 transition-all cursor-pointer rounded-xl"
                 >
                   Apply for Internship Today!
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

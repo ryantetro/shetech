@@ -204,9 +204,9 @@ export default function ExplorerDayPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-5xl mx-auto text-center">
               {/* SheTech Text - Small branding */}
-              <div className="mb-2">
+              {/* <div className="mb-2">
                 <span className="text-white/90 text-lg sm:text-xl font-light tracking-wide">SheTech</span>
-              </div>
+              </div> */}
               
               {/* Explorer Day Logo - Featured prominently */}
               <div className="mb-4 relative">
@@ -319,7 +319,7 @@ export default function ExplorerDayPage() {
         </section>
 
         {/* What to Expect & Schedule - Tabbed Interface */}
-        <AnimatedSection direction="up" className="py-10 sm:py-12 bg-gradient-to-br from-gray-50 to-primary-50/30">
+        <AnimatedSection direction="up" className="py-10 sm:py-12 pb-24 sm:pb-20 bg-gradient-to-br from-gray-50 to-primary-50/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               {/* Unified Header */}
@@ -369,135 +369,128 @@ export default function ExplorerDayPage() {
               </div>
 
               {/* Tab Content Container */}
-              <div className="relative min-h-[500px]">
+              <div className="relative pb-20 sm:pb-16">
                 {/* Workshops Tab Content */}
-                <div
-                  className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                    activeTab === 'workshops'
-                      ? 'opacity-100 translate-x-0'
-                      : 'opacity-0 -translate-x-8 pointer-events-none'
-                  }`}
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    {/* Image Column */}
-                    <div className="relative order-2 lg:order-1">
-                      <div className="rounded-2xl bg-gradient-to-br from-primary-400 via-secondary-400 to-tertiary-400 p-1 shadow-2xl transform hover:scale-105 transition-transform">
-                        <div className="w-full h-full rounded-2xl overflow-hidden">
-                          <Image
-                            src="/explorerday/cydni.png"
-                            alt="SheTech Explorer Day Speaker"
-                            width={800}
-                            height={800}
-                            className="w-full h-full object-cover"
-                            priority
-                          />
+                {activeTab === 'workshops' && (
+                  <div className="transition-all duration-500 ease-in-out opacity-100">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                      {/* Image Column */}
+                      <div key="workshops-image" className="relative order-2 lg:order-1 overflow-hidden animate-slide-in-left">
+                        <div className="rounded-2xl bg-gradient-to-br from-primary-400 via-secondary-400 to-tertiary-400 p-1 shadow-2xl transform hover:scale-105 transition-transform">
+                          <div className="w-full h-full rounded-2xl overflow-hidden">
+                            <Image
+                              src="/explorerday/cydni.png"
+                              alt="SheTech Explorer Day Speaker"
+                              width={800}
+                              height={800}
+                              className="w-full h-full object-cover"
+                              priority
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Workshops Grid Column */}
+                      <div className="order-1 lg:order-2">
+                        <div className="grid grid-cols-2 gap-3">
+                          {features.map((feature, index) => (
+                            <div
+                              key={`workshop-${activeTab}-${index}`}
+                              className="flex items-start gap-2.5 group"
+                              style={{
+                                opacity: 0,
+                                animationDelay: `${index * 50}ms`,
+                                animation: activeTab === 'workshops' ? 'fadeInUp 0.6s ease-out forwards' : 'none',
+                              }}
+                            >
+                              <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <span className="text-xl">{feature.icon}</span>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-gray-900 mb-0.5 text-sm">{feature.title}</h4>
+                                <p className="text-xs text-gray-600">{feature.description}</p>
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
-
-                    {/* Workshops Grid Column */}
-                    <div className="order-1 lg:order-2">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {features.map((feature, index) => (
-                          <div
-                            key={`workshop-${activeTab}-${index}`}
-                            className="flex items-start gap-2.5 group"
-                            style={{
-                              opacity: 0,
-                              animationDelay: `${index * 50}ms`,
-                              animation: activeTab === 'workshops' ? 'fadeInUp 0.6s ease-out forwards' : 'none',
-                            }}
-                          >
-                            <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <span className="text-xl">{feature.icon}</span>
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-gray-900 mb-0.5 text-sm">{feature.title}</h4>
-                              <p className="text-xs text-gray-600">{feature.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Schedule Tab Content */}
-                <div
-                  className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                    activeTab === 'schedule'
-                      ? 'opacity-100 translate-x-0'
-                      : 'opacity-0 translate-x-8 pointer-events-none'
-                  }`}
-                >
-                  <div className="max-w-3xl mx-auto">
-                    <div className="relative">
-                      {/* Vertical line */}
-                      <div className="absolute left-[100px] top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500"></div>
+                {activeTab === 'schedule' && (
+                  <div className="transition-all duration-500 ease-in-out opacity-100">
+                    <div className="max-w-3xl mx-auto">
+                      <div className="relative">
+                        {/* Vertical line */}
+                        <div className="absolute left-[70px] sm:left-[100px] top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500"></div>
 
-                      {/* Timeline items */}
-                      <div className="space-y-0">
-                        {schedule.map((item, index) => (
-                          <div
-                            key={`schedule-${activeTab}-${index}`}
-                            className="relative flex gap-6 pb-8 last:pb-0 group"
-                            style={{
-                              opacity: 0,
-                              animationDelay: `${index * 100}ms`,
-                              animation: activeTab === 'schedule' ? 'fadeInUp 0.6s ease-out forwards' : 'none',
-                            }}
-                          >
-                            {/* Time label on left */}
-                            <div className="w-[100px] flex-shrink-0 text-right pt-5">
-                              <span className="inline-block px-2.5 py-1 rounded-lg bg-secondary-100 text-secondary-700 text-xs font-bold">
-                                {item.time}
-                              </span>
-                            </div>
+                        {/* Timeline items */}
+                        <div className="space-y-0">
+                          {schedule.map((item, index) => (
+                            <div
+                              key={`schedule-${activeTab}-${index}`}
+                              className="relative flex gap-3 sm:gap-6 pb-4 sm:pb-8 last:pb-0 group"
+                              style={{
+                                opacity: 0,
+                                animationDelay: `${index * 100}ms`,
+                                animation: activeTab === 'schedule' ? 'fadeInUp 0.6s ease-out forwards' : 'none',
+                              }}
+                            >
+                              {/* Time label on left */}
+                              <div className="w-[70px] sm:w-[100px] flex-shrink-0 text-right pt-3 sm:pt-5">
+                                <span className="inline-block px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-secondary-100 text-secondary-700 text-[10px] sm:text-xs font-bold">
+                                  {item.time}
+                                </span>
+                              </div>
 
-                            {/* Dot on the line */}
-                            <div className="absolute left-[100px] top-6 w-2.5 h-2.5 rounded-full bg-secondary-500 border-[3px] border-white shadow-md -translate-x-1/2 group-hover:scale-150 transition-transform z-10"></div>
+                              {/* Dot on the line */}
+                              <div className="absolute left-[70px] sm:left-[100px] top-4 sm:top-6 w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-secondary-500 border-2 sm:border-[3px] border-white shadow-md -translate-x-1/2 group-hover:scale-150 transition-transform z-10"></div>
 
-                            {/* Content card on right */}
-                            <div className="flex-1 pt-1">
-                              <div className="p-4 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all group-hover:-translate-y-1">
-                                <h4 className="text-lg font-bold text-gray-900 mb-1.5">{item.title}</h4>
-                                <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                              {/* Content card on right */}
+                              <div className="flex-1 pt-0 sm:pt-1">
+                                <div className="p-3 sm:p-4 rounded-lg sm:rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all group-hover:-translate-y-1">
+                                  <h4 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-1.5">{item.title}</h4>
+                                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
         </AnimatedSection>
 
         {/* Visual Gallery - Image Carousel */}
-        <AnimatedSection direction="up" className="py-6 sm:py-8 bg-gradient-to-br from-gray-50 to-secondary-50/30">
+        <AnimatedSection direction="up" className="pt-48 pb-6 sm:pt-36 sm:py-8">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-6">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
-                  Experience Gallery
-                </h2>
-                <p className="text-sm sm:text-base text-gray-600">
-                  Moments from previous Explorer Day events
-                </p>
-              </div>
+              <div className="bg-gradient-to-br from-gray-50 to-secondary-50/30 rounded-2xl sm:rounded-none py-8 sm:py-0 px-4 sm:px-0 -mx-4 sm:mx-0">
+                <div className="text-center mb-6">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                    Experience Gallery
+                  </h2>
+                  <p className="text-sm sm:text-base text-gray-600">
+                    Moments from previous Explorer Day events
+                  </p>
+                </div>
 
               {/* Carousel Container */}
               <div 
-                className="relative max-w-6xl mx-auto"
+                className="relative max-w-6xl mx-auto px-12 sm:px-16"
                 onMouseEnter={() => setIsGalleryPaused(true)}
                 onMouseLeave={() => setIsGalleryPaused(false)}
               >
                 {/* Left Arrow */}
                 <button
                   onClick={() => setActiveGalleryImage((prev) => (prev - 1 + 9) % 9)}
-                  className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 sm:-translate-x-4 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
+                  className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
                   aria-label="Previous image"
                 >
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -506,7 +499,7 @@ export default function ExplorerDayPage() {
                 </button>
 
                 {/* Image Carousel */}
-                <div className="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-visible rounded-3xl">
+                <div className="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden rounded-3xl">
                   <div className="relative w-full h-full flex items-center justify-center">
                     {[...Array(9)].map((_, index) => {
                       let offset = index - activeGalleryImage;
@@ -528,14 +521,14 @@ export default function ExplorerDayPage() {
                             isActive
                               ? 'z-10 scale-100 opacity-100'
                               : isLeft
-                              ? 'z-0 -translate-x-[40%] sm:-translate-x-[35%] scale-70 sm:scale-75 opacity-50 sm:opacity-60'
+                              ? 'z-0 -translate-x-[45%] sm:-translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
                               : isRight
-                              ? 'z-0 translate-x-[40%] sm:translate-x-[35%] scale-70 sm:scale-75 opacity-50 sm:opacity-60'
+                              ? 'z-0 translate-x-[45%] sm:translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
                               : 'opacity-0'
                           }`}
                           onClick={() => !isActive && setActiveGalleryImage(index)}
                         >
-                          <div className="relative w-[180px] h-[250px] sm:w-[280px] sm:h-[300px] lg:w-[400px] lg:h-[350px] rounded-xl overflow-hidden shadow-xl">
+                          <div className="relative w-[160px] h-[250px] sm:w-[280px] sm:h-[300px] lg:w-[400px] lg:h-[350px] rounded-xl overflow-hidden shadow-xl">
                             {/* Placeholder Image */}
                             <div className="absolute inset-0 bg-gradient-to-br from-primary-200 via-secondary-200 to-tertiary-200 flex items-center justify-center">
                               <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
@@ -561,7 +554,7 @@ export default function ExplorerDayPage() {
                 {/* Right Arrow */}
                 <button
                   onClick={() => setActiveGalleryImage((prev) => (prev + 1) % 9)}
-                  className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 sm:translate-x-4 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
+                  className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
                   aria-label="Next image"
                 >
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -591,6 +584,7 @@ export default function ExplorerDayPage() {
                 <button className="text-primary-600 hover:text-primary-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
                   VIEW ALL PHOTOS
                 </button>
+              </div>
               </div>
             </div>
           </div>
@@ -810,7 +804,7 @@ export default function ExplorerDayPage() {
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl sm:text-3xl lg:text-4xl font-black text-white mb-4 leading-tight drop-shadow-lg">
                 Ready to Empower the Next Generation?
               </h2>
               <p className="text-base sm:text-lg text-slate-200 mb-6 leading-relaxed">
@@ -889,6 +883,21 @@ export default function ExplorerDayPage() {
 
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
+        }
+
+        @keyframes slideInLeft {
+          0% {
+            transform: translateX(-100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
+        .animate-slide-in-left {
+          animation: slideInLeft 0.6s ease-out forwards;
         }
       `}</style>
     </div>

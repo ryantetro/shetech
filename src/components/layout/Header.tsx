@@ -19,14 +19,21 @@ export const Header = () => {
       setIsScrolled(window.scrollY > 20);
 
       // Check if we're over a colorful hero section
-      // If the hero has bg-white or bg-gray, we should show solid header immediately
+      // If the hero has bg-white, bg-gray, or light gradient backgrounds, show solid header
       const heroElement = document.querySelector('main > section');
-      const heroHasWhiteBg = heroElement?.classList.contains('bg-white') ||
-        heroElement?.classList.contains('border-b');
+      const heroClasses = heroElement?.className || '';
+      
+      // Check for light backgrounds - these need dark text
+      const hasLightBg = heroClasses.includes('bg-white') ||
+        heroClasses.includes('bg-gray') ||
+        heroClasses.includes('bg-slate-50') ||
+        heroClasses.includes('from-slate-50') ||
+        heroClasses.includes('from-white') ||
+        heroClasses.includes('border-b');
 
-      // If hero has white background, don't use transparent header
-      // Otherwise, use transparent header for first 600px
-      setIsOverHero(!heroHasWhiteBg && window.scrollY < 600);
+      // If hero has light background, don't use transparent header (use solid with dark text)
+      // Otherwise, use transparent header with white text for first 600px
+      setIsOverHero(!hasLightBg && window.scrollY < 600);
     };
 
     window.addEventListener('scroll', handleScroll);
