@@ -26,7 +26,7 @@ export default function ExplorerDayPage() {
   // Auto-advance testimonial carousel
   useEffect(() => {
     if (isPaused) return;
-    
+
     const interval = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
@@ -44,7 +44,7 @@ export default function ExplorerDayPage() {
         const cardWidth = card.offsetWidth;
         const containerWidth = container.offsetWidth;
         const scrollLeft = cardLeft - (containerWidth / 2) + (cardWidth / 2);
-        
+
         container.scrollTo({
           left: scrollLeft,
           behavior: 'smooth',
@@ -56,7 +56,7 @@ export default function ExplorerDayPage() {
   // Auto-advance gallery carousel
   useEffect(() => {
     if (isGalleryPaused) return;
-    
+
     const interval = setInterval(() => {
       setActiveGalleryImage((prev) => (prev + 1) % 9);
     }, 4000);
@@ -67,16 +67,16 @@ export default function ExplorerDayPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section - Custom Tech Background */}
         <section className="relative overflow-hidden pt-20 sm:pt-24 pb-16 sm:pb-20">
           {/* Base gradient background - Subtle professional gradient */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0" 
-                 style={{ 
-                   background: 'linear-gradient(to bottom, rgb(15, 23, 42) 0%, rgb(30, 41, 59) 25%, rgb(51, 65, 85) 50%, rgb(71, 85, 105) 70%, rgb(148, 163, 184) 85%, rgb(241, 245, 249) 95%, rgb(255, 255, 255) 100%)'
-                 }}></div>
+            <div className="absolute inset-0"
+              style={{
+                background: 'linear-gradient(to bottom, rgb(15, 23, 42) 0%, rgb(30, 41, 59) 25%, rgb(51, 65, 85) 50%, rgb(71, 85, 105) 70%, rgb(148, 163, 184) 85%, rgb(241, 245, 249) 95%, rgb(255, 255, 255) 100%)'
+              }}></div>
           </div>
 
           {/* Custom Tech Grid Pattern */}
@@ -84,7 +84,7 @@ export default function ExplorerDayPage() {
             <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
               <defs>
                 <pattern id="techGrid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                  <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(0, 166, 206, 0.3)" strokeWidth="0.5"/>
+                  <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(0, 166, 206, 0.3)" strokeWidth="0.5" />
                 </pattern>
                 <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#00a6ce" stopOpacity="0.8" />
@@ -92,15 +92,15 @@ export default function ExplorerDayPage() {
                   <stop offset="100%" stopColor="#00a6ce" stopOpacity="0.4" />
                 </linearGradient>
                 <filter id="nodeGlow">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur" />
                   <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
                   </feMerge>
                 </filter>
               </defs>
               <rect width="100%" height="100%" fill="url(#techGrid)" />
-              
+
               {/* Animated connection nodes */}
               {[...Array(25)].map((_, i) => {
                 const x = ((i * 13) % 100);
@@ -164,9 +164,8 @@ export default function ExplorerDayPage() {
                 style={{
                   left: `${(i + 1) * 8}%`,
                   height: '100%',
-                  background: `linear-gradient(to bottom, transparent, ${
-                    i % 3 === 0 ? '#00a6ce' : i % 3 === 1 ? '#bd1c81' : '#010193'
-                  }40, transparent)`,
+                  background: `linear-gradient(to bottom, transparent, ${i % 3 === 0 ? '#00a6ce' : i % 3 === 1 ? '#bd1c81' : '#010193'
+                    }40, transparent)`,
                   animation: `dataStream ${4 + (i % 3)}s linear infinite`,
                   animationDelay: `${i * 0.3}s`,
                 }}
@@ -194,7 +193,7 @@ export default function ExplorerDayPage() {
           {/* Gradient overlay for depth and smooth transition */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 via-slate-800/5 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/60"></div>
-          
+
           {/* Subtle animated gradient orbs */}
           <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary-500/8 rounded-full blur-3xl animate-pulse-slow"></div>
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary-500/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
@@ -207,19 +206,19 @@ export default function ExplorerDayPage() {
               {/* <div className="mb-2">
                 <span className="text-white/90 text-lg sm:text-xl font-light tracking-wide">SheTech</span>
               </div> */}
-              
+
               {/* Explorer Day Logo - Featured prominently */}
               <div className="mb-4 relative">
                 {/* Glow effect behind logo */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-full max-w-xl h-20 bg-white/20 blur-3xl"></div>
                 </div>
-                
+
                 {/* Logo container with glassmorphism */}
                 <div className="relative p-4 sm:p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
                   <div className="relative w-full max-w-xl mx-auto">
                     <Image
-                      src="/explorerday/explorerday.png"
+                      src="/shetech-assets/Explorer Day 2026.svg"
                       alt="Explorer Day"
                       width={600}
                       height={150}
@@ -237,7 +236,7 @@ export default function ExplorerDayPage() {
                 </svg>
                 February 24, 2026
               </div>
-              
+
               {/* Description */}
               <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-2xl mx-auto mb-4 font-light">
                 Join more than 3,000 girls from hundreds of schools around the state for this free, hands-on day of STEM, industry partners, mentors, and more. <span className="font-semibold text-white">Lunch is included!</span>
@@ -337,31 +336,28 @@ export default function ExplorerDayPage() {
                 <div className="relative inline-flex rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 p-1 shadow-lg">
                   {/* Animated background indicator */}
                   <div
-                    className={`absolute top-1 bottom-1 rounded-lg bg-gradient-to-r transition-all duration-300 ease-in-out ${
-                      activeTab === 'workshops'
+                    className={`absolute top-1 bottom-1 rounded-lg bg-gradient-to-r transition-all duration-300 ease-in-out ${activeTab === 'workshops'
                         ? 'left-1 right-1/2 bg-gradient-to-r from-primary-500 to-primary-400'
                         : 'left-1/2 right-1 bg-gradient-to-r from-secondary-500 to-secondary-400'
-                    }`}
+                      }`}
                   ></div>
-                  
+
                   {/* Tab Buttons */}
                   <button
                     onClick={() => setActiveTab('workshops')}
-                    className={`relative z-10 px-8 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ease-in-out cursor-pointer ${
-                      activeTab === 'workshops'
+                    className={`relative z-10 px-8 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ease-in-out cursor-pointer ${activeTab === 'workshops'
                         ? 'text-white'
                         : 'text-gray-600 hover:text-gray-900'
-                    }`}
+                      }`}
                   >
                     Workshops
                   </button>
                   <button
                     onClick={() => setActiveTab('schedule')}
-                    className={`relative z-10 px-8 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ease-in-out cursor-pointer ${
-                      activeTab === 'schedule'
+                    className={`relative z-10 px-8 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ease-in-out cursor-pointer ${activeTab === 'schedule'
                         ? 'text-white'
                         : 'text-gray-600 hover:text-gray-900'
-                    }`}
+                      }`}
                   >
                     Schedule
                   </button>
@@ -481,110 +477,108 @@ export default function ExplorerDayPage() {
                   </p>
                 </div>
 
-              {/* Carousel Container */}
-              <div 
-                className="relative max-w-6xl mx-auto px-12 sm:px-16"
-                onMouseEnter={() => setIsGalleryPaused(true)}
-                onMouseLeave={() => setIsGalleryPaused(false)}
-              >
-                {/* Left Arrow */}
-                <button
-                  onClick={() => setActiveGalleryImage((prev) => (prev - 1 + 9) % 9)}
-                  className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
-                  aria-label="Previous image"
+                {/* Carousel Container */}
+                <div
+                  className="relative max-w-6xl mx-auto px-12 sm:px-16"
+                  onMouseEnter={() => setIsGalleryPaused(true)}
+                  onMouseLeave={() => setIsGalleryPaused(false)}
                 >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
+                  {/* Left Arrow */}
+                  <button
+                    onClick={() => setActiveGalleryImage((prev) => (prev - 1 + 9) % 9)}
+                    className="absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
+                    aria-label="Previous image"
+                  >
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
 
-                {/* Image Carousel */}
-                <div className="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden rounded-3xl">
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    {[...Array(9)].map((_, index) => {
-                      let offset = index - activeGalleryImage;
-                      // Handle circular wrapping
-                      if (offset > 4) offset -= 9;
-                      if (offset < -4) offset += 9;
-                      
-                      const isActive = offset === 0;
-                      const isLeft = offset === -1;
-                      const isRight = offset === 1;
-                      const isVisible = Math.abs(offset) <= 1;
+                  {/* Image Carousel */}
+                  <div className="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden rounded-3xl">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      {[...Array(9)].map((_, index) => {
+                        let offset = index - activeGalleryImage;
+                        // Handle circular wrapping
+                        if (offset > 4) offset -= 9;
+                        if (offset < -4) offset += 9;
 
-                      if (!isVisible) return null;
+                        const isActive = offset === 0;
+                        const isLeft = offset === -1;
+                        const isRight = offset === 1;
+                        const isVisible = Math.abs(offset) <= 1;
 
-                      return (
-                        <div
-                          key={index}
-                          className={`absolute transition-all duration-500 ease-in-out cursor-pointer ${
-                            isActive
-                              ? 'z-10 scale-100 opacity-100'
-                              : isLeft
-                              ? 'z-0 -translate-x-[45%] sm:-translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
-                              : isRight
-                              ? 'z-0 translate-x-[45%] sm:translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
-                              : 'opacity-0'
-                          }`}
-                          onClick={() => !isActive && setActiveGalleryImage(index)}
-                        >
-                          <div className="relative w-[160px] h-[250px] sm:w-[280px] sm:h-[300px] lg:w-[400px] lg:h-[350px] rounded-xl overflow-hidden shadow-xl">
-                            {/* Placeholder Image */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary-200 via-secondary-200 to-tertiary-200 flex items-center justify-center">
-                              <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                              </svg>
-                            </div>
-                            
-                            {/* Dark Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                            
-                            {/* Image Label */}
-                            <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 text-white">
-                              <p className="text-sm sm:text-base font-bold mb-0.5">Photo {index + 1}</p>
-                              <p className="text-xs text-white/80">Explorer Day Event</p>
+                        if (!isVisible) return null;
+
+                        return (
+                          <div
+                            key={index}
+                            className={`absolute transition-all duration-500 ease-in-out cursor-pointer ${isActive
+                                ? 'z-10 scale-100 opacity-100'
+                                : isLeft
+                                  ? 'z-0 -translate-x-[45%] sm:-translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
+                                  : isRight
+                                    ? 'z-0 translate-x-[45%] sm:translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
+                                    : 'opacity-0'
+                              }`}
+                            onClick={() => !isActive && setActiveGalleryImage(index)}
+                          >
+                            <div className="relative w-[160px] h-[250px] sm:w-[280px] sm:h-[300px] lg:w-[400px] lg:h-[350px] rounded-xl overflow-hidden shadow-xl">
+                              {/* Placeholder Image */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-primary-200 via-secondary-200 to-tertiary-200 flex items-center justify-center">
+                                <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                                </svg>
+                              </div>
+
+                              {/* Dark Gradient Overlay */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+                              {/* Image Label */}
+                              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 text-white">
+                                <p className="text-sm sm:text-base font-bold mb-0.5">Photo {index + 1}</p>
+                                <p className="text-xs text-white/80">Explorer Day Event</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
+
+                  {/* Right Arrow */}
+                  <button
+                    onClick={() => setActiveGalleryImage((prev) => (prev + 1) % 9)}
+                    className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
+                    aria-label="Next image"
+                  >
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
 
-                {/* Right Arrow */}
-                <button
-                  onClick={() => setActiveGalleryImage((prev) => (prev + 1) % 9)}
-                  className="absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-xl border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-all cursor-pointer group"
-                  aria-label="Next image"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
+                {/* Dot Indicators */}
+                <div className="flex justify-center gap-2 mt-6">
+                  {[...Array(9)].map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveGalleryImage(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${index === activeGalleryImage
+                          ? 'bg-primary-600 w-8'
+                          : 'bg-gray-300 hover:bg-gray-400'
+                        }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
 
-              {/* Dot Indicators */}
-              <div className="flex justify-center gap-2 mt-6">
-                {[...Array(9)].map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveGalleryImage(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      index === activeGalleryImage
-                        ? 'bg-primary-600 w-8'
-                        : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-              </div>
-
-              {/* View All CTA */}
-              <div className="text-center mt-4">
-                <button className="text-primary-600 hover:text-primary-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
-                  VIEW ALL PHOTOS
-                </button>
-              </div>
+                {/* View All CTA */}
+                <div className="text-center mt-4">
+                  <button className="text-primary-600 hover:text-primary-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+                    VIEW ALL PHOTOS
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -762,7 +756,7 @@ export default function ExplorerDayPage() {
               <p className="text-xs text-gray-600 mb-4">
                 Proud to collaborate with leading technology companies
               </p>
-              
+
               <div className="relative rounded-xl overflow-hidden shadow-md border border-gray-200 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 p-4">
                 <Image
                   src="/explorerday/sponsors.png"
@@ -781,10 +775,10 @@ export default function ExplorerDayPage() {
         <section className="relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-12">
           {/* Multi-stop gradient for smooth transition */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0" 
-                 style={{ 
-                   background: 'linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(249, 250, 251) 8%, rgb(241, 245, 249) 16%, rgb(226, 232, 240) 24%, rgb(203, 213, 225) 32%, rgb(148, 163, 184) 40%, rgb(100, 116, 139) 50%, rgb(71, 85, 105) 60%, rgb(51, 65, 85) 70%, rgb(30, 41, 59) 82%, rgb(15, 23, 42) 100%)'
-                 }}></div>
+            <div className="absolute inset-0"
+              style={{
+                background: 'linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(249, 250, 251) 8%, rgb(241, 245, 249) 16%, rgb(226, 232, 240) 24%, rgb(203, 213, 225) 32%, rgb(148, 163, 184) 40%, rgb(100, 116, 139) 50%, rgb(71, 85, 105) 60%, rgb(51, 65, 85) 70%, rgb(30, 41, 59) 82%, rgb(15, 23, 42) 100%)'
+              }}></div>
           </div>
 
           {/* Subtle tech pattern with fade */}

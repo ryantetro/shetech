@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
 type Benefit = {
@@ -23,9 +24,14 @@ const PROGRAMS_DATA: Program[] = [
         ctaText: 'Register Now',
         ctaHref: '/students/explorer-day',
         icon: (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
+            <div className="relative w-full h-full">
+                <Image
+                    src="/shetech-assets/Explorer Day Icon.svg"
+                    alt="Explorer Day"
+                    fill
+                    className="object-contain"
+                />
+            </div>
         ),
         benefits: [
             { text: 'Interactive workshops', color: 'bg-yellow-50 border-yellow-200 text-yellow-800' },
@@ -40,9 +46,14 @@ const PROGRAMS_DATA: Program[] = [
         ctaText: 'Apply Now',
         ctaHref: '/students/leadership-board',
         icon: (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
+            <div className="relative w-full h-full">
+                <Image
+                    src="/shetech-assets/student board icon.svg"
+                    alt="Student Board"
+                    fill
+                    className="object-contain"
+                />
+            </div>
         ),
         benefits: [
             { text: 'Leadership development', color: 'bg-cyan-50 border-cyan-200 text-cyan-800' },
@@ -57,9 +68,14 @@ const PROGRAMS_DATA: Program[] = [
         ctaText: 'Learn More',
         ctaHref: '/students/media-internship',
         icon: (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
+            <div className="relative w-full h-full">
+                <Image
+                    src="/shetech-assets/Media Intern Icon.svg"
+                    alt="Media Internship"
+                    fill
+                    className="object-contain"
+                />
+            </div>
         ),
         benefits: [
             { text: 'Video production skills', color: 'bg-rose-50 border-rose-200 text-rose-800' },
@@ -74,9 +90,14 @@ const PROGRAMS_DATA: Program[] = [
         ctaText: 'Apply Now',
         ctaHref: '/students/thanksgiving-point-internship',
         icon: (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-            </svg>
+            <div className="relative w-full h-full">
+                <Image
+                    src="/shetech-assets/int workshop icon.svg"
+                    alt="Internship"
+                    fill
+                    className="object-contain"
+                />
+            </div>
         ),
         benefits: [
             { text: 'Ag-tech exploration', color: 'bg-emerald-50 border-emerald-200 text-emerald-800' },
@@ -91,9 +112,14 @@ const PROGRAMS_DATA: Program[] = [
         ctaText: 'Apply Now',
         ctaHref: '/students/summer-internship',
         icon: (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-            </svg>
+            <div className="relative w-full h-full">
+                <Image
+                    src="/shetech-assets/summer intern icon.svg"
+                    alt="Summer Internship"
+                    fill
+                    className="object-contain"
+                />
+            </div>
         ),
         benefits: [
             { text: 'Company tours', color: 'bg-blue-50 border-blue-200 text-blue-800' },
@@ -109,20 +135,23 @@ export const ProgramsSection = () => {
     const selectedProgram = PROGRAMS_DATA[selectedIndex];
 
     return (
-        <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
+        <section className="py-20 sm:py-24 bg-[#EBEBF5] relative overflow-hidden">
             {/* Graph Paper Background */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-100"></div>
+            <div className="absolute inset-0 opacity-100" style={{ backgroundImage: 'radial-gradient(#d1d1d1 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <AnimatedSection direction="fade" delay={0}>
-                    <div className="text-center mb-12 sm:mb-16">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-yellow-100 border-2 border-yellow-200 rounded-full mb-4 shadow-sticker transform -rotate-2">
-                            <span className="text-sm font-bold text-yellow-800 uppercase tracking-wide">Year-Round Programs</span>
+                    <div className="text-center mb-12 sm:mb-16 relative">
+                        {/* Sticker Header */}
+                        <div className="relative inline-block transform -rotate-2 mb-6">
+                            <div className="absolute inset-0 bg-[#000080] transform translate-y-1 translate-x-1" style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)' }}></div>
+                            <div className="relative bg-[#00008B] text-white px-8 py-4 pb-8" style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)' }}>
+                                <span className="text-xl sm:text-2xl font-black uppercase tracking-wider">Explore SheTech</span>
+                                <div className="text-3xl sm:text-4xl font-black uppercase leading-none mt-1">ALL YEAR LONG</div>
+                            </div>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-4">
-                            Explore SheTech, <span className="text-highlight text-highlight-primary">All Year Long</span>
-                        </h2>
-                        <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
+
+                        <p className="text-lg text-[#00008B] max-w-2xl mx-auto leading-relaxed font-bold mt-4">
                             SheTech provides monthly events and opportunities for young women to learn and discover how their dreams can be realized in tech.
                         </p>
                     </div>
@@ -130,136 +159,75 @@ export const ProgramsSection = () => {
 
                 <AnimatedSection direction="up" delay={100}>
                     <div className="max-w-6xl mx-auto">
-                        {/* Mobile: Horizontal scrolling tabs */}
-                        <div className="lg:hidden mb-4">
-                            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-1">
-                                Select a Program
-                            </p>
-                            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-                                {PROGRAMS_DATA.map((program, index) => (
-                                    <button
-                                        key={program.title}
-                                        onClick={() => setSelectedIndex(index)}
-                                        className={`flex items-center gap-2 px-4 py-2.5 rounded-full border-2 whitespace-nowrap transition-all duration-200 shrink-0 ${
-                                            selectedIndex === index
-                                                ? 'bg-primary-500 border-primary-600 text-white shadow-md'
-                                                : 'bg-white border-slate-200 text-slate-600 hover:border-primary-300'
-                                        }`}
-                                    >
-                                        <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                                            selectedIndex === index
-                                                ? 'bg-white/20 text-white'
-                                                : 'bg-slate-100 text-slate-500'
-                                        }`}>
-                                            {index + 1}
-                                        </span>
-                                        <span className="font-semibold text-sm">{program.title}</span>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="grid lg:grid-cols-12 gap-0">
-                            {/* Left Column - File Folder Tabs (Desktop only) */}
-                            <div className="hidden lg:flex lg:col-span-4 flex-col pr-0 lg:-mr-px z-10">
-                                <div className="bg-slate-100 rounded-l-xl border-2 border-slate-300 border-r-0 p-4 h-full">
-                                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 px-2">
-                                        Select a Program
-                                    </p>
-                                    <div className="space-y-2">
-                                        {PROGRAMS_DATA.map((program, index) => (
-                                            <button
-                                                key={program.title}
-                                                onClick={() => setSelectedIndex(index)}
-                                                className={`w-full text-left transition-all duration-200 relative group ${selectedIndex === index
-                                                    ? 'z-20'
-                                                    : 'z-0 hover:bg-slate-200/50'
-                                                    }`}
-                                            >
-                                                <div className={`
-                                                    flex items-center gap-3 p-4 rounded-l-lg border-2 
-                                                    ${selectedIndex === index
-                                                        ? 'bg-white border-slate-300 border-r-0 w-[calc(100%+2px)]'
-                                                        : 'border-transparent opacity-70 hover:opacity-100'
-                                                    }
-                                                `}>
-                                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 border-2 ${selectedIndex === index
-                                                        ? 'bg-primary-100 border-primary-200 text-primary-600'
-                                                        : 'bg-white border-slate-200 text-slate-400'
-                                                        }`}>
-                                                        <span className="text-xs font-bold">{index + 1}</span>
-                                                    </div>
-                                                    <span className={`font-bold text-sm ${selectedIndex === index ? 'text-slate-900' : 'text-slate-600'}`}>
-                                                        {program.title}
-                                                    </span>
-                                                </div>
-                                            </button>
-                                        ))}
-                                    </div>
+                        <div className="grid lg:grid-cols-12 gap-6 items-start">
+                            {/* Left Column - Program List */}
+                            <div className="lg:col-span-4 flex flex-col gap-3">
+                                <div className="bg-[#00008B] text-white p-3 rounded-t-lg font-bold text-sm uppercase tracking-wider pl-4">
+                                    Select a Program
+                                </div>
+                                <div className="bg-white rounded-b-lg p-2 shadow-sm space-y-1">
+                                    {PROGRAMS_DATA.map((program, index) => (
+                                        <button
+                                            key={program.title}
+                                            onClick={() => setSelectedIndex(index)}
+                                            className={`w-full text-left px-4 py-3 rounded-md transition-all duration-200 flex items-center gap-3 font-bold ${selectedIndex === index
+                                                ? 'bg-[#00008B] text-white shadow-md'
+                                                : 'text-[#00008B] hover:bg-[#E6E6FA]'
+                                                }`}
+                                        >
+                                            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs border-2 ${selectedIndex === index
+                                                ? 'border-white bg-white/20'
+                                                : 'border-[#00008B] bg-transparent'
+                                                }`}>
+                                                {index + 1}
+                                            </span>
+                                            {program.title}
+                                        </button>
+                                    ))}
                                 </div>
                             </div>
 
-                            {/* Right Column - Notebook Content */}
+                            {/* Right Column - Content */}
                             <div className="lg:col-span-8">
                                 <AnimatedSection direction="fade" delay={0} key={selectedIndex}>
-                                    <div className="bg-white border-2 border-slate-300 rounded-xl lg:rounded-l-none lg:rounded-r-xl shadow-sticker h-full relative overflow-hidden">
-                                        {/* Notebook Lines Background */}
-                                        <div className="absolute inset-0" style={{
-                                            backgroundImage: 'linear-gradient(#e5e7eb 1px, transparent 1px)',
-                                            backgroundSize: '100% 2rem',
-                                            marginTop: '2rem'
-                                        }}></div>
-
-                                        {/* Red Margin Line */}
-                                        <div className="absolute top-0 bottom-0 left-4 sm:left-8 w-px bg-red-200"></div>
-
-                                        <div className="relative p-5 pl-8 sm:p-8 sm:pl-12">
-                                            {/* Header */}
-                                            <div className="flex items-start justify-between gap-4 mb-6">
-                                                <div className="flex-1 min-w-0">
-                                                    <div className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-bold rounded-full mb-2 border border-primary-200">
-                                                        PROGRAM FILE #{String(selectedIndex + 1).padStart(2, '0')}
+                                    <div className="bg-white rounded-xl shadow-lg border-2 border-white overflow-hidden relative min-h-[500px] flex flex-col">
+                                        {/* Program Content */}
+                                        <div className="p-8 sm:p-10 flex-1">
+                                            <div className="flex flex-col sm:flex-row gap-6 items-start justify-between mb-6">
+                                                <div>
+                                                    <div className="inline-block px-3 py-1 bg-[#E6E6FA] text-[#00008B] text-xs font-bold rounded-md mb-3 uppercase tracking-wider">
+                                                        Program Info
                                                     </div>
-                                                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+                                                    <h3 className="text-3xl sm:text-4xl font-black text-[#00008B] mb-2 uppercase">
                                                         {selectedProgram.title}
                                                     </h3>
                                                 </div>
-                                                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center text-primary-500 shadow-sm transform rotate-3 shrink-0">
-                                                    <div className="w-6 h-6 sm:w-8 sm:h-8">
-                                                        {selectedProgram.icon}
-                                                    </div>
+                                                <div className="w-20 h-20 shrink-0 text-[#00008B]/20">
+                                                    {selectedProgram.icon}
                                                 </div>
                                             </div>
 
-                                            {/* Content */}
-                                            <div className="prose prose-slate max-w-none mb-6">
-                                                <p className="text-base sm:text-lg text-slate-700 leading-7 sm:leading-8 font-medium">
-                                                    {selectedProgram.description}
-                                                </p>
-                                            </div>
+                                            <p className="text-lg text-slate-700 leading-relaxed font-medium mb-8">
+                                                {selectedProgram.description}
+                                            </p>
 
-                                            {/* Benefits - Sticky Notes (Now unique per program) */}
-                                            <div className="grid grid-cols-2 gap-3 mb-6">
+                                            <div className="grid sm:grid-cols-2 gap-3 mb-8">
                                                 {selectedProgram.benefits.map((benefit, idx) => (
-                                                    <div
-                                                        key={idx}
-                                                        className={`p-2.5 sm:p-3 rounded-lg border-2 ${benefit.color} text-xs sm:text-sm font-bold shadow-sm`}
-                                                    >
+                                                    <div key={idx} className="flex items-center gap-2 text-[#00008B] font-bold text-sm">
+                                                        <span className="w-2 h-2 rounded-full bg-[#BD1C81]"></span>
                                                         {benefit.text}
                                                     </div>
                                                 ))}
                                             </div>
 
-                                            {/* CTA */}
-                                            <Link 
-                                                href={selectedProgram.ctaHref}
-                                                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base"
-                                            >
-                                                {selectedProgram.ctaText}
-                                                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                                </svg>
-                                            </Link>
+                                            <div className="mt-auto pt-6 border-t border-slate-100">
+                                                <Link
+                                                    href={selectedProgram.ctaHref}
+                                                    className="inline-block bg-[#BD1C81] text-white font-bold text-lg px-8 py-3 rounded-md shadow-md hover:bg-[#A0156B] transition-colors uppercase tracking-wide"
+                                                >
+                                                    {selectedProgram.ctaText}
+                                                </Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </AnimatedSection>

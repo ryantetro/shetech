@@ -75,7 +75,7 @@ export const Footer = () => {
             <div className="flex items-center">
               <div className="relative w-48 h-auto">
                 <Image
-                  src="/logo.png"
+                  src="/shetech-assets/SheTech 2026 Logo.svg"
                   alt="SheTech Women Tech Council"
                   width={192}
                   height={64}

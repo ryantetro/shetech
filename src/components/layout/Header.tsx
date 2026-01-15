@@ -22,7 +22,7 @@ export const Header = () => {
       // If the hero has bg-white, bg-gray, or light gradient backgrounds, show solid header
       const heroElement = document.querySelector('main > section');
       const heroClasses = heroElement?.className || '';
-      
+
       // Check for light backgrounds - these need dark text
       const hasLightBg = heroClasses.includes('bg-white') ||
         heroClasses.includes('bg-gray') ||
@@ -128,7 +128,7 @@ export const Header = () => {
               className="relative"
             >
               <Image
-                src="/logo.png"
+                src={isOverHero ? "/shetech-assets/Shetech logo White.svg" : "/shetech-assets/SheTech 2026 Logo.svg"}
                 alt="SheTech Women Tech Council"
                 width={180}
                 height={60}
@@ -317,7 +317,7 @@ export const Header = () => {
           >
             <nav className="flex flex-col space-y-1 px-2">
               {NAVIGATION.map((item, index) => (
-                <div 
+                <div
                   key={item.label}
                   className="transform transition-all duration-300 ease-out"
                   style={{
