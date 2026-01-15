@@ -337,8 +337,8 @@ export default function ExplorerDayPage() {
                   {/* Animated background indicator */}
                   <div
                     className={`absolute top-1 bottom-1 rounded-lg bg-gradient-to-r transition-all duration-300 ease-in-out ${activeTab === 'workshops'
-                        ? 'left-1 right-1/2 bg-gradient-to-r from-primary-500 to-primary-400'
-                        : 'left-1/2 right-1 bg-gradient-to-r from-secondary-500 to-secondary-400'
+                      ? 'left-1 right-1/2 bg-gradient-to-r from-primary-500 to-primary-400'
+                      : 'left-1/2 right-1 bg-gradient-to-r from-secondary-500 to-secondary-400'
                       }`}
                   ></div>
 
@@ -346,8 +346,8 @@ export default function ExplorerDayPage() {
                   <button
                     onClick={() => setActiveTab('workshops')}
                     className={`relative z-10 px-8 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ease-in-out cursor-pointer ${activeTab === 'workshops'
-                        ? 'text-white'
-                        : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-white'
+                      : 'text-gray-600 hover:text-gray-900'
                       }`}
                   >
                     Workshops
@@ -355,8 +355,8 @@ export default function ExplorerDayPage() {
                   <button
                     onClick={() => setActiveTab('schedule')}
                     className={`relative z-10 px-8 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ease-in-out cursor-pointer ${activeTab === 'schedule'
-                        ? 'text-white'
-                        : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-white'
+                      : 'text-gray-600 hover:text-gray-900'
                       }`}
                   >
                     Schedule
@@ -497,7 +497,17 @@ export default function ExplorerDayPage() {
                   {/* Image Carousel */}
                   <div className="relative h-[250px] sm:h-[300px] lg:h-[350px] overflow-hidden rounded-3xl">
                     <div className="relative w-full h-full flex items-center justify-center">
-                      {[...Array(9)].map((_, index) => {
+                      {[
+                        '/shetech-gallery/KinserStudios-SheTech25-0926.jpg',
+                        '/shetech-gallery/KinserStudios-SheTech25-1414.jpg',
+                        '/shetech-gallery/KinserStudios-SheTech25-1494.jpg',
+                        '/shetech-gallery/KinserStudios-SheTech25-1949.jpg',
+                        '/shetech-gallery/KinserStudios-SheTech25-2510.jpg',
+                        '/shetech-gallery/KinserStudios-SheTech25-2532.jpg',
+                        '/shetech-gallery/KinserStudios-SheTech25-2541.jpg',
+                        '/shetech-gallery/KinserStudios-SheTech25-2830.jpg',
+                        '/shetech-gallery/KinserStudios-Womentechcouncil-shetech-explorerday-1109.jpg'
+                      ].map((src, index) => {
                         let offset = index - activeGalleryImage;
                         // Handle circular wrapping
                         if (offset > 4) offset -= 9;
@@ -514,22 +524,23 @@ export default function ExplorerDayPage() {
                           <div
                             key={index}
                             className={`absolute transition-all duration-500 ease-in-out cursor-pointer ${isActive
-                                ? 'z-10 scale-100 opacity-100'
-                                : isLeft
-                                  ? 'z-0 -translate-x-[45%] sm:-translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
-                                  : isRight
-                                    ? 'z-0 translate-x-[45%] sm:translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
-                                    : 'opacity-0'
+                              ? 'z-10 scale-100 opacity-100'
+                              : isLeft
+                                ? 'z-0 -translate-x-[45%] sm:-translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
+                                : isRight
+                                  ? 'z-0 translate-x-[45%] sm:translate-x-[35%] scale-65 sm:scale-75 opacity-50 sm:opacity-60'
+                                  : 'opacity-0'
                               }`}
                             onClick={() => !isActive && setActiveGalleryImage(index)}
                           >
                             <div className="relative w-[160px] h-[250px] sm:w-[280px] sm:h-[300px] lg:w-[400px] lg:h-[350px] rounded-xl overflow-hidden shadow-xl">
-                              {/* Placeholder Image */}
-                              <div className="absolute inset-0 bg-gradient-to-br from-primary-200 via-secondary-200 to-tertiary-200 flex items-center justify-center">
-                                <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-                                </svg>
-                              </div>
+                              <Image
+                                src={src}
+                                alt={`SheTech Explorer Day Moment ${index + 1}`}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 640px) 160px, (max-width: 1024px) 280px, 400px"
+                              />
 
                               {/* Dark Gradient Overlay */}
                               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
@@ -565,8 +576,8 @@ export default function ExplorerDayPage() {
                       key={index}
                       onClick={() => setActiveGalleryImage(index)}
                       className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${index === activeGalleryImage
-                          ? 'bg-primary-600 w-8'
-                          : 'bg-gray-300 hover:bg-gray-400'
+                        ? 'bg-primary-600 w-8'
+                        : 'bg-gray-300 hover:bg-gray-400'
                         }`}
                       aria-label={`Go to image ${index + 1}`}
                     />

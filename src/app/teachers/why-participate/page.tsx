@@ -21,7 +21,7 @@ const participationCategories = [
     id: 'educators',
     title: 'For Educators',
     description: "Help your female students discover careers in STEM with SheTech Explorer Day. They'll get experience with dozens of STEM jobs, work with mentors from hundreds of tech companies, gain access to summer internships and receive certificates and certifications.",
-    image: '/why-participate/image.png',
+    image: '/shetech-gallery/KinserStudios-SheTech25-2986.jpg',
     color: 'teal',
     gradient: 'from-teal-500 to-cyan-500',
     bgGradient: 'from-teal-500/10 to-cyan-500/10',
@@ -38,7 +38,7 @@ const participationCategories = [
     id: 'mentors',
     title: 'For Mentors',
     description: 'Mentors should be women and men working in STEM fields who can help guide students through the Ideation TechChallenge. This will be a 30-minute structured challenge where you will work with a small group of students via zoom, and then submit your judging score.',
-    image: '/why-participate/image1.png',
+    image: '/shetech-gallery/KinserStudios-SheTech25-3148.jpg',
     color: 'purple',
     gradient: 'from-purple-500 to-violet-500',
     bgGradient: 'from-purple-500/10 to-violet-500/10',
@@ -55,7 +55,7 @@ const participationCategories = [
     id: 'partners',
     title: 'For Industry Partners',
     description: "As a non-profit organization, the Women Tech Council's SheTech program relies on our industry partners to help girls imagine the possibilities in STEM. Industry partners play a role in many ways, including, but not limited to: program sponsorship and financial contributions, donations in kind, providing mentors, volunteers, meeting and event spaces, company tours, educational workshops and resources, marketing support, and many other ways to help SheTech be a success.",
-    image: '/why-participate/image2.png',
+    image: '/shetech-gallery/KinserStudios-SheTech25-3315.jpg',
     color: 'rose',
     gradient: 'from-rose-500 to-pink-500',
     bgGradient: 'from-rose-500/10 to-pink-500/10',
@@ -102,7 +102,7 @@ export default function WhyParticipatePage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center">
@@ -117,15 +117,15 @@ export default function WhyParticipatePage() {
             <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
               <defs>
                 <pattern id="triangleNet" x="0" y="0" width="100" height="87" patternUnits="userSpaceOnUse">
-                  <polygon points="50,0 100,87 0,87" fill="none" stroke="url(#triGrad)" strokeWidth="0.5"/>
-                  <circle cx="50" cy="0" r="2" fill="#14b8a6"/>
-                  <circle cx="100" cy="87" r="2" fill="#a855f7"/>
-                  <circle cx="0" cy="87" r="2" fill="#f43f5e"/>
+                  <polygon points="50,0 100,87 0,87" fill="none" stroke="url(#triGrad)" strokeWidth="0.5" />
+                  <circle cx="50" cy="0" r="2" fill="#14b8a6" />
+                  <circle cx="100" cy="87" r="2" fill="#a855f7" />
+                  <circle cx="0" cy="87" r="2" fill="#f43f5e" />
                 </pattern>
                 <linearGradient id="triGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#14b8a6"/>
-                  <stop offset="50%" stopColor="#a855f7"/>
-                  <stop offset="100%" stopColor="#f43f5e"/>
+                  <stop offset="0%" stopColor="#14b8a6" />
+                  <stop offset="50%" stopColor="#a855f7" />
+                  <stop offset="100%" stopColor="#f43f5e" />
                 </linearGradient>
               </defs>
               <rect width="100%" height="100%" fill="url(#triangleNet)" />
@@ -265,25 +265,25 @@ export default function WhyParticipatePage() {
         {/* Participation Category Sections */}
         {participationCategories.map((category, index) => {
           const isEven = index % 2 === 0;
-          
+
           return (
             <section
               key={category.id}
               id={category.id}
               className="relative py-16 sm:py-24 overflow-hidden"
               style={{
-                background: isEven 
-                  ? 'linear-gradient(to bottom, #ffffff, #f8fafc)' 
+                background: isEven
+                  ? 'linear-gradient(to bottom, #ffffff, #f8fafc)'
                   : 'linear-gradient(to bottom, #f8fafc, #ffffff)'
               }}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} opacity-30`}></div>
-              
+
               <div className="absolute inset-0 opacity-[0.03]">
                 <svg className="absolute inset-0 w-full h-full">
                   <defs>
                     <pattern id={`dots-${category.id}`} x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <circle cx="2" cy="2" r="1" fill="currentColor"/>
+                      <circle cx="2" cy="2" r="1" fill="currentColor" />
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill={`url(#dots-${category.id})`} className="text-gray-900" />
@@ -307,11 +307,11 @@ export default function WhyParticipatePage() {
                             />
                             <div className={`absolute inset-0 bg-gradient-to-t ${category.gradient} opacity-10`}></div>
                           </div>
-                          
+
                           <div className={`absolute -bottom-4 ${isEven ? '-right-4' : '-left-4'} w-20 h-20 rounded-2xl bg-gradient-to-br ${category.gradient} flex items-center justify-center text-white shadow-xl`}>
                             {getIcon(category.color, "w-10 h-10")}
                           </div>
-                          
+
                           <div className={`absolute -top-6 ${isEven ? '-left-6' : '-right-6'} w-24 h-24 rounded-full border-4 border-gray-200/50`}></div>
                         </div>
                       </div>
@@ -341,8 +341,8 @@ export default function WhyParticipatePage() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                           {category.benefits.map((benefit, i) => (
-                            <div 
-                              key={i} 
+                            <div
+                              key={i}
                               className="flex items-center gap-3 p-3 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
                             >
                               <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${category.gradient} flex items-center justify-center shrink-0`}>
@@ -376,7 +376,7 @@ export default function WhyParticipatePage() {
         {/* Compact CTA Banner */}
         <section className="relative py-8 sm:py-10 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 via-purple-500 to-rose-500"></div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
