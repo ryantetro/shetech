@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
-import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { Button } from '@/components/ui';
+import { AnimatedSection, Button, StickerHeader, GraphPaperBackground } from '@/components/ui';
 
 // Pre-calculate floating icon positions
 const floatingIcons = [...Array(12)].map((_, i) => ({
@@ -119,33 +118,19 @@ export default function ClubsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      
-      <main className="flex-1">
-        {/* Hero Section - Creative Doodle/Sketch Theme */}
-        <section className="relative overflow-hidden pt-20 sm:pt-24 pb-16 sm:pb-20 min-h-[70vh] flex items-center">
-          {/* Gradient Background - Purple to Pink like the reference */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-secondary-500 to-pink-500"></div>
-            {/* Overlay pattern for texture */}
-            <div className="absolute inset-0 opacity-10">
-              <svg className="w-full h-full" preserveAspectRatio="none">
-                <defs>
-                  <pattern id="doodlePattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <circle cx="30" cy="30" r="1.5" fill="white" />
-                    <path d="M10 10 L20 20 M40 40 L50 50" stroke="white" strokeWidth="0.5" opacity="0.5" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#doodlePattern)" />
-              </svg>
-            </div>
-          </div>
 
-          {/* Floating STEM Icons */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <main className="flex-1">
+        {/* Hero Section - Navy Program Theme */}
+        <section className="relative overflow-hidden pt-20 sm:pt-24 pb-16 sm:pb-20 min-h-[70vh] flex items-center bg-[#EBEBF5]">
+          {/* Graph Paper Background */}
+          <GraphPaperBackground />
+
+          {/* Floating STEM Icons - Adjusted colors for light background */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
             {floatingIcons.map((icon, i) => (
               <div
                 key={i}
-                className="absolute opacity-20 text-white"
+                className="absolute opacity-30 text-[#00008B]"
                 style={{
                   left: `${icon.left}%`,
                   top: `${icon.top}%`,
@@ -159,31 +144,26 @@ export default function ClubsPage() {
             ))}
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute top-20 right-10 w-32 h-32 border-4 border-white/20 rounded-full animate-spin-slow"></div>
-          <div className="absolute bottom-20 left-10 w-24 h-24 border-4 border-white/20 rotate-45 animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-white/10 rounded-lg rotate-12 animate-bounce" style={{ animationDuration: '3s' }}></div>
-
           {/* Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="max-w-4xl mx-auto text-center">
               <AnimatedSection direction="down" delay={0} initialLoad>
-                {/* Main Title - Chalk/Handwritten Style */}
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 text-white tracking-tight" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-                  SheTech Clubs
-                </h1>
-                
-                <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
-                  Join or create a SheTech Club at your school to share your excitement for STEM. 
+                {/* Sticker Header */}
+                <div className="mb-8">
+                  <StickerHeader label="Join the Community" title="SheTech Clubs" variant="teal" />
+                </div>
+
+                <p className="text-lg sm:text-xl text-[#00008B] mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
+                  Join or create a SheTech Club at your school to share your excitement for STEM.
                   Women Tech Council sponsors SheTech Clubs to empower the next generation of tech leaders.
                 </p>
 
-                {/* CTA Buttons */}
+                {/* CTA Buttons - Navy/Pink Theme */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="mailto:kristin@womentechcouncil.com">
-                    <Button 
+                    <Button
                       size="lg"
-                      className="bg-white text-secondary-600 hover:bg-gray-100 font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0"
+                      className="bg-[#00A6CE] text-white hover:bg-[#0086a6] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
                     >
                       Start a Club
                       <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,10 +172,10 @@ export default function ClubsPage() {
                     </Button>
                   </a>
                   <Link href="/students/leadership-board">
-                    <Button 
+                    <Button
                       size="lg"
                       variant="outline"
-                      className="border-2 border-white text-white hover:bg-white/20 font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition-all cursor-pointer"
+                      className="border-2 border-[#00008B] text-[#00008B] hover:bg-[#00008B] hover:text-white font-bold px-8 py-4 rounded-xl transition-all cursor-pointer uppercase tracking-wide"
                     >
                       Find Your School
                     </Button>
@@ -204,27 +184,20 @@ export default function ClubsPage() {
               </AnimatedSection>
             </div>
           </div>
-
-          {/* Wave Divider */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 120" fill="none" className="w-full">
-              <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-            </svg>
-          </div>
         </section>
 
         {/* Club Benefits Section */}
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white border-t border-slate-100">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection direction="up" delay={0}>
               <div className="text-center mb-12">
-                <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold text-secondary-600 bg-secondary-50 rounded-full">
+                <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold text-[#00008B] bg-indigo-50 rounded-full uppercase tracking-wider">
                   Why Join?
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#00008B] mb-4 uppercase">
                   What SheTech Clubs Offer
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
                   Women Tech Council sponsors SheTech Clubs to help you grow, connect, and explore STEM
                 </p>
               </div>
@@ -234,23 +207,21 @@ export default function ClubsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {clubBenefits.map((benefit, index) => (
                 <AnimatedSection key={index} direction="up" delay={index * 100}>
-                  <div className="group relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:border-secondary-200 transition-all duration-300 h-full">
+                  <div className="group relative bg-white rounded-xl p-8 border-2 border-slate-100 shadow-sm hover:shadow-xl hover:border-[#00008B] transition-all duration-300 h-full">
                     {/* Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-100 to-primary-100 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 rounded-full bg-[#E6E6FA] flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
                       {benefit.icon}
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+
+                    <h3 className="text-xl font-bold text-[#00008B] mb-3">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed font-medium">
                       {benefit.description}
                     </p>
 
-                    {/* Decorative corner */}
-                    <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-2xl">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-secondary-500/5 to-primary-500/5 -translate-y-12 translate-x-12 rotate-45"></div>
-                    </div>
+                    {/* Decorative stripe */}
+                    <div className="absolute top-0 right-8 w-12 h-1 bg-[#BD1C81] rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                 </AnimatedSection>
               ))}
@@ -259,27 +230,29 @@ export default function ClubsPage() {
         </section>
 
         {/* Student Board Connection */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-primary-50/30">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 sm:py-20 bg-[#EBEBF5] relative">
+          <GraphPaperBackground />
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Content */}
                 <AnimatedSection direction="left" delay={0}>
                   <div>
-                    <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold text-primary-600 bg-primary-50 rounded-full">
+                    <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold text-[#BD1C81] bg-pink-50 rounded-full uppercase tracking-wider">
                       Student Leadership
                     </span>
-                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-3xl sm:text-4xl font-black text-[#00008B] mb-4 uppercase">
                       Run by Student Leaders
                     </h2>
-                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                      SheTech Clubs are often started and run by SheTech Student Board members. 
+                    <p className="text-lg text-[#00008B] mb-6 leading-relaxed font-medium">
+                      SheTech Clubs are often started and run by SheTech Student Board members.
                       See the student board member for your school and find our list of Student Board members for this year.
                     </p>
-                    
+
                     <Link href="/students/leadership-board">
-                      <Button 
-                        className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg shadow-primary-500/30 hover:shadow-xl transition-all cursor-pointer border-0"
+                      <Button
+                        className="bg-[#00008B] hover:bg-[#000080] text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all cursor-pointer border-0 uppercase tracking-wide"
                       >
                         View Student Board
                         <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -293,60 +266,56 @@ export default function ClubsPage() {
                 {/* Visual Card */}
                 <AnimatedSection direction="right" delay={200}>
                   <div className="relative">
-                    <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+                    <div className="bg-white rounded-xl p-8 shadow-xl border-2 border-white">
                       {/* Header */}
-                      <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+                      <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
                         <div className="flex gap-1.5">
-                          <div className="w-3 h-3 rounded-full bg-secondary-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-primary-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-tertiary-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-[#BD1C81]"></div>
+                          <div className="w-3 h-3 rounded-full bg-[#00008B]"></div>
+                          <div className="w-3 h-3 rounded-full bg-[#00A6CE]"></div>
                         </div>
-                        <span className="text-gray-500 text-sm font-medium">Student Board Network</span>
+                        <span className="text-slate-400 text-sm font-bold uppercase tracking-wider">Student Board Network</span>
                       </div>
 
                       {/* Stats Preview */}
                       <div className="space-y-4">
-                        <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-                          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center">
+                        <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                          <div className="w-12 h-12 rounded-lg bg-[#00008B] flex items-center justify-center">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-gray-900">56+</div>
-                            <div className="text-sm text-gray-500">Partner Schools</div>
+                            <div className="text-2xl font-black text-[#00008B]">56+</div>
+                            <div className="text-sm text-slate-500 font-bold">Partner Schools</div>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-                          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
+                        <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                          <div className="w-12 h-12 rounded-lg bg-[#BD1C81] flex items-center justify-center">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-gray-900">100+</div>
-                            <div className="text-sm text-gray-500">Student Leaders</div>
+                            <div className="text-2xl font-black text-[#00008B]">100+</div>
+                            <div className="text-sm text-slate-500 font-bold">Student Leaders</div>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-                          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-tertiary-500 to-tertiary-600 flex items-center justify-center">
+                        <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                          <div className="w-12 h-12 rounded-lg bg-[#00A6CE] flex items-center justify-center">
                             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-gray-900">Year-Round</div>
-                            <div className="text-sm text-gray-500">Active Program</div>
+                            <div className="text-2xl font-black text-[#00008B]">Year-Round</div>
+                            <div className="text-sm text-slate-500 font-bold">Active Program</div>
                           </div>
                         </div>
                       </div>
                     </div>
-
-                    {/* Decorative elements */}
-                    <div className="absolute -top-4 -right-4 w-16 h-16 bg-secondary-500/10 rounded-xl rotate-12 -z-10"></div>
-                    <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary-500/10 rounded-full -z-10"></div>
                   </div>
                 </AnimatedSection>
               </div>
@@ -356,9 +325,9 @@ export default function ClubsPage() {
 
         {/* Explorer Day Stats Section */}
         <section className="relative py-20 sm:py-24 overflow-hidden">
-          {/* Background - Matching reference pink/magenta */}
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary-500 via-secondary-600 to-pink-600"></div>
-          
+          {/* Background - Magenta Theme (Matching Explorer Day Page) */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#BD1C81] via-[#a3156d] to-[#801055]"></div>
+
           {/* Grid Pattern Overlay */}
           <div className="absolute inset-0 opacity-20">
             <svg className="w-full h-full" preserveAspectRatio="none">
@@ -379,10 +348,10 @@ export default function ClubsPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <AnimatedSection direction="up" delay={0}>
               <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                  Bring your club to SheTech Explorer Day
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
+                  Bring your club to Explorer Day
                 </h2>
-                <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
                   Experience hands-on tech workshops, meet industry mentors, and connect with companies
                 </p>
               </div>
@@ -392,7 +361,7 @@ export default function ClubsPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {stats.map((stat, index) => (
                 <AnimatedSection key={index} direction="up" delay={index * 100}>
-                  <div 
+                  <div
                     ref={statRefs[index].ref}
                     className="text-center group"
                   >
@@ -400,15 +369,15 @@ export default function ClubsPage() {
                     <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
                       <span className="text-3xl sm:text-4xl">{stat.icon}</span>
                     </div>
-                    
+
                     {/* Number */}
                     <div className="text-4xl sm:text-5xl font-black text-white mb-1">
                       {statRefs[index].count}
                     </div>
-                    
+
                     {/* Label */}
-                    <div className="text-white/90 font-medium">{stat.label}</div>
-                    <div className="text-white/70 text-sm">{stat.sublabel}</div>
+                    <div className="text-white/90 font-bold">{stat.label}</div>
+                    <div className="text-white/70 text-sm font-medium">{stat.sublabel}</div>
                   </div>
                 </AnimatedSection>
               ))}
@@ -418,9 +387,9 @@ export default function ClubsPage() {
             <AnimatedSection direction="up" delay={400}>
               <div className="text-center mt-12">
                 <Link href="/students/explorer-day">
-                  <Button 
+                  <Button
                     size="lg"
-                    className="bg-white text-secondary-600 hover:bg-gray-100 font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0"
+                    className="bg-white text-[#00A6CE] hover:bg-white/90 font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
                   >
                     Learn About Explorer Day
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -447,7 +416,7 @@ export default function ClubsPage() {
                       Contact us to learn more or get help starting a SheTech Club at your school.
                     </p>
                   </div>
-                  <a 
+                  <a
                     href="mailto:kristin@womentechcouncil.com"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors whitespace-nowrap"
                   >

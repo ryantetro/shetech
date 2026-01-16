@@ -498,3 +498,23 @@ section {
 .border-sketch {
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
 }
+
+/* Infinite Scroll Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}

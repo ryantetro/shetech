@@ -27,8 +27,8 @@ export const Header = () => {
       const hasLightBg = heroClasses.includes('bg-white') ||
         heroClasses.includes('bg-gray') ||
         heroClasses.includes('bg-slate-50') ||
-        heroClasses.includes('from-slate-50') ||
         heroClasses.includes('from-white') ||
+        heroClasses.includes('bg-[#EBEBF5]') ||
         heroClasses.includes('border-b');
 
       // If hero has light background, don't use transparent header (use solid with dark text)
@@ -128,7 +128,7 @@ export const Header = () => {
               className="relative"
             >
               <Image
-                src={isOverHero ? "/shetech-assets/Shetech logo White.svg" : "/shetech-assets/SheTech 2026 Logo.svg"}
+                src={isOverHero ? "/shetech-assets/Shetech logo White.svg" : "/logo.png"}
                 alt="SheTech Women Tech Council"
                 width={180}
                 height={60}
