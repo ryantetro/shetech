@@ -78,7 +78,7 @@ export default function ClubsPage() {
     { end: 200, label: 'Hands-on Tech', sublabel: 'Experiences', icon: '🔬' },
     { end: 150, label: 'Tech', sublabel: 'Companies', icon: '💻' },
     { end: 500, label: 'Industry', sublabel: 'Mentors', icon: '👩‍💼' },
-    { end: 2000, label: 'High School', sublabel: 'Girls', icon: '🎓' },
+    { end: 3500, label: 'High School', sublabel: 'Girls', icon: '🎓' },
   ];
 
   const stat1 = useCountUp(stats[0].end);
@@ -203,25 +203,28 @@ export default function ClubsPage() {
               </div>
             </AnimatedSection>
 
-            {/* Benefits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Benefits Grid - Sleek Minimalist */}
+            <div className="flex flex-wrap justify-center gap-x-12 gap-y-16 max-w-6xl mx-auto">
               {clubBenefits.map((benefit, index) => (
-                <AnimatedSection key={index} direction="up" delay={index * 100}>
-                  <div className="group relative bg-white rounded-xl p-8 border-2 border-slate-100 shadow-sm hover:shadow-xl hover:border-[#00008B] transition-all duration-300 h-full">
-                    {/* Icon */}
-                    <div className="w-16 h-16 rounded-full bg-[#E6E6FA] flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                <AnimatedSection
+                  key={index}
+                  direction="up"
+                  delay={index * 100}
+                  className="w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)]"
+                >
+                  <div className="group cursor-default h-full">
+                    {/* Floating Icon */}
+                    <div className="text-5xl mb-6 transform transition-transform duration-300 group-hover:-translate-y-2 inline-block">
                       {benefit.icon}
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#00008B] mb-3">
+                    <h3 className="text-2xl font-black text-[#00008B] mb-3 group-hover:text-[#BD1C81] transition-colors">
                       {benefit.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed font-medium">
+
+                    <p className="text-slate-600 text-lg leading-relaxed font-medium border-l-4 border-transparent pl-0 group-hover:border-[#00A6CE] group-hover:pl-4 transition-all duration-300">
                       {benefit.description}
                     </p>
-
-                    {/* Decorative stripe */}
-                    <div className="absolute top-0 right-8 w-12 h-1 bg-[#BD1C81] rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                 </AnimatedSection>
               ))}

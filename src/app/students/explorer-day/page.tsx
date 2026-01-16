@@ -196,7 +196,7 @@ export default function ExplorerDayPage() {
                 </svg>
                 February 24, 2026
                 <span className="mx-2 opacity-50">|</span>
-                Utah Valley University
+                Mountain America Expo Center
               </div>
 
               {/* Description */}
@@ -237,7 +237,7 @@ export default function ExplorerDayPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
                 { label: "Date", value: "Feb 24, 2026", sub: "Mark your calendar", icon: "📅" },
-                { label: "Location", value: "Utah Valley University", sub: "Orem, Utah", icon: "📍" },
+                { label: "Location", value: "Mountain America Expo Center", sub: "Sandy, Utah", icon: "📍" },
                 { label: "Participants", value: "3,000+", sub: "High School Girls", icon: "👯‍♀️" }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 transform hover:-translate-y-1 transition-transform duration-300">
