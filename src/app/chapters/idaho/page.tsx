@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
-import { AnimatedSection } from '@/components/ui';
+import { AnimatedSection, StickerHeader } from '@/components/ui';
 
 // Who can attend data
 const attendees = [
@@ -129,7 +129,7 @@ export default function IdahoPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section - Idaho Mountain/River Theme */}
         <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center">
@@ -144,25 +144,25 @@ export default function IdahoPage() {
           <div className="absolute bottom-0 left-0 right-0 h-64">
             <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 300">
               {/* Back mountain range - lighter */}
-              <path d="M0,300 L0,180 L80,140 L160,170 L240,100 L320,150 L400,80 L480,130 L560,60 L640,110 L720,50 L800,100 L880,70 L960,120 L1040,90 L1120,140 L1200,110 L1200,300 Z" fill="#0d9488" opacity="0.2"/>
+              <path d="M0,300 L0,180 L80,140 L160,170 L240,100 L320,150 L400,80 L480,130 L560,60 L640,110 L720,50 L800,100 L880,70 L960,120 L1040,90 L1120,140 L1200,110 L1200,300 Z" fill="#0d9488" opacity="0.2" />
               {/* Front mountain range - darker */}
-              <path d="M0,300 L0,220 L100,180 L200,210 L300,160 L400,200 L500,150 L600,190 L700,140 L800,180 L900,155 L1000,195 L1100,170 L1200,200 L1200,300 Z" fill="#134e4a" opacity="0.4"/>
+              <path d="M0,300 L0,220 L100,180 L200,210 L300,160 L400,200 L500,150 L600,190 L700,140 L800,180 L900,155 L1000,195 L1100,170 L1200,200 L1200,300 Z" fill="#134e4a" opacity="0.4" />
               {/* Single row of pine trees */}
               <g fill="#0f766e" opacity="0.35">
-                <path d="M60,240 L75,195 L90,240 Z"/>
-                <path d="M67,220 L75,185 L83,220 Z"/>
-                <path d="M200,235 L215,190 L230,235 Z"/>
-                <path d="M207,215 L215,180 L223,215 Z"/>
-                <path d="M380,245 L395,200 L410,245 Z"/>
-                <path d="M387,225 L395,190 L403,225 Z"/>
-                <path d="M560,238 L575,193 L590,238 Z"/>
-                <path d="M567,218 L575,183 L583,218 Z"/>
-                <path d="M740,242 L755,197 L770,242 Z"/>
-                <path d="M747,222 L755,187 L763,222 Z"/>
-                <path d="M920,236 L935,191 L950,236 Z"/>
-                <path d="M927,216 L935,181 L943,216 Z"/>
-                <path d="M1100,240 L1115,195 L1130,240 Z"/>
-                <path d="M1107,220 L1115,185 L1123,220 Z"/>
+                <path d="M60,240 L75,195 L90,240 Z" />
+                <path d="M67,220 L75,185 L83,220 Z" />
+                <path d="M200,235 L215,190 L230,235 Z" />
+                <path d="M207,215 L215,180 L223,215 Z" />
+                <path d="M380,245 L395,200 L410,245 Z" />
+                <path d="M387,225 L395,190 L403,225 Z" />
+                <path d="M560,238 L575,193 L590,238 Z" />
+                <path d="M567,218 L575,183 L583,218 Z" />
+                <path d="M740,242 L755,197 L770,242 Z" />
+                <path d="M747,222 L755,187 L763,222 Z" />
+                <path d="M920,236 L935,191 L950,236 Z" />
+                <path d="M927,216 L935,181 L943,216 Z" />
+                <path d="M1100,240 L1115,195 L1130,240 Z" />
+                <path d="M1107,220 L1115,185 L1123,220 Z" />
               </g>
             </svg>
           </div>
@@ -190,9 +190,14 @@ export default function IdahoPage() {
 
                     {/* Description */}
                     <p className="text-base sm:text-lg text-white/70 mb-6 leading-relaxed max-w-xl">
-                      A hands-on tech conference for high school girls 9th through 12th grade in the Gem State. 
-                      Discover STEM through interactive workshops, meet role models, and explore career opportunities.
+                      Powered by the Idaho STEM Action Center, SheTech Idaho unites students, educators, and industry mentors to create hands-on learning experiences that connect STEM to real-world careers. From robotics and engineering to data science and design, SheTech Idaho inspires innovation across the Gem State.
                     </p>
+
+                    {/* Partner Quote */}
+                    <div className="mb-8 p-4 bg-white/5 border-l-4 border-cyan-400 rounded-r-lg backdrop-blur-sm max-w-lg mx-auto lg:mx-0 text-left">
+                      <p className="text-white/90 italic mb-2">“SheTech Idaho shows our girls what’s possible — and that’s powerful.”</p>
+                      <p className="text-cyan-300 text-sm font-semibold">— Idaho Industry Partner</p>
+                    </div>
 
                     {/* Event Highlights */}
                     <div className="flex flex-wrap gap-4 mb-8 justify-center lg:justify-start">
@@ -254,7 +259,7 @@ export default function IdahoPage() {
                           />
                         </div>
                       </div>
-                      
+
                       {/* Event Highlight */}
                       <div className="text-center">
                         <p className="text-white/80 text-sm mb-4">
@@ -278,13 +283,13 @@ export default function IdahoPage() {
         </section>
 
         {/* Video & About Section */}
+        {/*
         <section id="about" className="relative py-16 sm:py-20 bg-gradient-to-b from-white to-cyan-50/30">
-          {/* Subtle pattern */}
           <div className="absolute inset-0 opacity-[0.02]">
             <svg className="absolute inset-0 w-full h-full">
               <defs>
                 <pattern id="idahoDots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#0891b2"/>
+                  <circle cx="2" cy="2" r="1" fill="#0891b2" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#idahoDots)" />
@@ -294,7 +299,6 @@ export default function IdahoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
                 <div className="text-center mb-12">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-medium mb-4">
                     <span>🏔️</span>
@@ -305,9 +309,7 @@ export default function IdahoPage() {
                   </h2>
                 </div>
 
-                {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                  {/* Video */}
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <div className="aspect-video">
                       <iframe
@@ -320,26 +322,23 @@ export default function IdahoPage() {
                         className="rounded-2xl"
                       ></iframe>
                     </div>
-                    {/* Video glow effect */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-2xl blur-xl opacity-20 -z-10"></div>
                   </div>
 
-                  {/* Content */}
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-6">
-                      SheTech Explorer Day is a hands-on tech conference for high school girls 9th through 12th grade. 
+                      SheTech Explorer Day is a hands-on tech conference for high school girls 9th through 12th grade.
                       This day-long event will include hands-on workshops in science, technology, engineering, and math (STEM).
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-6">
-                      Our ultimate goal is to expose girls to technology in a fun atmosphere as well as meet STEM role models 
+                      Our ultimate goal is to expose girls to technology in a fun atmosphere as well as meet STEM role models
                       to learn more about opportunities in those fields.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-6">
-                      Girls who attend will have access to internships, receive a SheTech certificate, receive pathway 
+                      Girls who attend will have access to internships, receive a SheTech certificate, receive pathway
                       information and become part of a community to help girls have opportunities in STEM.
                     </p>
 
-                    {/* Key Benefits */}
                     <div className="grid grid-cols-2 gap-4 mt-8">
                       <div className="flex items-center gap-3 p-3 bg-cyan-50 rounded-xl">
                         <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center">
@@ -380,13 +379,14 @@ export default function IdahoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* What You'll Do Section */}
+        {/*
         <section className="relative py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
                 <div className="text-center mb-12">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-4">
                     <span>✨</span>
@@ -400,9 +400,7 @@ export default function IdahoPage() {
                   </p>
                 </div>
 
-                {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                  {/* Activities */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {dayActivities.map((activity, index) => (
                       <div
@@ -418,7 +416,6 @@ export default function IdahoPage() {
                     ))}
                   </div>
 
-                  {/* Video */}
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <div className="aspect-video">
                       <iframe
@@ -431,7 +428,6 @@ export default function IdahoPage() {
                         className="rounded-2xl"
                       ></iframe>
                     </div>
-                    {/* Video glow effect */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl blur-xl opacity-20 -z-10"></div>
                   </div>
                 </div>
@@ -439,17 +435,18 @@ export default function IdahoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Who Can Attend Section */}
+        {/*
         <section className="relative py-16 sm:py-20 bg-gradient-to-br from-blue-950 via-cyan-900 to-emerald-950 overflow-hidden">
-          {/* Mountain pattern overlay */}
           <div className="absolute inset-0 opacity-10">
             <svg className="absolute inset-0 w-full h-full">
               <defs>
                 <pattern id="attendPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                  <circle cx="30" cy="30" r="2" fill="#fff"/>
-                  <circle cx="0" cy="0" r="1" fill="#fff"/>
-                  <circle cx="60" cy="60" r="1" fill="#fff"/>
+                  <circle cx="30" cy="30" r="2" fill="#fff" />
+                  <circle cx="0" cy="0" r="1" fill="#fff" />
+                  <circle cx="60" cy="60" r="1" fill="#fff" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#attendPattern)" />
@@ -459,7 +456,6 @@ export default function IdahoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-5xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
                 <div className="text-center mb-12">
                   <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                     Who Can <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Attend?</span>
@@ -469,7 +465,6 @@ export default function IdahoPage() {
                   </p>
                 </div>
 
-                {/* Attendee Cards */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                   {attendees.map((attendee, index) => (
                     <div
@@ -492,27 +487,20 @@ export default function IdahoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Sponsors Section */}
+        {/*
         <section className="relative py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-medium mb-4">
-                    <span>🤝</span>
-                    Our Partners
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                    Thank You to Our <span className="bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent">Sponsors</span>
-                  </h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
-                    SheTech Idaho is made possible by the generous support of our community partners
-                  </p>
-                </div>
+                <StickerHeader
+                  label="Sponsors"
+                  title="Our Partners"
+                  variant="teal"
+                />
 
-                {/* Sponsor Logos Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
                   {sponsors.map((sponsor, index) => (
                     <div
@@ -534,8 +522,10 @@ export default function IdahoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* SheTech Platform Section - Compact */}
+        {/*
         <section className="relative py-8 sm:py-10 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
@@ -561,16 +551,16 @@ export default function IdahoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Compact CTA Banner */}
+        {/*
         <section className="relative py-8 sm:py-10 bg-gradient-to-r from-blue-950 via-cyan-900 to-emerald-950 overflow-hidden">
-          {/* Idaho accent line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500"></div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
-                {/* Text */}
                 <div className="text-center sm:text-left">
                   <h3 className="text-lg font-semibold text-white mb-1">
                     Ready to Explore STEM in Idaho? 🏔️
@@ -580,7 +570,6 @@ export default function IdahoPage() {
                   </p>
                 </div>
 
-                {/* Button */}
                 <div className="flex gap-3">
                   <a
                     href="https://www.shetechexplorer.com/idaho"
@@ -598,6 +587,7 @@ export default function IdahoPage() {
             </div>
           </div>
         </section>
+        */}
       </main>
 
       <Footer />

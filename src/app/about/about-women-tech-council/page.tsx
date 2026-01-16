@@ -73,52 +73,39 @@ const stats = [
   { value: 3, suffix: '', label: 'States', description: 'Utah, Idaho, Colorado' },
 ];
 
-// Programs data
+// WTC Programs data
 const programs = [
   {
-    title: 'SheTech Explorer Day',
-    description: 'Annual day bringing together all participants for hands-on experiences',
-    icon: '📅',
-    color: 'from-cyan-500 to-blue-500',
+    title: 'Women Tech Awards',
+    description: 'Honoring women who drive innovation and create impact.',
+    icon: '🏆',
+    color: 'from-pink-500 to-rose-500',
   },
   {
-    title: 'SheTech Clubs',
-    description: 'Student-led clubs in high schools across our regions',
-    icon: '👥',
+    title: 'Career Acceleration Programs',
+    description: 'Supporting professional women to advance and lead in tech.',
+    icon: '🚀',
     color: 'from-purple-500 to-indigo-500',
   },
   {
-    title: 'Internship Program',
-    description: 'Real-world experience with tech companies and mentors',
+    title: 'Boardroom & Leadership Programs',
+    description: 'Preparing women to lead organizations and shape the future of technology.',
     icon: '💼',
-    color: 'from-rose-500 to-pink-500',
+    color: 'from-cyan-500 to-blue-500',
   },
   {
-    title: 'Student Board',
-    description: 'Leadership opportunities at every high school',
-    icon: '🏆',
-    color: 'from-amber-500 to-orange-500',
-  },
-  {
-    title: 'Educator Board',
-    description: 'Supporting teachers and educators in STEM education',
-    icon: '📚',
-    color: 'from-emerald-500 to-teal-500',
-  },
-  {
-    title: 'Monthly Events',
-    description: 'Tech company visits, role models, and networking',
-    icon: '🎯',
-    color: 'from-violet-500 to-purple-500',
+    title: 'SheTech',
+    description: 'Inspiring and preparing the next generation of women in STEM.',
+    icon: '⚡',
+    color: 'from-[#BD1C81] to-purple-600',
   },
 ];
 
-// WTC pillars
+// WTC pillars - Activate, Build, Lead
 const wtcPillars = [
-  { title: 'Mentoring', description: 'Connecting future leaders with industry experts', icon: '🤝' },
-  { title: 'Visibility', description: 'Showcasing talent and achievements', icon: '✨' },
-  { title: 'Networking', description: 'Building powerful professional connections', icon: '🔗' },
-  { title: 'Growth', description: 'Driving economic impact in tech', icon: '📈' },
+  { title: 'Activate', description: 'Inspiring the next generation', icon: '✨' },
+  { title: 'Build', description: 'Creating professional pathways', icon: '🏗️' },
+  { title: 'Lead', description: 'Elevating women in leadership', icon: '🚀' },
 ];
 
 export default function AboutWomenTechCouncilPage() {
@@ -128,10 +115,10 @@ export default function AboutWomenTechCouncilPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-16 sm:pt-20 pb-16 sm:pb-24 bg-white">
+        <section className="relative overflow-hidden pt-32 sm:pt-40 pb-16 sm:pb-24 bg-[#FDF2F8]">
           {/* Clean gradient background */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FDF2F8] to-white"></div>
           </div>
 
           {/* Subtle dot pattern */}
@@ -139,7 +126,7 @@ export default function AboutWomenTechCouncilPage() {
             <svg className="absolute inset-0 w-full h-full">
               <defs>
                 <pattern id="heroDots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#06b6d4"/>
+                  <circle cx="2" cy="2" r="1" fill="#BD1C81" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#heroDots)" />
@@ -151,45 +138,47 @@ export default function AboutWomenTechCouncilPage() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center max-w-4xl mx-auto">
                 <AnimatedSection direction="up" delay={0} initialLoad>
-                  {/* Logo */}
-                  <div className="flex justify-center mb-6">
-                    <div className="relative w-64 sm:w-80 h-20 sm:h-24">
-                      <Image
-                        src="/logo.png"
-                        alt="SheTech"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
+                  {/* Header Text */}
+                  <div className="flex justify-center mb-10 sm:mb-12">
+                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+                      <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight leading-[1.1] mb-2">
+                        Empowering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BD1C81] to-pink-500">Women.</span>
+                      </h1>
+                      <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight leading-[1.1]">
+                        Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BD1C81] to-pink-500">Talent Pipeline.</span>
+                      </h1>
                     </div>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl text-gray-600 font-medium mb-6 max-w-2xl mx-auto">
-                    The Largest Industry-Led <span className="font-bold text-gray-900">STEM Platform</span> for High School Girls
-                  </h2>
-
                   {/* Description */}
-                  <p className="text-base sm:text-lg text-gray-500 mb-8 leading-relaxed max-w-2xl mx-auto">
-                    We are activating, engaging, and inspiring the next generation of female leaders. Through hands-on experiences and mentorship, we turn &quot;I can&apos;t&quot; into &quot;I will&quot;.
-                  </p>
+                  <div className="prose prose-lg mx-auto text-gray-600 mb-10">
+                    <p className="lead text-xl sm:text-2xl font-light text-gray-500 mb-6">
+                      The Women Tech Council (WTC) is a national organization headquartered in Utah that amplifies the economic impact of women in technology.
+                    </p>
+                    <p className="text-base sm:text-lg">
+                      Through programs that <strong>Activate</strong>, <strong>Build</strong>, and <strong>Lead</strong>, WTC creates a community of women and allies driving innovation, growth, and inclusion across every sector.
+                    </p>
+                  </div>
 
                   {/* CTA Buttons */}
                   <div className="flex flex-wrap gap-4 justify-center">
                     <a
                       href="#programs"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#BD1C81] text-white font-semibold shadow-lg hover:bg-[#a02f99] hover:scale-105 transition-all duration-300"
                     >
-                      Explore Programs
+                      Our Programs
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </a>
-                    <Link
-                      href="/about/contact-us"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gray-100 border border-gray-200 text-gray-700 font-semibold hover:bg-gray-200 transition-all duration-300"
+                    <a
+                      href="https://womentechcouncil.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white border border-pink-100 text-[#BD1C81] font-semibold hover:bg-pink-50 transition-all duration-300"
                     >
-                      Partner With Us
-                    </Link>
+                      Learn More About Women Tech Council
+                    </a>
                   </div>
                 </AnimatedSection>
               </div>
@@ -197,56 +186,42 @@ export default function AboutWomenTechCouncilPage() {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Stats Section with WTC Image */}
         <section className="relative py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                    Impact That <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">Matters</span>
-                  </h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
-                    SheTech is transforming the STEM pipeline, one girl at a time
-                  </p>
-                </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                  {stats.map((stat, index) => {
-                    const StatCard = () => {
-                      const { count, ref } = useCountUp(stat.value, 2000, true);
-                      return (
-                        <div
-                          ref={ref}
-                          className="group bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300"
-                        >
-                          <div className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent mb-2">
-                            {count.toLocaleString()}{stat.suffix}
-                          </div>
-                          <div className="text-white font-semibold mb-1">{stat.label}</div>
-                          <div className="text-white/50 text-sm">{stat.description}</div>
-                        </div>
-                      );
-                    };
-                    return <StatCard key={index} />;
-                  })}
-                </div>
-
-                {/* Why It Matters Callout */}
-                <div className="mt-10 bg-gradient-to-r from-cyan-50 to-pink-50 rounded-2xl p-6 sm:p-8 border border-cyan-100">
-                  <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-pink-500 flex items-center justify-center text-white shrink-0">
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <div className="text-center sm:text-left">
-                      <h3 className="text-xl font-bold text-gray-900 mb-1">Why It Matters</h3>
-                      <p className="text-gray-600">
-                        Today every company is a technology company. SheTech demonstrates to girls that no matter what they are passionate about, <strong className="text-cyan-600">technology is the power to achieve it</strong>.
+                <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl overflow-hidden shadow-2xl relative">
+                  <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="p-8 sm:p-12 flex flex-col justify-center relative z-10">
+                      <h3 className="text-3xl font-bold text-white mb-6">
+                        Activate. <span className="text-[#BD1C81]">Build.</span> Lead.
+                      </h3>
+                      <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                        SheTech is part of WTC’s <strong>Activate</strong> pillar—designed to inspire and prepare the next generation of women in STEM. We are building the pipeline from high school to the boardroom.
                       </p>
+
+                      {/* Mini Stats */}
+                      <div className="grid grid-cols-2 gap-6">
+                        <div>
+                          <div className="text-3xl font-black text-[#BD1C81]">10K+</div>
+                          <div className="text-white/60 text-sm">Network Members</div>
+                        </div>
+                        <div>
+                          <div className="text-3xl font-black text-pink-400">3</div>
+                          <div className="text-white/60 text-sm">Key Pillars</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative h-64 lg:h-auto min-h-[300px]">
+                      {/* Using a gallery image representing community/leadership */}
+                      <Image
+                        src="/shetech-gallery/KinserStudios-SheTech25-3332.jpg"
+                        alt="Women Tech Council Community"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-transparent to-transparent lg:bg-gradient-to-l opacity-80 lg:opacity-100"></div>
                     </div>
                   </div>
                 </div>
@@ -256,177 +231,63 @@ export default function AboutWomenTechCouncilPage() {
         </section>
 
         {/* Programs Section */}
-        <section id="programs" className="relative py-16 sm:py-20 bg-gray-50">
-          {/* Subtle pattern */}
-          <div className="absolute inset-0 opacity-[0.02]">
-            <svg className="absolute inset-0 w-full h-full">
-              <defs>
-                <pattern id="programDots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#06b6d4"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#programDots)" />
-            </svg>
-          </div>
-
+        <section id="programs" className="relative py-16 sm:py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
                 {/* Section Header */}
                 <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-medium mb-4">
-                    <span>🎯</span>
-                    Our Ecosystem
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-100 text-[#BD1C81] text-sm font-medium mb-4">
+                    <span>🚀</span>
+                    Our Impact
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                    Comprehensive <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">Programs</span>
+                    Driving <span className="bg-gradient-to-r from-[#BD1C81] to-pink-500 bg-clip-text text-transparent">Innovation</span>
                   </h2>
                   <p className="text-gray-600 max-w-2xl mx-auto">
-                    SheTech operates with the school year, offering a continuous pathway of engagement to inspire and support girls in STEM.
+                    From high school classrooms to corporate boardrooms, our programs create impact at every stage of a career.
                   </p>
                 </div>
 
-                {/* Programs Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                {/* Programs Grid - Clean Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mb-16">
                   {programs.map((program, index) => (
-                    <div
-                      key={index}
-                      className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:border-cyan-200 transition-all duration-300"
-                    >
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${program.color} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div key={index} className="flex flex-col sm:flex-row gap-6 items-start">
+                      <div className={`shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${program.color} flex items-center justify-center text-3xl shadow-md rotate-3`}>
                         {program.icon}
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors">
-                        {program.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        {program.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Plus More Banner */}
-                <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-center">
-                  <h3 className="text-xl font-bold text-white mb-2">Plus More Opportunities</h3>
-                  <p className="text-white/70">
-                    Information about jobs, scholarships, and pathways to careers in STEM
-                  </p>
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
-
-        {/* Women Tech Council Section */}
-        <section className="relative py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-          {/* Subtle background pattern */}
-          <div className="absolute inset-0 opacity-[0.02]">
-            <svg className="absolute inset-0 w-full h-full">
-              <defs>
-                <pattern id="wtcPattern" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-                  <circle cx="16" cy="16" r="1" fill="#ec4899"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#wtcPattern)" />
-            </svg>
-          </div>
-
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-6xl mx-auto">
-              <AnimatedSection direction="up" delay={0}>
-                {/* Section Header - Centered */}
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                    About <span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">Women Tech Council</span>
-                  </h2>
-                  <p className="text-gray-600 max-w-3xl mx-auto">
-                    A national organization focused on the economic impact of women in driving high growth for the technology sector
-                  </p>
-                </div>
-
-                {/* Main Content Card */}
-                <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden mb-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-5">
-                    {/* Left Content - 3 cols */}
-                    <div className="lg:col-span-3 p-8 sm:p-10">
-                      <div className="prose prose-gray max-w-none mb-8">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          {program.title}
+                        </h3>
                         <p className="text-gray-600 text-lg leading-relaxed">
-                          The <strong className="text-gray-900">Women Tech Council (WTC)</strong> develops programs that propel the economic pipeline from high school to the board room, offering mentoring, visibility, opportunities and networking to more than <span className="text-cyan-600 font-semibold">10,000+ women and men</span> working in technology.
+                          {program.description}
                         </p>
                       </div>
-
-                      {/* WTC Pillars - Horizontal Icons */}
-                      <div className="grid grid-cols-4 gap-4">
-                        {wtcPillars.map((pillar, index) => (
-                          <div key={index} className="text-center group">
-                            <div className="w-14 h-14 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-cyan-50 to-pink-50 border border-gray-100 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
-                              {pillar.icon}
-                            </div>
-                            <h4 className="font-semibold text-gray-900 text-sm">{pillar.title}</h4>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Right - Regional Map Card - 2 cols */}
-                    <div className="lg:col-span-2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 sm:p-10 text-white relative">
-                      {/* Decorative gradient orb */}
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl"></div>
-                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-pink-500/20 rounded-full blur-3xl"></div>
-
-                      <div className="relative z-10">
-                        <div className="flex items-center gap-3 mb-6">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-pink-500 flex items-center justify-center">
-                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          </div>
-                          <h3 className="text-xl font-bold">Regional Presence</h3>
-                        </div>
-
-                        {/* States Grid */}
-                        <div className="grid grid-cols-3 gap-3 mb-6">
-                          {[
-                            { name: 'Utah', status: 'HQ' },
-                            { name: 'Idaho', status: 'Chapter' },
-                            { name: 'Colorado', status: 'Chapter' },
-                          ].map((state, index) => (
-                            <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-3 text-center hover:bg-white/10 transition-all duration-300">
-                              <div className="text-lg font-bold text-white">{state.name}</div>
-                              <div className="text-xs text-cyan-400">{state.status}</div>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Contact CTA */}
-                        <a
-                          href="mailto:kristin@womentechcouncil.com"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white text-sm font-medium hover:bg-white/20 transition-all duration-300"
-                        >
-                          Partner with us in your region
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Stats Row */}
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { icon: '🎓', value: 'High School', label: 'to Boardroom Pipeline' },
-                    { icon: '👥', value: '10,000+', label: 'Network Members' },
-                    { icon: '🚀', value: 'National', label: 'Organization' },
-                  ].map((item, index) => (
-                    <div key={index} className="bg-white rounded-xl p-4 border border-gray-100 text-center hover:shadow-md hover:border-cyan-200 transition-all duration-300">
-                      <div className="text-2xl mb-2">{item.icon}</div>
-                      <div className="font-bold text-gray-900">{item.value}</div>
-                      <div className="text-gray-500 text-xs">{item.label}</div>
                     </div>
                   ))}
+                </div>
+
+                {/* Learn More Banner */}
+                <div className="bg-white border border-pink-100 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-lg">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#FDF2F8] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+                  <div className="relative z-10">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Join the Council</h3>
+                    <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+                      Become part of the community that is shaping the future of technology.
+                    </p>
+                    <a
+                      href="https://womentechcouncil.com"
+                      className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#BD1C81] text-white font-bold hover:bg-[#a02f99] transition-colors shadow-md"
+                    >
+                      Learn More About Women Tech Council
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </AnimatedSection>
             </div>
@@ -434,9 +295,9 @@ export default function AboutWomenTechCouncilPage() {
         </section>
 
         {/* Compact CTA Banner */}
-        <section className="relative py-8 sm:py-10 bg-gradient-to-r from-slate-900 via-cyan-950/80 to-slate-900 overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-pink-500 to-purple-500"></div>
-          
+        <section className="relative py-8 sm:py-10 bg-[#BD1C81] overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white/20 via-white/40 to-white/20"></div>
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
@@ -444,7 +305,7 @@ export default function AboutWomenTechCouncilPage() {
                   <h3 className="text-lg font-semibold text-white mb-1">
                     Explore The Possibilities
                   </h3>
-                  <p className="text-sm text-white/60">
+                  <p className="text-sm text-white/80">
                     SheTech helps girls find pathways to careers in STEM
                   </p>
                 </div>
@@ -452,7 +313,7 @@ export default function AboutWomenTechCouncilPage() {
                 <div className="flex gap-3">
                   <Link
                     href="/students/explorer-day"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-pink-500 hover:opacity-90 text-white font-medium whitespace-nowrap px-5 py-2.5 rounded-lg text-sm transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 bg-white text-[#BD1C81] hover:bg-pink-50 font-bold whitespace-nowrap px-5 py-2.5 rounded-lg text-sm transition-all cursor-pointer shadow-lg"
                   >
                     Get Involved
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

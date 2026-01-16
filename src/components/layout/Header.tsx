@@ -29,6 +29,10 @@ export const Header = () => {
         heroClasses.includes('bg-slate-50') ||
         heroClasses.includes('from-white') ||
         heroClasses.includes('bg-[#EBEBF5]') ||
+        heroClasses.includes('bg-[#F5F5FA]') ||
+        heroClasses.includes('bg-[#FDF2F8]') || // Light pink/magenta background
+        heroClasses.includes('bg-pink-50') ||
+        heroClasses.includes('bg-purple-50') ||
         heroClasses.includes('border-b');
 
       // If hero has light background, don't use transparent header (use solid with dark text)

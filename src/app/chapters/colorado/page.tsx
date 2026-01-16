@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
-import { AnimatedSection } from '@/components/ui';
+import { AnimatedSection, StickerHeader } from '@/components/ui';
 
 // Who can attend data
 const attendees = [
@@ -129,7 +129,7 @@ export default function ColoradoPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section - Colorado Mountain Theme */}
         <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center">
@@ -144,24 +144,24 @@ export default function ColoradoPage() {
           <div className="absolute inset-0">
             <svg className="absolute bottom-0 left-0 right-0 w-full h-80 sm:h-96" preserveAspectRatio="none" viewBox="0 0 1200 300">
               {/* Back mountain range - lighter */}
-              <path d="M0,300 L0,200 L80,150 L150,180 L250,100 L350,150 L450,70 L550,120 L650,60 L750,110 L850,50 L950,100 L1050,70 L1150,130 L1200,100 L1200,300 Z" fill="#1e3a5f" opacity="0.5"/>
-              
+              <path d="M0,300 L0,200 L80,150 L150,180 L250,100 L350,150 L450,70 L550,120 L650,60 L750,110 L850,50 L950,100 L1050,70 L1150,130 L1200,100 L1200,300 Z" fill="#1e3a5f" opacity="0.5" />
+
               {/* Front mountain range - darker */}
-              <path d="M0,300 L0,240 L120,180 L200,220 L320,140 L420,190 L520,120 L620,170 L740,100 L840,160 L960,110 L1060,170 L1160,130 L1200,180 L1200,300 Z" fill="#0f172a" opacity="0.85"/>
-              
+              <path d="M0,300 L0,240 L120,180 L200,220 L320,140 L420,190 L520,120 L620,170 L740,100 L840,160 L960,110 L1060,170 L1160,130 L1200,180 L1200,300 Z" fill="#0f172a" opacity="0.85" />
+
               {/* Snow caps - prominent and visible */}
-              <path d="M235,110 L250,100 L265,110 L257,104 L243,104 Z" fill="#ffffff" opacity="0.95"/>
-              <path d="M435,80 L450,70 L465,80 L457,74 L443,74 Z" fill="#ffffff" opacity="0.95"/>
-              <path d="M635,70 L650,60 L665,70 L657,64 L643,64 Z" fill="#ffffff" opacity="0.95"/>
-              <path d="M835,60 L850,50 L865,60 L857,54 L843,54 Z" fill="#ffffff" opacity="0.95"/>
-              <path d="M1035,80 L1050,70 L1065,80 L1057,74 L1043,74 Z" fill="#ffffff" opacity="0.95"/>
-              
+              <path d="M235,110 L250,100 L265,110 L257,104 L243,104 Z" fill="#ffffff" opacity="0.95" />
+              <path d="M435,80 L450,70 L465,80 L457,74 L443,74 Z" fill="#ffffff" opacity="0.95" />
+              <path d="M635,70 L650,60 L665,70 L657,64 L643,64 Z" fill="#ffffff" opacity="0.95" />
+              <path d="M835,60 L850,50 L865,60 L857,54 L843,54 Z" fill="#ffffff" opacity="0.95" />
+              <path d="M1035,80 L1050,70 L1065,80 L1057,74 L1043,74 Z" fill="#ffffff" opacity="0.95" />
+
               {/* Snow cap accent lines */}
-              <path d="M245,105 L250,100 L255,105" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8"/>
-              <path d="M445,75 L450,70 L455,75" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8"/>
-              <path d="M645,65 L650,60 L655,65" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8"/>
-              <path d="M845,55 L850,50 L855,55" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8"/>
-              <path d="M1045,75 L1050,70 L1055,75" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8"/>
+              <path d="M245,105 L250,100 L255,105" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8" />
+              <path d="M445,75 L450,70 L455,75" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8" />
+              <path d="M645,65 L650,60 L655,65" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8" />
+              <path d="M845,55 L850,50 L855,55" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8" />
+              <path d="M1045,75 L1050,70 L1055,75" fill="none" stroke="#ffffff" strokeWidth="3" opacity="0.8" />
             </svg>
           </div>
 
@@ -188,8 +188,14 @@ export default function ColoradoPage() {
 
                     {/* Description */}
                     <p className="text-base sm:text-lg text-white/70 mb-6 leading-relaxed max-w-xl">
-                      Colorado Technology Association is proud to host SheTech Explorer Day Colorado, bringing together students from across the Centennial State for hands-on STEM experiences.
+                      In partnership with leading Colorado tech companies, universities, and the Women Tech Council, SheTech Colorado activates students through Explorer Day and ongoing engagement programs. Students build projects, explore AI and aerospace, and connect with mentors shaping the future of innovation.
                     </p>
+
+                    {/* Partner Quote */}
+                    <div className="mb-8 p-4 bg-white/5 border-l-4 border-sky-400 rounded-r-lg backdrop-blur-sm max-w-lg mx-auto lg:mx-0 text-left">
+                      <p className="text-white/90 italic mb-2">“The collaboration between mentors and students makes SheTech unforgettable.”</p>
+                      <p className="text-sky-300 text-sm font-semibold">— Colorado Student</p>
+                    </div>
 
                     {/* Event Details */}
                     <div className="flex flex-wrap gap-4 mb-8 justify-center lg:justify-start">
@@ -256,7 +262,7 @@ export default function ColoradoPage() {
                           />
                         </div>
                       </div>
-                      
+
                       {/* Event Highlight */}
                       <div className="text-center">
                         <p className="text-white/80 text-sm mb-4">
@@ -280,13 +286,13 @@ export default function ColoradoPage() {
         </section>
 
         {/* About Section */}
+        {/*
         <section id="about" className="relative py-16 sm:py-20 bg-gradient-to-b from-white to-sky-50/30">
-          {/* Subtle pattern */}
           <div className="absolute inset-0 opacity-[0.02]">
             <svg className="absolute inset-0 w-full h-full">
               <defs>
                 <pattern id="mountainDots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1" fill="#0284c7"/>
+                  <circle cx="2" cy="2" r="1" fill="#0284c7" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#mountainDots)" />
@@ -296,7 +302,6 @@ export default function ColoradoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
                 <div className="text-center mb-12">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100 text-sky-700 text-sm font-medium mb-4">
                     <span>🏔️</span>
@@ -307,7 +312,6 @@ export default function ColoradoPage() {
                   </h2>
                 </div>
 
-                {/* Content Card */}
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 sm:p-10">
                   <p className="text-gray-600 leading-relaxed mb-6">
                     Colorado Technology Association is proud to host SheTech Explorer Day Colorado 2019, bringing together 150+ students from across Colorado to meet with 10+ industry partners and 40+ mentors and to participate in TechZone activities, Tech workshops, and a TechChallenge.
@@ -316,7 +320,6 @@ export default function ColoradoPage() {
                     SheTech is a one-day no-cost event for high school girls that features hands-on activities in science, technology, engineering, and math (STEM) alongside women professionals from a variety of backgrounds and industries.
                   </p>
 
-                  {/* Eligibility Note */}
                   <div className="bg-gradient-to-r from-sky-50 to-indigo-50 rounded-xl p-6 border border-sky-100">
                     <h3 className="font-semibold text-gray-900 mb-2">Who Can Attend?</h3>
                     <p className="text-gray-600 text-sm">
@@ -328,17 +331,18 @@ export default function ColoradoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Who Can Attend Section */}
+        {/*
         <section className="relative py-16 sm:py-20 bg-gradient-to-br from-blue-900 via-sky-800 to-indigo-900 overflow-hidden">
-          {/* Mountain pattern overlay */}
           <div className="absolute inset-0 opacity-10">
             <svg className="absolute inset-0 w-full h-full">
               <defs>
                 <pattern id="attendPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                  <circle cx="30" cy="30" r="2" fill="#fff"/>
-                  <circle cx="0" cy="0" r="1" fill="#fff"/>
-                  <circle cx="60" cy="60" r="1" fill="#fff"/>
+                  <circle cx="30" cy="30" r="2" fill="#fff" />
+                  <circle cx="0" cy="0" r="1" fill="#fff" />
+                  <circle cx="60" cy="60" r="1" fill="#fff" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#attendPattern)" />
@@ -348,7 +352,6 @@ export default function ColoradoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-5xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
                 <div className="text-center mb-12">
                   <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                     Who Can <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">Attend?</span>
@@ -358,7 +361,6 @@ export default function ColoradoPage() {
                   </p>
                 </div>
 
-                {/* Attendee Cards */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                   {attendees.map((attendee, index) => (
                     <div
@@ -381,42 +383,34 @@ export default function ColoradoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Sponsors Section */}
+        {/*
         <section className="relative py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100 text-sky-700 text-sm font-medium mb-4">
-                    <span>🤝</span>
-                    Our Partners
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                    Thank You to Our <span className="bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">Sponsors</span>
-                  </h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
-                    SheTech Colorado is made possible by the generous support of our community partners
-                  </p>
-                </div>
+                <StickerHeader
+                  label="Sponsors"
+                  title="Our Partners"
+                  variant="blue"
+                />
 
-                {/* Sponsor Categories */}
                 <div className="space-y-12">
                   {sponsorCategories.map((category, catIndex) => (
                     <div key={catIndex}>
                       <h3 className="text-lg font-semibold text-gray-700 text-center mb-6 pb-2 border-b border-gray-200">
                         {category.title}
                       </h3>
-                      <div className={`grid gap-6 ${
-                        category.sponsors.length === 1 
-                          ? 'grid-cols-1 max-w-xs mx-auto' 
-                          : category.sponsors.length === 2 
-                            ? 'grid-cols-2 max-w-md mx-auto'
-                            : category.sponsors.length <= 4
-                              ? 'grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto'
-                              : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'
-                      }`}>
+                      <div className={`grid gap-6 ${category.sponsors.length === 1
+                        ? 'grid-cols-1 max-w-xs mx-auto'
+                        : category.sponsors.length === 2
+                          ? 'grid-cols-2 max-w-md mx-auto'
+                          : category.sponsors.length <= 4
+                            ? 'grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto'
+                            : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5'
+                        }`}>
                         {category.sponsors.map((sponsor, index) => (
                           <div
                             key={index}
@@ -440,8 +434,10 @@ export default function ColoradoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Past Event Highlight */}
+        {/*
         <section className="relative py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
@@ -456,7 +452,7 @@ export default function ColoradoPage() {
                       Colorado SheTech 2017
                     </h2>
                   </div>
-                  
+
                   <blockquote className="text-gray-600 leading-relaxed italic border-l-4 border-sky-500 pl-6 mb-6">
                     &ldquo;As the technology sector continues to evolve, many companies are having difficulty finding qualified workers to fill in-demand, high-tech jobs. To help grow the talent pipeline and expand this traditionally male-dominated industry, the Colorado Technology Association&apos;s Women in Tech Council hosted the SheTech Explorer Day Colorado, a day-long immersive event where 9th – 11th grade female high school students from across the state learned what it&apos;s like to work in science, technology, engineering and math (STEM).&rdquo;
                   </blockquote>
@@ -465,8 +461,8 @@ export default function ColoradoPage() {
                     Colorado Technology Association Foundation hosted SheTech Colorado Day at The Commons on Champa on June 8, 2017, bringing together nearly 60 9th-11th grade girls to meet with 14 industry partners and participate in activities, workshops and a TechChallenge.
                   </p>
 
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-medium"
                   >
                     See full article
@@ -479,13 +475,14 @@ export default function ColoradoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* SheTech Platform Section */}
+        {/*
         <section className="relative py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
               <AnimatedSection direction="up" delay={0}>
-                {/* Section Header */}
                 <div className="text-center mb-12">
                   <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                     SheTech <span className="bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">Platform</span>
@@ -495,7 +492,6 @@ export default function ColoradoPage() {
                   </p>
                 </div>
 
-                {/* Platform Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {platformOpportunities.map((item, index) => (
                     <div
@@ -516,16 +512,16 @@ export default function ColoradoPage() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Compact CTA Banner */}
+        {/*
         <section className="relative py-8 sm:py-10 bg-gradient-to-r from-blue-900 via-sky-800 to-indigo-900 overflow-hidden">
-          {/* Colorado accent line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500"></div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
-                {/* Text */}
                 <div className="text-center sm:text-left">
                   <h3 className="text-lg font-semibold text-white mb-1">
                     Ready to Explore STEM in Colorado? 🏔️
@@ -535,7 +531,6 @@ export default function ColoradoPage() {
                   </p>
                 </div>
 
-                {/* Button */}
                 <div className="flex gap-3">
                   <Link
                     href="/teachers/register-your-students"
@@ -551,6 +546,7 @@ export default function ColoradoPage() {
             </div>
           </div>
         </section>
+        */}
       </main>
 
       <Footer />

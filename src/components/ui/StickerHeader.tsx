@@ -5,7 +5,7 @@ type StickerHeaderProps = {
     title: string;
     className?: string;
     angle?: number;
-    variant?: 'navy' | 'magenta' | 'teal';
+    variant?: 'navy' | 'magenta' | 'teal' | 'blue';
 };
 
 export const StickerHeader = ({
@@ -31,6 +31,12 @@ export const StickerHeader = ({
         teal: {
             bg: 'bg-[#00A6CE]',
             shadow: 'bg-[#0086a6]',
+            text: 'text-white',
+            label: 'text-white/90'
+        },
+        blue: {
+            bg: 'bg-[#0064BA]',
+            shadow: 'bg-[#004e93]',
             text: 'text-white',
             label: 'text-white/90'
         }
