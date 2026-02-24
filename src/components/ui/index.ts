@@ -3,3 +3,4 @@ export * from './Input';
 export * from './AnimatedSection';
 export * from './StickerHeader';
 export * from './GraphPaperBackground';
+export * from './GalleryCarousel';

@@ -46,7 +46,7 @@ export const HeroSection = () => {
                     {/* Description */}
                     <AnimatedSection direction="up" delay={500} initialLoad={true}>
                         <p className="text-xl sm:text-xl text-[#00A6CE] sm:text-slate-600 mb-8 max-w-[70%] sm:max-w-lg font-bold sm:font-medium leading-tight sm:leading-relaxed">
-                            Join thousands of high school girls, mentors, and tech companies for Utah's largest hands-on STEM experience.
+                            Join thousands of high school girls, mentors, and tech companies for Utah&apos;s largest hands-on STEM experience.
                         </p>
                     </AnimatedSection>
 
@@ -60,7 +60,7 @@ export const HeroSection = () => {
                                 Register Now
                             </Link>
                             <Link
-                                href="/get-involved/mentor"
+                                href="/companies/mentor"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-md bg-[#00A6CE] text-white font-bold text-lg hover:bg-[#008db0] transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wide w-full sm:w-auto"
                             >
                                 Become a Mentor

@@ -3,129 +3,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
-import { AnimatedSection, StickerHeader } from '@/components/ui';
+import { AnimatedSection } from '@/components/ui';
 
-// Who can attend data
-const attendees = [
-  {
-    title: 'High School Girls',
-    description: '9th-10th grade students',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'CTE Directors',
-    description: 'Career & Technical Education',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-  },
-  {
-    title: 'School Counselors',
-    description: 'Guidance professionals',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Mentors & Volunteers',
-    description: 'Industry professionals',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-  },
-];
-
-// SheTech Platform opportunities
-const platformOpportunities = [
-  {
-    title: 'Scholarships',
-    description: 'Access exclusive scholarship opportunities',
-    icon: '🎓',
-  },
-  {
-    title: 'High School Curriculum',
-    description: 'STEM-focused educational resources',
-    icon: '📚',
-  },
-  {
-    title: 'Certifications',
-    description: 'Industry-recognized certifications',
-    icon: '🏆',
-  },
-];
-
-// Sponsor categories with logos
-const sponsorCategories = [
-  {
-    title: 'Brought to You By',
-    sponsors: [
-      { name: 'Sponsor 1', image: '/colorado/image.png' },
-      { name: 'Sponsor 2', image: '/colorado/image copy.png' },
-    ],
-  },
-  {
-    title: 'With Additional Support From',
-    sponsors: [
-      { name: 'Sponsor 3', image: '/colorado/image copy 2.png' },
-      { name: 'Sponsor 4', image: '/colorado/image copy 3.png' },
-      { name: 'Sponsor 5', image: '/colorado/image copy 4.png' },
-    ],
-  },
-  {
-    title: 'Lunch Sponsor',
-    sponsors: [
-      { name: 'Sponsor 6', image: '/colorado/image copy 5.png' },
-    ],
-  },
-  {
-    title: 'Venue Partner',
-    sponsors: [
-      { name: 'Sponsor 7', image: '/colorado/image copy 6.png' },
-    ],
-  },
-  {
-    title: 'Workshop Partners',
-    sponsors: [
-      { name: 'Sponsor 8', image: '/colorado/image copy 7.png' },
-      { name: 'Sponsor 9', image: '/colorado/image copy 8.png' },
-      { name: 'Sponsor 10', image: '/colorado/image copy 9.png' },
-      { name: 'Sponsor 11', image: '/colorado/image copy 10.png' },
-    ],
-  },
-  {
-    title: 'TechZone Partners',
-    sponsors: [
-      { name: 'Sponsor 12', image: '/colorado/image copy 11.png' },
-      { name: 'Sponsor 13', image: '/colorado/image copy 12.png' },
-      { name: 'Sponsor 14', image: '/colorado/image copy 13.png' },
-      { name: 'Sponsor 15', image: '/colorado/image copy 14.png' },
-      { name: 'Sponsor 16', image: '/colorado/image copy 15.png' },
-      { name: 'Sponsor 17', image: '/colorado/image copy 16.png' },
-      { name: 'Sponsor 18', image: '/colorado/image copy 17.png' },
-      { name: 'Sponsor 19', image: '/colorado/image copy 18.png' },
-      { name: 'Sponsor 20', image: '/colorado/image copy 19.png' },
-    ],
-  },
-];
-
-// Event stats
-const eventStats = [
-  { value: '150+', label: 'Students' },
-  { value: '10+', label: 'Industry Partners' },
-  { value: '40+', label: 'Mentors' },
-];
 
 export default function ColoradoPage() {
+  // Event stats
+  const eventStats = [
+    { value: '150+', label: 'Students' },
+    { value: '10+', label: 'Industry Partners' },
+    { value: '40+', label: 'Mentors' },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />

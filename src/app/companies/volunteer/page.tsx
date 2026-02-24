@@ -30,7 +30,7 @@ export default function VolunteerPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-4">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRunWlBC5GYBzyN4J5bF6vzDjVLAURwf4vtrBMxzlZ7xJnfA/viewform" target="_blank" rel="noopener noreferrer">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1nzpMINzIF86Ym3XtTzxGr-n3LKg4sSpyPWjZx315WhHUyQ/viewform" target="_blank" rel="noopener noreferrer">
                       <Button
                         size="lg"
                         className="bg-[#010193] text-white hover:bg-[#000070] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
@@ -59,7 +59,7 @@ export default function VolunteerPage() {
                       {/* Floating Quote Card */}
                       <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-lg border border-[#010193]/10">
                         <p className="text-[#010193] font-bold text-center text-lg leading-tight">
-                          "You’ll be part of the energy and teamwork that make SheTech one of the most inspiring days of the year."
+                          &quot;You&apos;ll be part of the energy and teamwork that make SheTech one of the most inspiring days of the year.&quot;
                         </p>
                       </div>
                     </div>
@@ -173,7 +173,7 @@ export default function VolunteerPage() {
               {/* CTA */}
               <AnimatedSection direction="up" delay={300}>
                 <div className="text-center">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRunWlBC5GYBzyN4J5bF6vzDjVLAURwf4vtrBMxzlZ7xJnfA/viewform" target="_blank" rel="noopener noreferrer">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1nzpMINzIF86Ym3XtTzxGr-n3LKg4sSpyPWjZx315WhHUyQ/viewform" target="_blank" rel="noopener noreferrer">
                     <Button className="bg-[#010193] text-white hover:bg-[#000070] font-bold px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl border-0 uppercase tracking-wide text-lg">
                       Volunteer Now
                     </Button>

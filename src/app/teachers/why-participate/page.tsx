@@ -138,7 +138,7 @@ export default function WhyParticipatePage() {
 
                   <div className="mb-8 p-6 bg-slate-50 rounded-xl border-l-4 border-[#0064BA]">
                     <p className="text-slate-700 italic font-medium mb-3">
-                      "SheTech was the moment my students connected what they were learning in class to real careers. It gave them purpose."
+                      &quot;SheTech was the moment my students connected what they were learning in class to real careers. It gave them purpose.&quot;
                     </p>
                     <p className="text-sm font-bold text-[#00008B] uppercase">— High School STEM Teacher, Utah</p>
                   </div>
@@ -175,7 +175,7 @@ export default function WhyParticipatePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
               <AnimatedSection direction="right" delay={100}>
                 <div className="bg-white p-8 rounded-2xl shadow-xl border-t-8 border-[#BD1C81]">
-                  <p className="text-2xl font-black text-[#00008B] mb-4">"I didn’t think I could do tech — until SheTech."</p>
+                  <p className="text-2xl font-black text-[#00008B] mb-4">&quot;I didn&apos;t think I could do tech &mdash; until SheTech.&quot;</p>
                   <div className="space-y-2">
                     <div className="h-2 w-16 bg-[#BD1C81]/20 rounded-full"></div>
                     <div className="h-2 w-10 bg-[#BD1C81]/20 rounded-full"></div>
@@ -185,7 +185,7 @@ export default function WhyParticipatePage() {
               </AnimatedSection>
               <AnimatedSection direction="left" delay={200}>
                 <div className="bg-white p-8 rounded-2xl shadow-xl border-t-8 border-[#0064BA]">
-                  <p className="text-2xl font-black text-[#00008B] mb-4">"Now I want to be an engineer."</p>
+                  <p className="text-2xl font-black text-[#00008B] mb-4">&quot;Now I want to be an engineer.&quot;</p>
                   <div className="space-y-2">
                     <div className="h-2 w-16 bg-[#0064BA]/20 rounded-full"></div>
                     <div className="h-2 w-10 bg-[#0064BA]/20 rounded-full"></div>

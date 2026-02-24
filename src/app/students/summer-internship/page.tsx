@@ -45,7 +45,7 @@ const benefits = [
       </svg>
     ),
     title: 'Engage with Professionals',
-    description: 'Hear what "a day in their life" looks like',
+    description: "Hear what &quot;a day in their life&quot; looks like",
   },
   {
     icon: (
@@ -53,7 +53,7 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    title: 'Learn to Ideate',
+    title: 'Brainstorm',
     description: 'Brainstorm and ideate solutions to tech problems',
   },
   {
@@ -210,6 +210,19 @@ export default function SummerInternshipPage() {
                 </div>
               </div>
 
+              <AnimatedSection direction="up" delay={400}>
+                <div className="mt-8 text-center">
+                  <a
+                    href="https://forms.gle/uRZu6myZg48xDXE56"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-white text-[#00A6CE] hover:bg-gray-50 font-black px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all uppercase tracking-wide text-lg border-0"
+                  >
+                    Sign Up
+                  </a>
+                </div>
+              </AnimatedSection>
+
             </div>
           </div>
         </section>
@@ -288,12 +301,12 @@ export default function SummerInternshipPage() {
                         Since 2017, the SheTech Internship Exploration program has connected hundreds of girls with Silicon Slopes giants.
                       </p>
                       <p className="text-gray-600 leading-relaxed">
-                        During the 2-week internship, participants have been featured on KSL TV, presented at state conferences, and gained hands-on skills like soldering—all while building a network of mentors and peers.
+                        During the 2-week internship, participants have been featured on KSL TV, presented at state conferences, and gained hands-on skills while building a network of mentors and peers.
                       </p>
                     </div>
                     <div className="relative h-64 lg:h-auto min-h-[300px]">
                       <Image
-                        src="/shetech-gallery/KinserStudios-SheTech25-2541.jpg"
+                        src="/summer-internship/thanksgiving-point-2025.jpg"
                         alt="SheTech Internship Group"
                         fill
                         className="object-cover"
@@ -342,7 +355,7 @@ export default function SummerInternshipPage() {
                   </svg>
 
                   <blockquote className="text-2xl md:text-3xl font-medium text-gray-900 leading-relaxed mb-8">
-                    "Through partnering with industry to bring them real experiences in tech, we are creating actionable pathways for girls to be a successful part of the technology economy."
+                    &quot;Through partnering with industry to bring them real experiences in tech, we are creating actionable pathways for girls to be a successful part of the technology economy.&quot;
                   </blockquote>
 
                   <div className="flex items-center justify-center gap-4">

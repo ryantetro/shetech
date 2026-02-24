@@ -5,6 +5,19 @@ import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, StickerHeader, GraphPaperBackground, Button } from '@/components/ui';
 
+const TECHBUZZ_ARTICLE_TILES = [
+  { title: 'SheTech Interns Interview Heidi Barnett', href: 'https://www.techbuzznews.com/shetech-interns-interview-heidi-barnett/' },
+  { title: 'SheTech Interns Interview Michaela Hatch', href: 'https://www.techbuzznews.com/shetech-interns-interview-michaela-hatch/' },
+  { title: 'SheTech Interns Interview Lauren Mason-Carris', href: 'https://www.techbuzznews.com/shetech-interns-inteview-lauren-mason-carris/' },
+  { title: 'SheTech Interns Interview Lynn Reichert', href: 'https://www.techbuzznews.com/shetech-interns-inteview-lynn-reichert/' },
+  { title: 'Connecting the Dots with Koriann Edwards', href: 'https://www.techbuzznews.com/connecting-the-dots-koriann-edwards/' },
+  { title: "Brooke Baker's Pivot", href: 'https://www.techbuzznews.com/brooke-bakers-pivot/' },
+  { title: 'SheTech Interns Interview Lynne Yocom', href: 'https://www.techbuzznews.com/shetech-interns-interview-lynne-yocom/' },
+  { title: 'SheTech Interns Interview Evita Weagel', href: 'https://www.techbuzznews.com/shetech-interns-interview-evita-weagel/' },
+  { title: 'Dolly Chitta & SheTech', href: 'https://www.techbuzznews.com/dolly-chitta-shetech/' },
+  { title: 'SheTech Interns Interview Erin Farr', href: 'https://www.techbuzznews.com/shetech-intern-interviews-erin-farr/' },
+];
+
 export default function TechBuzzArticlesPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -70,7 +83,12 @@ export default function TechBuzzArticlesPage() {
               {/* Hero Visual - Article Card */}
               <div className="relative">
                 <AnimatedSection direction="left" delay={200}>
-                  <div className="relative group flex justify-center">
+                  <a
+                    href="https://www.techbuzznews.com/shetech-explorer-day-2026/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative group flex justify-center"
+                  >
                     {/* Decorative Gradient Blob */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#6E35B0] via-purple-500 to-indigo-500 rounded-[2rem] opacity-20 group-hover:opacity-40 blur-2xl transition duration-500 w-full max-w-[500px] mx-auto"></div>
 
@@ -96,12 +114,12 @@ export default function TechBuzzArticlesPage() {
                           <span>•</span>
                           <span>5 min read</span>
                         </div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-3 leading-tight">
-                          Next Gen Innovators: How SheTech Students Are Shaping the Future
-                        </h3>
-                        <p className="text-slate-600 mb-6 line-clamp-3">
-                          From coding workshops to mentorship sessions, see how these high school students are turning their passion for STEM into real-world solutions that impact their communities.
-                        </p>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3 leading-tight">
+                            Behind the Scenes at SheTech Explorer Day 2026
+                          </h3>
+                          <p className="text-slate-600 mb-6 line-clamp-3">
+                            Dive into the featured TechBuzz story that follows students, mentors, and partners through a full day of workshops, challenges, and inspiration.
+                          </p>
                         <div className="flex items-center justify-between pt-6 border-t border-slate-100">
                           <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-[#6E35B0] font-bold">
@@ -113,15 +131,54 @@ export default function TechBuzzArticlesPage() {
                             </div>
                           </div>
                           <span className="text-[#6E35B0] font-bold text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            Read More
+                            Read the Featured Story
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                           </span>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </AnimatedSection>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection direction="up" delay={0}>
+              <div className="text-center mb-12 max-w-3xl mx-auto">
+                <p className="text-xs uppercase tracking-[0.5em] text-slate-400 mb-2">This Year</p>
+                <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">TechBuzz In Focus</h2>
+                <p className="text-lg text-slate-600">
+                  Browse the latest stories produced by SheTech Media Interns and the partners who mentor them.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {TECHBUZZ_ARTICLE_TILES.map((article, index) => (
+                <AnimatedSection key={article.title} direction="up" delay={index * 80}>
+                  <a
+                    href={article.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group bg-slate-50 rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="text-xs uppercase tracking-[0.4em] text-[#6E35B0] font-semibold mb-3">TechBuzz News</div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{article.title}</h3>
+                    <p className="text-sm text-slate-500 mb-6">
+                      SheTech Media Interns share the people, projects, and breakthroughs inspiring girls in STEM.
+                    </p>
+                    <span className="inline-flex items-center text-sm font-bold text-[#6E35B0] gap-1 group-hover:translate-x-1 transition-transform duration-200">
+                      Open Article
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </a>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </section>

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
@@ -84,7 +83,7 @@ export default function WTCCollegeInternsPage() {
 
                 <AnimatedSection direction="right" delay={300} initialLoad={true}>
                   <p className="text-xl text-slate-400 mb-10 leading-relaxed font-light">
-                    Calling all SheTech Alumnae! Keep the momentum going. Join our team as a part-time intern to mentor the next generation, expand our reach, and build your professional network.
+                    Calling all SheTech Alumni! Keep the momentum going. Join our team as a part-time intern to mentor the next generation, expand our reach, and build your professional network.
                   </p>
                 </AnimatedSection>
 
@@ -129,14 +128,14 @@ export default function WTCCollegeInternsPage() {
         </section>
 
         {/* The Role Section - Clean Grid Layout */}
-        <section className="py-24 bg-white relative">
+        <section id="details" className="py-24 bg-white relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
 
               {/* Left: Main Copy */}
               <AnimatedSection direction="right">
                 <div>
-                  <h2 className="text-4xl font-black text-slate-900 mb-6">Stay Connected</h2>
+                  <h2 className="text-4xl font-black text-slate-900 mb-6">More About This Opportunity</h2>
                   <div className="w-20 h-1.5 bg-teal-500 rounded-full mb-8"></div>
 
                   <div className="prose prose-lg text-slate-600">
@@ -194,10 +193,12 @@ export default function WTCCollegeInternsPage() {
               </div>
 
               <a
-                href="mailto:info@shetech.org?subject=SheTech Intern Application"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScvjn4CarMOKBzsgFEN-_CQsLxHvPtvv53krHMTLpFDZ7bS-w/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-white text-slate-900 font-black text-lg hover:bg-slate-100 transition-all duration-300 shadow-2xl hover:scale-105 transform"
               >
-                APPLY FOR PROGRAMS
+                Sign Up for SheTech Info
               </a>
             </AnimatedSection>
           </div>

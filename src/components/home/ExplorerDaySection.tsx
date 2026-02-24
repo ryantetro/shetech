@@ -123,7 +123,14 @@ export const ExplorerDaySection = () => {
                                 </div>
                                 <p className="text-lg font-bold">Mountain America Expo Center</p>
                                 <p className="text-sm opacity-80">9575 S State St, Sandy, UT 84070</p>
-                                <a href="#" className="mt-3 text-sm underline decoration-white/50 hover:decoration-white transition-all">Get Directions &rarr;</a>
+                                <a
+                                    href="https://www.google.com/maps/place/Mountain+America+Exposition+Center/@40.5787202,-111.8907584,16z/data=!3m1!4b1!4m6!3m5!1s0x875287d846876ad1:0x708f5ab663f1cf66!8m2!3d40.5787162!4d-111.8881835!16s%2Fm%2F0k1jkf0?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-3 text-sm underline decoration-white/50 hover:decoration-white transition-all"
+                                >
+                                    Get Directions &rarr;
+                                </a>
                             </div>
                         </div>
                     </AnimatedSection>

@@ -160,7 +160,7 @@ export default function ClubsPage() {
 
                 {/* CTA Buttons - Navy/Pink Theme */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="mailto:kristin@womentechcouncil.com">
+                  <a href="https://forms.gle/4Z64D9b8cBD137mC6" target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-[#00A6CE] text-white hover:bg-[#0086a6] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"

@@ -20,7 +20,7 @@ export default function TechWorkshopsPage() {
               <div>
                 <AnimatedSection direction="right" delay={0}>
                   <div className="mb-6 inline-block">
-                    <StickerHeader label="Skills for Future" title="Tech Workshops" angle={-2} variant="magenta" />
+                    <StickerHeader label="Skills for Future Tech Careers" title="Tech Workshops" angle={-2} variant="magenta" />
                   </div>
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#6E35B0] mb-6 leading-tight uppercase">
                     Where Curiosity <br /> Meets <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6E35B0] to-purple-400">Career.</span>
@@ -45,7 +45,7 @@ export default function TechWorkshopsPage() {
                   </div>
 
                   <div className="mt-8 space-y-4">
-                    <p className="font-bold text-[#6E35B0] uppercase tracking-wide text-sm">What you'll find:</p>
+                    <p className="font-bold text-[#6E35B0] uppercase tracking-wide text-sm">What you&apos;ll find:</p>
                     <ul className="space-y-2 text-slate-600">
                       <li className="flex items-center gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#6E35B0]"></div>
@@ -105,7 +105,7 @@ export default function TechWorkshopsPage() {
                           {/* Overlay Code Snippet */}
                           <div className="absolute inset-0 bg-[#1E1E1E]/40 backdrop-blur-[1px] p-6 font-mono text-sm leading-6">
                             <div className="text-[#569CD6]">function <span className="text-[#DCDCAA]">innovate</span>() &#123;</div>
-                            <div className="pl-4 text-[#9CDCFE]">const <span className="text-[#4FC1FF]">future</span> = <span className="text-[#CE9178]">'bright'</span>;</div>
+                            <div className="pl-4 text-[#9CDCFE]">const <span className="text-[#4FC1FF]">future</span> = <span className="text-[#CE9178]">&apos;bright&apos;</span>;</div>
                             <div className="pl-4 text-[#C586C0]">return</div>
                             <div className="pl-8 text-[#DCDCAA]">buildNewWorld(<span className="text-[#9CDCFE]">future</span>);</div>
                             <div className="text-[#569CD6]">&#125;</div>
@@ -128,6 +128,17 @@ export default function TechWorkshopsPage() {
                 </AnimatedSection>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 sm:py-20 bg-[#FDF2F8]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection direction="up" delay={0}>
+              <div className="rounded-3xl border-2 border-dashed border-[#6E35B0] p-12 text-center text-slate-500">
+                <p className="text-xl font-semibold mb-2">Placeholder for Jill&apos;s new Tech Workshops content.</p>
+                <p className="text-sm">We’ll replace this area with the new layout once the updated module arrives.</p>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
 

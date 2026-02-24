@@ -1,36 +1,16 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { Button, StickerHeader, GraphPaperBackground } from '@/components/ui';
+import { GalleryCarousel } from '@/components/ui/GalleryCarousel';
+import { EXPLORER_GALLERY_IMAGES } from '@/components/home/ExplorerGallerySection';
 
-// Pre-calculate particle positions for stable rendering
-const particlePositions = [...Array(15)].map(() => ({
-  left: Math.random() * 100,
-  duration: 5 + Math.random() * 5,
-  delay: Math.random() * 3,
-  colorIndex: Math.floor(Math.random() * 3),
-}));
+
 
 export default function ExplorerDayPage() {
-  const [activeTab, setActiveTab] = useState<'workshops' | 'schedule'>('workshops');
-  const [activeGalleryImage, setActiveGalleryImage] = useState(0);
-  const [isGalleryPaused, setIsGalleryPaused] = useState(false);
-
-  // Auto-advance gallery carousel
-  useEffect(() => {
-    if (isGalleryPaused) return;
-
-    const interval = setInterval(() => {
-      setActiveGalleryImage((prev) => (prev + 1) % 9);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [isGalleryPaused]);
-
   // Mock Data for Workshop Features
   const features = [
     {
@@ -60,34 +40,9 @@ export default function ExplorerDayPage() {
     { time: "9:00 AM", title: "Registration & Expo", description: "Check-in, grab your swag, and explore the TechZone expo." },
     { time: "10:00 AM", title: "Opening Kickoff", description: "High-energy welcome with special guest speakers." },
     { time: "10:45 AM", title: "Workshop Session 1", description: "First round of hands-on STEM workshops." },
-    { time: "11:45 AM", title: "Lunch & Networking", description: "Enjoy lunch while meeting mentors and new friends." },
+    { time: "11:45 AM", title: "Networking", description: "Connect with mentors, partners, and peers." },
     { time: "12:30 PM", title: "TechChallenge", description: "Team-based problem solving competition." },
     { time: "1:30 PM", title: "Awards & Closing", description: "Celebrate the day's achievements and win prizes!" }
-  ];
-
-  const stats = [
-    { value: "3,000+", label: "High School Girls" },
-    { value: "150+", label: "Schools Represented" },
-    { value: "900+", label: "Mentors" },
-    { value: "40+", label: "Tech Companies" }
-  ];
-
-  const whyMatters = [
-    {
-      title: "Discover Your Passion",
-      description: "Explore diverse fields in STEM to find what excites you most.",
-      icon: "✨"
-    },
-    {
-      title: "Build Confidence",
-      description: "Gain hands-on experience that proves you belong in tech.",
-      icon: "💪"
-    },
-    {
-      title: "Create Connections",
-      description: "Meet friends and mentors who will support your journey.",
-      icon: "🤝"
-    }
   ];
 
   return (
@@ -201,27 +156,28 @@ export default function ExplorerDayPage() {
 
               {/* Description */}
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-10 font-medium animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                Join more than 3,000 girls from hundreds of schools around the state for this free, hands-on day of STEM, partners, mentors, and more. <span className="text-[#00A6CE] font-bold bg-white/90 px-1 rounded shadow-sm">Lunch is included!</span>
+                Join more than 3,000 girls from hundreds of schools around the state for this free, hands-on day of STEM, partners, mentors, and more.
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center isolate animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-                <Button
-                  size="lg"
-                  className="bg-white text-[#00A6CE] hover:bg-gray-50 font-black px-10 py-4 rounded-xl shadow-xl hover:shadow-2xl shadow-black/20 transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide text-lg"
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSd5nlsVX1Bs858OK__EeiEYZqWS4qVKtmgObz7f1KNRP7mvzQ/viewform?usp=header"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-white text-[#00A6CE] hover:bg-gray-50 font-black px-10 py-4 rounded-xl shadow-xl hover:shadow-2xl shadow-black/20 transform hover:scale-105 transition-all uppercase tracking-wide text-lg border-0"
                 >
                   Register Free
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-[#00A6CE]/20 text-white border-2 border-white/50 hover:bg-white hover:text-[#00A6CE] backdrop-blur-sm font-bold px-10 py-4 rounded-xl transition-all cursor-pointer uppercase tracking-wide text-lg hover:border-white"
+                </a>
+                <a
+                  href="#event-schedule"
+                  className="inline-flex items-center justify-center bg-[#00A6CE]/20 text-white border-2 border-white/50 hover:bg-white hover:text-[#00A6CE] backdrop-blur-sm font-bold px-10 py-4 rounded-xl transition-all uppercase tracking-wide text-lg hover:border-white"
                 >
                   View Schedule
-                </Button>
+                </a>
               </div>
 
             </div>
@@ -284,7 +240,10 @@ export default function ExplorerDayPage() {
           </section>
 
           {/* Schedule Section */}
-          <section className="py-12 sm:py-16 relative z-10 bg-white border-y border-slate-200">
+          <section
+            id="event-schedule"
+            className="py-12 sm:py-16 relative z-10 bg-white border-y border-slate-200"
+          >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
@@ -327,121 +286,24 @@ export default function ExplorerDayPage() {
                     ))}
                   </div>
 
-                  <div className="mt-10 text-center lg:text-left pl-0 lg:pl-[7.5rem]">
-                    <Button className="bg-[#00A6CE] text-white hover:bg-[#0086a6] font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all border-0 uppercase tracking-wide">
-                      Download Full Guide
-                    </Button>
-                  </div>
                 </div>
               </div>
 
             </div>
           </section>
 
-          {/* Gallery Section */}
-          <section className="py-16 sm:py-20 relative z-10">
+          <section className="py-16 sm:py-20 relative z-10 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <StickerHeader label="Memories" title="Past Events" variant="teal" angle={-1} />
               </div>
-
-              {/* Gallery Carousel Window */}
-              <div className="relative max-w-5xl mx-auto px-4 sm:px-12">
-                {/* Controls */}
-                <button
-                  onClick={() => setActiveGalleryImage((prev) => (prev - 1 + 9) % 9)}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center text-slate-600 hover:text-[#BD1C81] hover:scale-110 transition-all"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-                </button>
-                <button
-                  onClick={() => setActiveGalleryImage((prev) => (prev + 1) % 9)}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center text-slate-600 hover:text-[#BD1C81] hover:scale-110 transition-all"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </button>
-
-                <div
-                  className="relative h-[400px] w-full overflow-hidden"
-                  onMouseEnter={() => setIsGalleryPaused(true)}
-                  onMouseLeave={() => setIsGalleryPaused(false)}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    {[
-                      '/shetech-gallery/KinserStudios-SheTech25-0926.jpg',
-                      '/shetech-gallery/KinserStudios-SheTech25-1414.jpg',
-                      '/shetech-gallery/KinserStudios-SheTech25-1494.jpg',
-                      '/shetech-gallery/KinserStudios-SheTech25-1949.jpg',
-                      '/shetech-gallery/KinserStudios-SheTech25-2510.jpg',
-                      '/shetech-gallery/KinserStudios-SheTech25-2532.jpg',
-                      '/shetech-gallery/KinserStudios-SheTech25-2541.jpg',
-                      '/shetech-gallery/KinserStudios-SheTech25-2830.jpg',
-                      '/shetech-gallery/KinserStudios-Womentechcouncil-shetech-explorerday-1109.jpg'
-                    ].map((src, index) => {
-                      let offset = index - activeGalleryImage;
-                      if (offset > 4) offset -= 9;
-                      if (offset < -4) offset += 9;
-
-                      return (
-                        <div
-                          key={index}
-                          className="absolute transition-all duration-500 ease-out shadow-2xl rounded-xl overflow-hidden cursor-pointer bg-white border-4 border-white"
-                          style={{
-                            width: '300px',
-                            height: '400px',
-                            left: '50%',
-                            zIndex: 10 - Math.abs(offset),
-                            opacity: Math.abs(offset) > 2 ? 0 : 1,
-                            transform: `translateX(calc(-50% + ${offset * 220}px)) scale(${1 - Math.abs(offset) * 0.15})`
-                          }}
-                          onClick={() => setActiveGalleryImage(index)}
-                        >
-                          <Image
-                            src={src}
-                            alt="Gallery"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
+              <AnimatedSection direction="up" delay={100}>
+                <div className="relative max-w-5xl mx-auto">
+                  <GalleryCarousel images={EXPLORER_GALLERY_IMAGES} />
                 </div>
-              </div>
-
-              {/* Stats Strip */}
-              <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
-                {stats.map((stat, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-4xl font-black text-[#BD1C81] mb-1">{stat.value}</div>
-                    <div className="text-sm font-bold text-slate-500 uppercase tracking-wide">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+              </AnimatedSection>
             </div>
           </section>
-
-          {/* Why It Matters */}
-          <section className="py-12 sm:py-16 bg-white border-t border-slate-200 relative z-10">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-black text-slate-900 mb-4 uppercase">Why Explorer Day Matters</h2>
-                <p className="text-slate-500">More than just an event—it's a launching pad for future innovators</p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {whyMatters.map((item, i) => (
-                  <div key={i} className="bg-slate-50 rounded-2xl p-8 border border-slate-100 text-center hover:bg-[#BD1C81] hover:text-white group transition-colors duration-300">
-                    <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
-                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-sm opacity-80 leading-relaxed font-medium">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
 
           {/* Sponsors / Footer CTA */}
           <section className="py-16 relative z-10">
@@ -453,7 +315,7 @@ export default function ExplorerDayPage() {
                 <div className="relative z-10">
                   <h2 className="text-3xl sm:text-4xl font-black uppercase mb-6">Ready to Join Us?</h2>
                   <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                    Don't miss out on the biggest tech event for high school girls in Utah. Registration is free and open now!
+                    Don&apos;t miss out on the biggest tech event for high school girls in Utah. Registration is free and open now!
                   </p>
                   <Button className="bg-white text-[#00A6CE] font-black text-lg px-10 py-4 rounded-xl shadow-xl hover:scale-105 transition-transform border-0 uppercase cursor-pointer">
                     Secure Your Spot

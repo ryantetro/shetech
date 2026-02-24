@@ -47,12 +47,12 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     const checkInitialVisibility = () => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
-        const isInViewport = 
+        const isInViewport =
           rect.top < window.innerHeight * 0.9 &&
           rect.bottom > 0 &&
           rect.left < window.innerWidth &&
           rect.right > 0;
-        
+
         if (isInViewport && !hasAnimated) {
           // Small delay for smoother initial animation
           setTimeout(() => {
@@ -79,14 +79,15 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
       clearTimeout(initialTimeout);
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [delay, hasAnimated, initialLoad]);
@@ -108,7 +109,7 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
           : `opacity-0 ${directionClasses[direction]}`,
         className
       )}
-      style={{ 
+      style={{
         transition: 'opacity 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
         transitionDelay: `${delay}ms`,
         willChange: 'opacity, transform',

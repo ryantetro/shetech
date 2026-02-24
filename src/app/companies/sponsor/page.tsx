@@ -59,7 +59,7 @@ export default function SponsorPage() {
                       {/* Floating Stats Card */}
                       <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-lg border border-[#010193]/10">
                         <p className="text-[#010193] font-bold text-center text-lg leading-tight">
-                          "Your partnership fuels hands-on experiences, mentorship, and workforce readiness."
+                          &quot;Your partnership fuels hands-on experiences, mentorship, and workforce readiness.&quot;
                         </p>
                       </div>
                     </div>

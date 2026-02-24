@@ -5,7 +5,7 @@ import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, StickerHeader, GraphPaperBackground } from '@/components/ui';
 
 // Application form URL
-const APPLICATION_FORM_URL = 'https://docs.google.com/forms/d/1724js4I2HPhnwqWH70LeYYt5ENK93WA7dnPmIfIaP1A/preview';
+const APPLICATION_FORM_URL = 'https://forms.gle/Fw7BQgjxLVDeDSqS7';
 
 // Pre-calculate floating media icons
 const floatingIcons = [...Array(12)].map((_, i) => ({
@@ -280,7 +280,7 @@ export default function MediaInternshipPage() {
                         The <span className="text-[#00A6CE] font-bold">SheTech & TechBuzz Media Internship</span> is a unique opportunity to gain real-world experience in tech journalism and media production.
                       </p>
                       <p className="mb-6">
-                        You'll work directly with industry mentors to highlight women in technology, cover major tech events, and produce professional-grade content for social media and news platforms.
+                        You&apos;ll work directly with industry mentors to highlight women in technology, cover major tech events, and produce professional-grade content for social media and news platforms.
                       </p>
                       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
                         <div className="w-10 h-10 rounded-full bg-[#00A6CE]/10 flex items-center justify-center text-[#00A6CE] shrink-0">

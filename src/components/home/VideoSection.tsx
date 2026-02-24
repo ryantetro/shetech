@@ -26,7 +26,7 @@ export const VideoSection = () => {
                             SheTech <span className="text-white/80">IN ACTION</span>
                         </h2>
                         <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed font-bold">
-                            Watch how we're transforming lives through technology education
+                            Watch how we&apos;re transforming lives through technology education
                         </p>
                     </div>
                 </AnimatedSection>

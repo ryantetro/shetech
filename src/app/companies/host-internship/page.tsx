@@ -121,7 +121,7 @@ export default function HostInternshipPage() {
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#010193]/80 to-transparent flex items-end p-8">
-                      <p className="text-white font-bold text-lg">"Seeing the day-to-day of a tech company changed my entire perspective on my future career."</p>
+                      <p className="text-white font-bold text-lg">&quot;Seeing the day-to-day of a tech company changed my entire perspective on my future career.&quot;</p>
                     </div>
                   </div>
                 </AnimatedSection>

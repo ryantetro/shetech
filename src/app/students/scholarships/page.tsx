@@ -10,7 +10,7 @@ export default function ScholarshipsPage() {
     {
       title: "Utah Energy Workforce Scholarship Program",
       amount: "Four $5,000 Awards",
-      description: "One scholarship available in each of Utah’s congressional districts for students pursuing STEM studies. Applicants submit short films exploring Utah’s energy sector.",
+      description: "One scholarship available in each of Utah&apos;s congressional districts for students pursuing STEM studies. Applicants submit short films exploring Utah’s energy sector.",
       deadline: "Check Website",
       requirements: ["STEM Studies Context", "Short Film Submission", "Utah Resident"]
     },
@@ -97,7 +97,7 @@ export default function ScholarshipsPage() {
                     </div>
                     <h3 className="text-3xl font-black text-white mb-2">Changing Lives</h3>
                     <p className="text-white/90 text-lg leading-relaxed">
-                      "This scholarship didn't just fund my education; it gave me the confidence to pursue a career I never thought possible."
+                      &quot;This scholarship didn&apos;t just fund my education; it gave me the confidence to pursue a career I never thought possible.&quot;
                     </p>
                   </div>
                 </div>
@@ -144,9 +144,16 @@ export default function ScholarshipsPage() {
                         <div className="flex items-center justify-between text-sm">
                           <span className="text-slate-500 font-medium">Deadline: <span className="text-[#00008B] font-bold">{item.deadline}</span></span>
                         </div>
-                        <Button className="w-full mt-6 bg-slate-50 hover:bg-[#00008B] text-[#00008B] hover:text-white font-bold border-0 transition-all cursor-pointer">
-                          Apply Now
-                        </Button>
+                        <a
+                          href="#"
+                          aria-disabled="true"
+                          data-link-pending="true"
+                          className="block w-full text-center"
+                        >
+                          <Button className="w-full mt-6 bg-slate-50 hover:bg-[#00008B] text-[#00008B] hover:text-white font-bold border-0 transition-all cursor-pointer">
+                            Apply Now
+                          </Button>
+                        </a>
                       </div>
                     </div>
                   </div>

@@ -59,7 +59,7 @@ export default function MentorPage() {
                       {/* Floating Quote Card */}
                       <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-xl shadow-lg border border-[#010193]/10">
                         <p className="text-[#010193] font-bold text-center text-lg leading-tight">
-                          "You bring your experience and passion to inspire the next generation."
+                          &quot;You bring your experience and passion to inspire the next generation.&quot;
                         </p>
                       </div>
                     </div>
@@ -120,8 +120,8 @@ export default function MentorPage() {
                       <div className="space-y-6">
                         <div>
                           <div className="text-xs font-bold uppercase tracking-wider text-blue-200 mb-1">Virtual Training (Zoom)</div>
-                          <div className="font-bold text-lg">Feb 19, 4–5pm <span className="text-blue-300 mx-1">OR</span></div>
-                          <div className="font-bold text-lg">Feb 20, 8–9am</div>
+                          <div className="font-bold text-lg">Feb 12, 4–5pm <span className="text-blue-300 mx-1">OR</span></div>
+                          <div className="font-bold text-lg">Feb 13, 8–9am</div>
                         </div>
 
                         <div className="pt-4 border-t border-white/20">
@@ -208,7 +208,7 @@ export default function MentorPage() {
 
               <AnimatedSection direction="up" delay={400}>
                 <p className="text-slate-600 font-medium italic mb-8">
-                  "Ongoing mentorship builds connection and confidence—helping girls continue their journey in STEM long after the event ends."
+                  &quot;Ongoing mentorship builds connection and confidence—helping girls continue their journey in STEM long after the event ends.&quot;
                 </p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5JcKITadKPzNXuuF2GbOy8K2yN2homMJ3agKqPVd9_AhjCA/viewform" target="_blank" rel="noopener noreferrer">
                   <Button

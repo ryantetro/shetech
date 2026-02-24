@@ -107,9 +107,9 @@ export default function ContactUsPage() {
                       </h3>
                       <div className="flex gap-4">
                         {[
-                          { icon: <FaInstagram className="w-6 h-6" />, href: '#', label: 'Instagram', color: 'text-pink-600 hover:text-pink-700 bg-pink-50 hover:bg-pink-100' },
-                          { icon: <FaLinkedin className="w-6 h-6" />, href: '#', label: 'LinkedIn', color: 'text-blue-700 hover:text-blue-800 bg-blue-50 hover:bg-blue-100' },
-                          { icon: <FaFacebook className="w-6 h-6" />, href: '#', label: 'Facebook', color: 'text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100' },
+                          { icon: <FaInstagram className="w-6 h-6" />, href: 'https://www.instagram.com/she.tech/?hl=en', label: 'Instagram', color: 'text-pink-600 hover:text-pink-700 bg-pink-50 hover:bg-pink-100' },
+                          { icon: <FaLinkedin className="w-6 h-6" />, href: 'https://www.linkedin.com/company/women-tech-council/posts/?feedView=all', label: 'LinkedIn', color: 'text-blue-700 hover:text-blue-800 bg-blue-50 hover:bg-blue-100' },
+                          { icon: <FaFacebook className="w-6 h-6" />, href: 'https://www.facebook.com/shetechexplorer/', label: 'Facebook', color: 'text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100' },
                           { icon: <FaTwitter className="w-6 h-6" />, href: '#', label: 'Twitter', color: 'text-sky-500 hover:text-sky-600 bg-sky-50 hover:bg-sky-100' },
                         ].map((social) => (
                           <a
@@ -216,4 +216,3 @@ export default function ContactUsPage() {
     </div>
   );
 }
-

@@ -1,16 +1,26 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, StickerHeader, GraphPaperBackground, Button } from '@/components/ui';
 
 export default function InstagramFeedPage() {
   React.useEffect(() => {
+    // Define interface for Instagram window object
+    interface InstagramWindow extends Window {
+      instgrm?: {
+        Embeds: {
+          process: () => void;
+        };
+      };
+    }
+
+    const win = window as unknown as InstagramWindow;
+
     // Function to reload/process Instagram embeds with retry
     const processEmbeds = () => {
-      if ((window as any).instgrm) {
-        (window as any).instgrm.Embeds.process();
+      if (win.instgrm) {
+        win.instgrm.Embeds.process();
       } else {
         // Retry if window.instgrm is not available yet
         setTimeout(processEmbeds, 500);

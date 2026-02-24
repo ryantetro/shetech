@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
@@ -125,7 +124,7 @@ export default function EntrepreneurApprenticeshipPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-indigo-600 text-white font-bold text-lg hover:bg-indigo-500 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 uppercase tracking-wide"
                   >
-                    Apply Now
+                    Join Waitlist
                   </a>
                   <a
                     href="#learn-more"

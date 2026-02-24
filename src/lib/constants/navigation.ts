@@ -110,7 +110,7 @@ export const NAVIGATION: NavigationItem[] = [
     ],
   },
   {
-    label: 'Media Hub',
+    label: 'Tech Careers',
     href: null,
     items: [
       {
@@ -188,4 +188,3 @@ export const NAVIGATION: NavigationItem[] = [
     ],
   },
 ];
-

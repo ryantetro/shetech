@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
@@ -76,13 +75,13 @@ export default function ThanksgivingPointInternshipPage() {
         <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-white">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <Image
-              src="/shetech-gallery/KinserStudios-SheTech25-3786.jpg"
-              alt="Thanksgiving Point Internship"
-              fill
-              className="object-cover"
-              priority
-              quality={100}
+            <video
+              src="/videos/thanksgiving-point.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
             />
             {/* Gradient Overlay for text readability - White fade from left */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent sm:via-white/60"></div>
