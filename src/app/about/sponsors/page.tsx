@@ -75,7 +75,7 @@ export default function SponsorsPage() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <a href="mailto:kristin@womentechcouncil.com">
+                      <a href="mailto:kristin@womentechcouncil.com" data-link-pending="about-sponsors-become">
                         <Button
                           size="lg"
                           className="bg-[#BD1C81] text-white hover:bg-[#a02f99] font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto"
@@ -83,7 +83,12 @@ export default function SponsorsPage() {
                           Become a Sponsor
                         </Button>
                       </a>
-                      <a href="https://www.shetechexplorer.com/industry-partners/" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href="https://www.shetechexplorer.com/industry-partners/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-link-pending="about-sponsors-meet"
+                      >
                         <Button
                           size="lg"
                           variant="outline"

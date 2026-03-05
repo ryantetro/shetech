@@ -86,6 +86,7 @@ export default function ArizonaPage() {
                     <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                       <Link
                         href="/teachers/register-your-students"
+                        data-link-pending="chapters-arizona-register"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 via-rose-500 to-purple-500 text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
                       >
                         Register Your Students

@@ -118,6 +118,7 @@ export default function ColoradoPage() {
                     <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                       <Link
                         href="/teachers/register-your-students"
+                        data-link-pending="chapters-colorado-register"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
                       >
                         Register Your Students
@@ -127,6 +128,7 @@ export default function ColoradoPage() {
                       </Link>
                       <a
                         href="#about"
+                        data-link-pending="chapters-colorado-learn-more"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300"
                       >
                         Learn More

@@ -304,10 +304,10 @@ export default function SummerInternshipPage() {
                         During the 2-week internship, participants have been featured on KSL TV, presented at state conferences, and gained hands-on skills while building a network of mentors and peers.
                       </p>
                     </div>
-                    <div className="relative h-64 lg:h-auto min-h-[300px]">
+                    <div className="relative h-64 lg:h-auto min-h-[300px]" data-asset-pending="summer-internship-impact-photo">
                       <Image
-                        src="/summer-internship/thanksgiving-point-2025.jpg"
-                        alt="SheTech Internship Group"
+                        src="/summer-internship/shetechgroup.png"
+                        alt="SheTech Summer Internship participants"
                         fill
                         className="object-cover"
                       />

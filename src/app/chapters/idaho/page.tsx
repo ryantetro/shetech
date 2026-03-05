@@ -107,6 +107,7 @@ export default function IdahoPage() {
                         href="https://www.shetechexplorer.com/idaho"
                         target="_blank"
                         rel="noopener noreferrer"
+                        data-link-pending="chapters-idaho-signup"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
                       >
                         Sign Up Here
@@ -116,6 +117,7 @@ export default function IdahoPage() {
                       </a>
                       <a
                         href="#about"
+                        data-link-pending="chapters-idaho-learn-more"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300"
                       >
                         Learn More

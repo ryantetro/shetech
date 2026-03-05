@@ -23,6 +23,7 @@ const STUDENT_DEMO_TILES = [
     image: '/shetech-gallery/KinserStudios-SheTech25-2830.jpg',
   },
 ];
+const STUDENT_DEMOS_EMBED_URL = 'https://www.youtube.com/embed/iA9UefQye4I';
 
 export default function StudentDemosPage() {
   return (
@@ -100,6 +101,35 @@ export default function StudentDemosPage() {
                 </AnimatedSection>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection direction="up" delay={0}>
+              <div className="max-w-4xl mx-auto text-center mb-10">
+                <p className="text-xs uppercase tracking-[0.5em] text-slate-400 mb-2">Featured Demo</p>
+                <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Inspiration Gallery</h2>
+                <p className="text-lg text-slate-600">
+                  Replay a Student Demos highlight and explore how workshop ideas turn into real projects.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection direction="up" delay={120}>
+              <div className="max-w-5xl mx-auto overflow-hidden rounded-3xl border border-slate-100 shadow-xl">
+                <div className="relative aspect-video">
+                  <iframe
+                    src={STUDENT_DEMOS_EMBED_URL}
+                    title="SheTech Student Demos Livestream"
+                    className="absolute inset-0 h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
 

@@ -41,7 +41,7 @@ export default function HostInternshipPage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="mailto:kristin@womentechcouncil.com">
+                  <a href="mailto:kristin@womentechcouncil.com" data-link-pending="companies-host-intern">
                     <Button
                       size="lg"
                       className="bg-white text-[#010193] hover:bg-blue-50 font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
@@ -135,7 +135,7 @@ export default function HostInternshipPage() {
           <div className="container mx-auto px-4 text-center">
             <AnimatedSection direction="up" delay={0}>
               <h2 className="text-3xl font-black text-[#010193] mb-8">Ready to Host a Session?</h2>
-              <a href="mailto:kristin@womentechcouncil.com">
+              <a href="mailto:kristin@womentechcouncil.com" data-link-pending="companies-contact-host">
                 <Button
                   size="lg"
                   className="bg-[#010193] text-white hover:bg-[#000070] font-bold px-12 py-5 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all text-lg"

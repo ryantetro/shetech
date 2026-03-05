@@ -33,7 +33,7 @@ export default function TechWorkshopsPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-4 mb-8">
-                    <a href="#workshops">
+                    <a href="#workshops" data-link-pending="tech-workshops-explore">
                       <Button
                         size="lg"
                         className="bg-[#6E35B0] text-white hover:bg-[#5a2a91] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide flex items-center gap-2"

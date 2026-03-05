@@ -5,18 +5,50 @@ import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, StickerHeader, GraphPaperBackground, Button } from '@/components/ui';
 
-const TECHBUZZ_ARTICLE_TILES = [
-  { title: 'SheTech Interns Interview Heidi Barnett', href: 'https://www.techbuzznews.com/shetech-interns-interview-heidi-barnett/' },
-  { title: 'SheTech Interns Interview Michaela Hatch', href: 'https://www.techbuzznews.com/shetech-interns-interview-michaela-hatch/' },
-  { title: 'SheTech Interns Interview Lauren Mason-Carris', href: 'https://www.techbuzznews.com/shetech-interns-inteview-lauren-mason-carris/' },
-  { title: 'SheTech Interns Interview Lynn Reichert', href: 'https://www.techbuzznews.com/shetech-interns-inteview-lynn-reichert/' },
-  { title: 'Connecting the Dots with Koriann Edwards', href: 'https://www.techbuzznews.com/connecting-the-dots-koriann-edwards/' },
-  { title: "Brooke Baker's Pivot", href: 'https://www.techbuzznews.com/brooke-bakers-pivot/' },
-  { title: 'SheTech Interns Interview Lynne Yocom', href: 'https://www.techbuzznews.com/shetech-interns-interview-lynne-yocom/' },
-  { title: 'SheTech Interns Interview Evita Weagel', href: 'https://www.techbuzznews.com/shetech-interns-interview-evita-weagel/' },
-  { title: 'Dolly Chitta & SheTech', href: 'https://www.techbuzznews.com/dolly-chitta-shetech/' },
-  { title: 'SheTech Interns Interview Erin Farr', href: 'https://www.techbuzznews.com/shetech-intern-interviews-erin-farr/' },
+const TECHBUZZ_ARTICLE_URLS = [
+  'https://www.techbuzznews.com/shetech-interns-interview-heidi-barnett/',
+  'https://www.techbuzznews.com/shetech-interns-interview-michaela-hatch/',
+  'https://www.techbuzznews.com/shetech-interns-inteview-lauren-mason-carris/',
+  'https://www.techbuzznews.com/shetech-interns-interview-lynn-reichert/',
+  'https://www.techbuzznews.com/connecting-the-dots-koriann-edwards/',
+  'https://www.techbuzznews.com/brooke-bakers-pivot/',
+  'https://www.techbuzznews.com/shetech-interns-interview-lynne-yocom/',
+  'https://www.techbuzznews.com/shetech-interns-interview-evita-weagel/',
+  'https://www.techbuzznews.com/dolly-chitta-shetech/',
+  'https://www.techbuzznews.com/shetech-intern-interviews-erin-farr/',
+  'https://www.techbuzznews.com/shetech-interns-interview-dr-alexandra-pasi/',
+  'https://www.techbuzznews.com/shetech-intern-interviews-neela-pack/',
+  'https://www.techbuzznews.com/shetech-intern-interviews-maria-del-pilar-mora-saavedra/',
+  'https://www.techbuzznews.com/shetech-interns-interview-julia-macdonough/',
+  'https://www.techbuzznews.com/shetech-interns-interview-karen-peterson/',
+  'https://www.techbuzznews.com/shetech-interns-interview-jessica-curran/',
+  'https://www.techbuzznews.com/shetech-sparks-confidence-and-curiosity-in-future-female-tech-leaders/',
+  'https://www.techbuzznews.com/shetech-interns-interview-ashlee-cowley/',
+  'https://www.techbuzznews.com/shetech-interns-interview-audra-yocom/',
 ];
+
+const toTitleCase = (text: string) =>
+  text
+    .split(' ')
+    .map((word) => {
+      if (!word) return word;
+      if (word.toLowerCase() === 'shetech') return 'SheTech';
+      if (word.toLowerCase() === 'dr') return 'Dr.';
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
+
+const headlineFromUrl = (url: string) => {
+  const slug = (url.replace(/\/$/, '').split('/').pop() || '')
+    .replace(/inteview/g, 'interview')
+    .replace(/-/g, ' ');
+  return toTitleCase(slug);
+};
+
+const TECHBUZZ_ARTICLE_TILES = [...new Set(TECHBUZZ_ARTICLE_URLS)].map((href) => ({
+  href,
+  title: headlineFromUrl(href),
+}));
 
 export default function TechBuzzArticlesPage() {
   return (

@@ -4,11 +4,11 @@ import React from 'react';
 import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { Button, StickerHeader, GraphPaperBackground } from '@/components/ui';
+import { StickerHeader, GraphPaperBackground } from '@/components/ui';
 import { GalleryCarousel } from '@/components/ui/GalleryCarousel';
 import { EXPLORER_GALLERY_IMAGES } from '@/components/home/ExplorerGallerySection';
 
-
+const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd5nlsVX1Bs858OK__EeiEYZqWS4qVKtmgObz7f1KNRP7mvzQ/viewform?usp=header';
 
 export default function ExplorerDayPage() {
   // Mock Data for Workshop Features
@@ -162,7 +162,7 @@ export default function ExplorerDayPage() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center isolate animate-fade-in-up" style={{ animationDelay: '300ms' }}>
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSd5nlsVX1Bs858OK__EeiEYZqWS4qVKtmgObz7f1KNRP7mvzQ/viewform?usp=header"
+                  href={REGISTRATION_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-white text-[#00A6CE] hover:bg-gray-50 font-black px-10 py-4 rounded-xl shadow-xl hover:shadow-2xl shadow-black/20 transform hover:scale-105 transition-all uppercase tracking-wide text-lg border-0"
@@ -317,9 +317,14 @@ export default function ExplorerDayPage() {
                   <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
                     Don&apos;t miss out on the biggest tech event for high school girls in Utah. Registration is free and open now!
                   </p>
-                  <Button className="bg-white text-[#00A6CE] font-black text-lg px-10 py-4 rounded-xl shadow-xl hover:scale-105 transition-transform border-0 uppercase cursor-pointer">
+                  <a
+                    href={REGISTRATION_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-white text-[#00A6CE] font-black text-lg px-10 py-4 rounded-xl shadow-xl hover:scale-105 transition-transform border-0 uppercase cursor-pointer"
+                  >
                     Secure Your Spot
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>

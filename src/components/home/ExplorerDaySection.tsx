@@ -26,7 +26,7 @@ export const ExplorerDaySection = () => {
                                 />
                             </div>
                             <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-wide">
-                                Feb 24 2026 <span className="mx-2 text-white/60">/</span> 9-1<sup className="text-xl sm:text-2xl">PM</sup> <span className="mx-2 text-white/60">/</span> Sandy
+                                Feb 2027 <span className="mx-2 text-white/60">/</span> 9-1<sup className="text-xl sm:text-2xl">PM</sup> <span className="mx-2 text-white/60">/</span> Sandy
                             </h2>
                         </div>
                     </AnimatedSection>
