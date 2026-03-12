@@ -12,6 +12,22 @@ const googleSans = localFont({
 export const metadata: Metadata = {
   title: "SheTech Explorer - Empowering Girls in STEM",
   description: "SheTech helps girls recognize the opportunities they can pursue in STEM education and careers. Join us for hands-on experiences, mentorship, and real-world opportunities.",
+  icons: {
+    icon: [
+      {
+        url: "/favicons/shetech_favicon_royal.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicons/shetech_favicon_white.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    shortcut: "/favicons/shetech_favicon_fuchsia.svg",
+    apple: "/favicons/shetech_favicon_teal.svg",
+  },
 };
 
 export default function RootLayout({
