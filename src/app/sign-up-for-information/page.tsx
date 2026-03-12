@@ -6,6 +6,7 @@ import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, StickerHeader, GraphPaperBackground, Button, Input } from '@/components/ui';
 
 export default function SignUpForInformationPage() {
+  const RECIPIENT_EMAIL = 'kristin@womentechcouncil.com';
   const [formData, setFormData] = useState({
     name: '',
     schoolName: '',
@@ -16,9 +17,18 @@ export default function SignUpForInformationPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    alert('Thank you for signing up!');
+    const subject = `SheTech Sign-Up Submission: ${formData.name || 'Educator'}`;
+    const body = [
+      'New Sign Up for Information submission:',
+      '',
+      `Name: ${formData.name}`,
+      `School Name: ${formData.schoolName}`,
+      `Email: ${formData.email}`,
+      `Number of Students: ${formData.studentCount || 'Not provided'}`,
+      `Interested in bringing students to Explorer Day: ${formData.bringStudents ? 'Yes' : 'No'}`,
+    ].join('\n');
+
+    window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -154,6 +164,9 @@ export default function SignUpForInformationPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </Button>
+                  <p className="text-xs text-slate-500 mt-3">
+                    Submitting opens your default email app to send this information to Kristin.
+                  </p>
                 </form>
               </div>
             </AnimatedSection>

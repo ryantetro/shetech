@@ -1,18 +1,8 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, StickerHeader, Button } from '@/components/ui';
-
-// Logos from public/Sponsors
-const partners = [
-  { name: 'Adobe', src: '/Sponsors/adobe-44195.svg', height: 40 },
-  { name: 'American Express', src: '/Sponsors/1200px-American_Express_logo_(2018).svg.png', height: 60 },
-  { name: 'CHG Healthcare', src: '/Sponsors/CHG_logo_horiz_RGB_F.png', height: 50 },
-  { name: 'Entrata', src: '/Sponsors/entrata_red_lettermark.png', height: 40 },
-  { name: 'Workday', src: '/Sponsors/workday.png', height: 40 },
-];
 
 export default function SponsorsPage() {
   return (
@@ -105,48 +95,9 @@ export default function SponsorsPage() {
           </div>
         </section>
 
-        {/* Sponsor Grid Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-              <AnimatedSection direction="up" delay={200}>
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl font-black text-slate-900 mb-4">
-                    Join Leading Companies
-                  </h2>
-                  <p className="text-slate-500 text-lg">
-                    Investing in the next generation of innovators
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                  {partners.map((partner, index) => (
-                    <div
-                      key={index}
-                      className="w-full flex items-center justify-center p-6 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 h-32"
-                    >
-                      <div className="relative w-full h-full flex items-center justify-center">
-                        {/* 
-                          Using inline height styles for logo optical balancing since we don't have perfect aspect ratios upfront.
-                          In a real app, object-contain with 'fill' is good, but sometimes specific heights look better for logos.
-                        */}
-                        <img
-                          src={partner.src}
-                          alt={partner.name}
-                          className="max-h-16 w-auto object-contain"
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-16 text-center">
-                  <p className="text-slate-400 text-sm font-medium uppercase tracking-widest mb-6">And 500+ More</p>
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
+        {/*
+          Sponsor logo section intentionally hidden until the finalized logo set is ready.
+        */}
 
       </main>
       <Footer />

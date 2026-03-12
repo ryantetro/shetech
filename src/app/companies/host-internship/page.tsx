@@ -41,12 +41,12 @@ export default function HostInternshipPage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="mailto:kristin@womentechcouncil.com" data-link-pending="companies-host-intern">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9yTPP3iIz94nCjbmEmWueS_TPbP9Xv_qjzI9R9UzE8acOng/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-white text-[#010193] hover:bg-blue-50 font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
                     >
-                      Host an Intern
+                      Host an Internship Session
                       <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                     </Button>
                   </a>
@@ -135,12 +135,12 @@ export default function HostInternshipPage() {
           <div className="container mx-auto px-4 text-center">
             <AnimatedSection direction="up" delay={0}>
               <h2 className="text-3xl font-black text-[#010193] mb-8">Ready to Host a Session?</h2>
-              <a href="mailto:kristin@womentechcouncil.com" data-link-pending="companies-contact-host">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9yTPP3iIz94nCjbmEmWueS_TPbP9Xv_qjzI9R9UzE8acOng/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="bg-[#010193] text-white hover:bg-[#000070] font-bold px-12 py-5 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all text-lg"
                 >
-                  Contact Us to Host
+                  Host an Internship Session
                 </Button>
               </a>
             </AnimatedSection>

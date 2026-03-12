@@ -1,40 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, Button, StickerHeader, GraphPaperBackground } from '@/components/ui';
 
 export default function RegisterYourStudentsPage() {
-  // Countdown Timer Logic (Feb 24, 2026)
-  // Countdown Timer Logic
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const explorerDay = new Date('2026-02-24T09:00:00');
-      const now = new Date();
-      const difference = explorerDay.getTime() - now.getTime();
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    };
-
-    calculateTimeLeft(); // Initial call
-    const timer = setInterval(calculateTimeLeft, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-
-
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -51,7 +21,7 @@ export default function RegisterYourStudentsPage() {
               <div className="text-center lg:text-left">
                 <AnimatedSection direction="right" delay={0} initialLoad>
                   <div className="mb-6 inline-block">
-                    <StickerHeader label="Feb 24, 2026" title="Register Your School" angle={-2} variant="blue" />
+                    <StickerHeader label="Now Open" title="Register Your School" angle={-2} variant="blue" />
                   </div>
 
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#00008B] mb-6 leading-tight uppercase">
@@ -78,26 +48,6 @@ export default function RegisterYourStudentsPage() {
                         </svg>
                       </Button>
                     </a>
-                  </div>
-
-                  {/* Countdown Timer */}
-                  <div className="mt-10 pt-8 border-t border-slate-200">
-                    <p className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-3">Countdown to Explorer Day</p>
-                    <div className="flex gap-4 justify-center lg:justify-start">
-                      {[
-                        { label: 'Days', value: timeLeft.days },
-                        { label: 'Hours', value: timeLeft.hours },
-                        { label: 'Mins', value: timeLeft.minutes },
-                        { label: 'Secs', value: timeLeft.seconds }
-                      ].map((item, i) => (
-                        <div key={i} className="text-center">
-                          <div className="bg-white rounded-lg shadow-sm border border-slate-200 w-20 h-20 flex items-center justify-center text-2xl font-black text-[#0064BA]">
-                            {item.value}
-                          </div>
-                          <div className="text-xs font-bold text-slate-400 mt-1 uppercase">{item.label}</div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </AnimatedSection>
               </div>

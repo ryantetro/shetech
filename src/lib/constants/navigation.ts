@@ -110,7 +110,7 @@ export const NAVIGATION: NavigationItem[] = [
     ],
   },
   {
-    label: 'Tech Careers',
+    label: 'Content',
     href: null,
     items: [
       {
@@ -129,7 +129,7 @@ export const NAVIGATION: NavigationItem[] = [
         description: 'Watch student project demonstrations',
       },
       {
-        label: 'Tech Workshops',
+        label: 'Tech Careers',
         href: '/media-hub/tech-workshops',
         description: 'Recorded workshops and tutorials',
       },
@@ -169,11 +169,6 @@ export const NAVIGATION: NavigationItem[] = [
         label: 'Sponsors',
         href: '/about/sponsors',
         description: 'Our valued partners and supporters',
-      },
-      {
-        label: 'Board Members',
-        href: '/about/board-members',
-        description: 'Meet our leadership team',
       },
       {
         label: 'About Women Tech Council',

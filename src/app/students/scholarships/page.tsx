@@ -6,23 +6,6 @@ import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, Button, StickerHeader, GraphPaperBackground } from '@/components/ui';
 
 export default function ScholarshipsPage() {
-  const scholarships = [
-    {
-      title: "Utah Energy Workforce Scholarship Program",
-      amount: "Four $5,000 Awards",
-      description: "One scholarship available in each of Utah&apos;s congressional districts for students pursuing STEM studies. Applicants submit short films exploring Utah’s energy sector.",
-      deadline: "Check Website",
-      requirements: ["STEM Studies Context", "Short Film Submission", "Utah Resident"]
-    },
-    {
-      title: "High School Utah Entrepreneur Challenge",
-      amount: "$20,000+ in Prizes",
-      description: "Encourages innovation and entrepreneurship among high school students. Win cash and scholarship prizes for your creative business ideas.",
-      deadline: "Check Website",
-      requirements: ["Innovation Focus", "Entrepreneurship", "Business/Product Idea"]
-    }
-  ];
-
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -45,7 +28,7 @@ export default function ScholarshipsPage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="#scholarships-list">
+                  <a href="https://ushe.edu/state-scholarships-aid/" target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-[#00A6CE] text-white hover:bg-[#0086a6] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
@@ -103,70 +86,6 @@ export default function ScholarshipsPage() {
                 </div>
               </AnimatedSection>
             </div>
-          </div>
-        </section>
-
-        {/* Scholarships List */}
-        <section id="scholarships-list" className="py-16 sm:py-24 bg-[#EBEBF5] relative">
-          <GraphPaperBackground />
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <AnimatedSection direction="up" delay={0}>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-black text-[#00008B] uppercase mb-4">Current Opportunities</h2>
-                <div className="w-24 h-1 bg-[#00A6CE] mx-auto rounded-full"></div>
-              </div>
-            </AnimatedSection>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {scholarships.map((item, index) => (
-                <AnimatedSection key={index} direction="up" delay={index * 100}>
-                  <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group h-full flex flex-col">
-                    <div className="h-2 bg-[#00008B] group-hover:bg-[#00A6CE] transition-colors"></div>
-                    <div className="p-8 flex-1 flex flex-col">
-                      <div className="text-[#00A6CE] font-black text-xl mb-2">{item.amount}</div>
-                      <h3 className="text-xl font-bold text-[#00008B] mb-4 group-hover:text-[#BD1C81] transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-slate-600 mb-6 flex-1 font-medium">{item.description}</p>
-
-                      <div className="border-t border-slate-100 pt-6 mt-auto">
-                        <div className="text-sm font-bold text-slate-400 uppercase tracking-wide mb-3">Key Details</div>
-                        <ul className="space-y-2 mb-6">
-                          {item.requirements.map((req, i) => (
-                            <li key={i} className="flex items-center text-sm text-slate-600">
-                              <svg className="w-4 h-4 text-[#00A6CE] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                              {req}
-                            </li>
-                          ))}
-                        </ul>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-500 font-medium">Deadline: <span className="text-[#00008B] font-bold">{item.deadline}</span></span>
-                        </div>
-                        <a
-                          href="#"
-                          aria-disabled="true"
-                          data-link-pending="true"
-                          className="block w-full text-center"
-                        >
-                          <Button className="w-full mt-6 bg-slate-50 hover:bg-[#00008B] text-[#00008B] hover:text-white font-bold border-0 transition-all cursor-pointer">
-                            Apply Now
-                          </Button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-
-            <div className="mt-16 text-center max-w-2xl mx-auto">
-              <p className="text-lg text-[#00008B] font-medium leading-relaxed italic">
-                &quot;Stay tuned for more scholarship listings and ways to support your education.&quot;
-              </p>
-            </div>
-
           </div>
         </section>
       </main>

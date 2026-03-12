@@ -218,7 +218,7 @@ export default function SummerInternshipPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-white text-[#00A6CE] hover:bg-gray-50 font-black px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all uppercase tracking-wide text-lg border-0"
                   >
-                    Sign Up
+                    Apply Now
                   </a>
                 </div>
               </AnimatedSection>

@@ -33,12 +33,12 @@ export default function TechWorkshopsPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-4 mb-8">
-                    <a href="#workshops" data-link-pending="tech-workshops-explore">
+                    <a href="https://she-tech-pathways.vercel.app/" target="_blank" rel="noopener noreferrer">
                       <Button
                         size="lg"
                         className="bg-[#6E35B0] text-white hover:bg-[#5a2a91] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide flex items-center gap-2"
                       >
-                        Explore Workshops
+                        Explore Careers
                         <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                       </Button>
                     </a>
@@ -128,17 +128,6 @@ export default function TechWorkshopsPage() {
                 </AnimatedSection>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="py-16 sm:py-20 bg-[#FDF2F8]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimatedSection direction="up" delay={0}>
-              <div className="rounded-3xl border-2 border-dashed border-[#6E35B0] p-12 text-center text-slate-500">
-                <p className="text-xl font-semibold mb-2">Placeholder for Jill&apos;s new Tech Workshops content.</p>
-                <p className="text-sm">We’ll replace this area with the new layout once the updated module arrives.</p>
-              </div>
-            </AnimatedSection>
           </div>
         </section>
 

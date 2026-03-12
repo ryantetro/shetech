@@ -30,7 +30,7 @@ export default function HostSheTechDayPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-4 mb-12">
-                    <a href="mailto:kristin@womentechcouncil.com" data-link-pending="chapters-apply-start">
+                    <a href="https://forms.gle/LTFTDv2Yor2n2KbSA" target="_blank" rel="noopener noreferrer">
                       <Button
                         size="lg"
                         className="bg-[#BA38B2] text-white hover:bg-[#a02f99] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide flex items-center gap-2"
@@ -178,7 +178,7 @@ export default function HostSheTechDayPage() {
                     </div>
                   </div>
 
-                  <a href="mailto:kristin@womentechcouncil.com" data-link-pending="chapters-convert-community">
+                  <a href="https://forms.gle/LTFTDv2Yor2n2KbSA" target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-[#BA38B2] text-white hover:bg-[#a02f99] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
@@ -218,8 +218,9 @@ export default function HostSheTechDayPage() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a
-                    href="mailto:kristin@womentechcouncil.com"
-                    data-link-pending="chapters-apply-become"
+                    href="https://forms.gle/LTFTDv2Yor2n2KbSA"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-[#BD1C81] rounded-full font-bold text-lg shadow-2xl hover:bg-pink-50 transition-all duration-300 hover:scale-105 hover:shadow-[#BD1C81]/50"
                   >
                     Apply to Become a SheTech Chapter

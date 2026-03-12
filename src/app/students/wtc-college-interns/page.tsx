@@ -90,7 +90,9 @@ export default function WTCCollegeInternsPage() {
                 <AnimatedSection direction="right" delay={400} initialLoad={true}>
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href="#apply"
+                      href="https://forms.gle/2hgrnz4dpRhgfqBZ9"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-teal-500 text-white font-bold text-lg hover:bg-teal-400 transition-all duration-300 shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 hover:-translate-y-1"
                     >
                       Apply Now

@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
 export const ExplorerDaySection = () => {
@@ -102,38 +101,6 @@ export const ExplorerDaySection = () => {
                             Swag & Giveaway
                         </div>
                     </div>
-
-                    {/* CTA Button */}
-                    <AnimatedSection direction="up" delay={300}>
-                        <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20 max-w-3xl mx-auto">
-                            <Link
-                                href="/students/explorer-day"
-                                className="inline-block bg-white text-[#BD1C81] font-black text-xl sm:text-2xl px-12 py-5 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 uppercase tracking-wider"
-                            >
-                                Secure Your Spot
-                            </Link>
-                            <p className="mt-4 text-sm font-medium text-white/70">
-                                Registration closes February 17, 2026
-                            </p>
-
-                            {/* Venue Info Small */}
-                            <div className="mt-8 pt-6 border-t border-white/20 flex flex-col items-center">
-                                <div className="flex items-center gap-2 font-bold mb-1">
-                                    <span className="uppercase text-sm tracking-wider opacity-80">Venue</span>
-                                </div>
-                                <p className="text-lg font-bold">Mountain America Expo Center</p>
-                                <p className="text-sm opacity-80">9575 S State St, Sandy, UT 84070</p>
-                                <a
-                                    href="https://www.google.com/maps/place/Mountain+America+Exposition+Center/@40.5787202,-111.8907584,16z/data=!3m1!4b1!4m6!3m5!1s0x875287d846876ad1:0x708f5ab663f1cf66!8m2!3d40.5787162!4d-111.8881835!16s%2Fm%2F0k1jkf0?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-3 text-sm underline decoration-white/50 hover:decoration-white transition-all"
-                                >
-                                    Get Directions &rarr;
-                                </a>
-                            </div>
-                        </div>
-                    </AnimatedSection>
 
                 </div>
             </div>

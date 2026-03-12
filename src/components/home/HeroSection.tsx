@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
 export const HeroSection = () => {
@@ -53,18 +52,22 @@ export const HeroSection = () => {
                     {/* CTA Buttons */}
                     <AnimatedSection direction="up" delay={700} initialLoad={true}>
                         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                            <Link
-                                href="/students/explorer-day"
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLScV3u6I45duINo2lJUEhGlsURy9uMdY6wTJb9jdZm5hU2SvTw/viewform"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-md bg-[#BD1C81] text-white font-bold text-lg hover:bg-[#a0156b] transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wide w-full sm:w-auto"
                             >
-                                Register Now
-                            </Link>
-                            <Link
-                                href="/companies/mentor"
+                                Join student board
+                            </a>
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSeX_oH_hrFXFSGFPo-u9DqYqTO0zyXf5FeeSy-1J_CmjdSxfw/viewform"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center px-8 py-4 rounded-md bg-[#00A6CE] text-white font-bold text-lg hover:bg-[#008db0] transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wide w-full sm:w-auto"
                             >
-                                Become a Mentor
-                            </Link>
+                                Apply for Internships
+                            </a>
                         </div>
                     </AnimatedSection>
                 </div>

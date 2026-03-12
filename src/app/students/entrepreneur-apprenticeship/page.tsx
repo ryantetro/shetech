@@ -6,7 +6,7 @@ import { Header, Footer } from '@/components/layout';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 
 // More info form URL
-const INFO_FORM_URL = 'https://docs.google.com/forms/d/1VvXunGCp2BqmgA5smG7uDL72glb_FTLkT7wtfKa8Tnw/viewform';
+const INFO_FORM_URL = 'https://forms.gle/bEv7Nt6npbAKxYWTA';
 
 // Skills data - Updated to map new copy where applicable
 const skills = [
@@ -127,7 +127,9 @@ export default function EntrepreneurApprenticeshipPage() {
                     Join Waitlist
                   </a>
                   <a
-                    href="#learn-more"
+                    href={INFO_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/5 text-white font-bold text-lg hover:bg-white/10 border border-white/10 transition-all duration-300 backdrop-blur-sm"
                   >
                     Learn More
