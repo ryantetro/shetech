@@ -5,8 +5,6 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection';
 export const ExplorerDaySection = () => {
     return (
         <section id="explorer-day" className="relative py-20 sm:py-24 bg-[#BD1C81] overflow-hidden text-white">
-            {/* Background "2026" Watermark if needed, or just clean magenta */}
-
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
 
@@ -84,10 +82,6 @@ export const ExplorerDaySection = () => {
 
                     {/* Benefits List */}
                     <div className="flex flex-col md:flex-row justify-center items-center gap-6 sm:gap-12 text-sm sm:text-base font-bold mb-10 text-white">
-                        <div className="flex items-center gap-2">
-                            <span className="w-2 h-2 bg-white rounded-full"></span>
-                            Free admission & lunch included
-                        </div>
                         <div className="flex items-center gap-2">
                             <span className="w-2 h-2 bg-white rounded-full"></span>
                             Multiple workshop sessions

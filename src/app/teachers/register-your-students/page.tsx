@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, Button, StickerHeader, GraphPaperBackground } from '@/components/ui';
 
+const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6AQ-Z3Go01GI1-OcIt2_cZmdXbU9cKH711yh-SbG1M_SLAg/viewform?usp=publish-editor';
+
 export default function RegisterYourStudentsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -143,7 +145,7 @@ export default function RegisterYourStudentsPage() {
 
                 <div className="flex justify-center">
                   <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSd5nlsVX1Bs858OK__EeiEYZqWS4qVKtmgObz7f1KNRP7mvzQ/viewform"
+                    href={REGISTRATION_FORM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"

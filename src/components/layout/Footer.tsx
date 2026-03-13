@@ -192,14 +192,11 @@ export const Footer = () => {
         <div className="pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-600 text-center sm:text-left">
-              © {new Date().getFullYear()} Women Tech Council. All rights reserved.
+              © Women Tech Council. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-gray-600 flex-wrap justify-center sm:justify-end">
               <a href="/privacy-policy" className="hover:text-primary-600 transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-primary-600 transition-colors">
-                Accessibility
               </a>
             </div>
           </div>

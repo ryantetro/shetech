@@ -64,27 +64,13 @@ export default function SponsorsPage() {
                       ))}
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex justify-center">
                       <a href="mailto:kristin@womentechcouncil.com" data-link-pending="about-sponsors-become">
                         <Button
                           size="lg"
                           className="bg-[#BD1C81] text-white hover:bg-[#a02f99] font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto"
                         >
                           Become a Sponsor
-                        </Button>
-                      </a>
-                      <a
-                        href="https://www.shetechexplorer.com/industry-partners/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-link-pending="about-sponsors-meet"
-                      >
-                        <Button
-                          size="lg"
-                          variant="outline"
-                          className="border-[#BD1C81] text-[#BD1C81] hover:bg-[#BD1C81]/5 font-bold px-8 py-4 rounded-xl w-full sm:w-auto"
-                        >
-                          Meet our Sponsors
                         </Button>
                       </a>
                     </div>
@@ -95,9 +81,7 @@ export default function SponsorsPage() {
           </div>
         </section>
 
-        {/*
-          Sponsor logo section intentionally hidden until the finalized logo set is ready.
-        */}
+        {/* Sponsor logo/content section intentionally hidden until Kristin sends the final logos. */}
 
       </main>
       <Footer />

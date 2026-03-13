@@ -6,7 +6,11 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils/cn';
 import { NAVIGATION } from '@/lib/constants/navigation';
 
-export const Header = () => {
+interface HeaderProps {
+  forceSolid?: boolean;
+}
+
+export const Header = ({ forceSolid = false }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOverHero, setIsOverHero] = useState(false); // Default to false for safety
@@ -17,6 +21,11 @@ export const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      if (forceSolid) {
+        setIsOverHero(false);
+        return;
+      }
 
       // Check if we're over a colorful hero section
       // If the hero has bg-white, bg-gray, or light gradient backgrounds, show solid header
@@ -49,7 +58,9 @@ export const Header = () => {
         clearTimeout(closeTimeoutRef.current);
       }
     };
-  }, []);
+  }, [forceSolid]);
+
+  const shouldUseTransparentHeader = !forceSolid && isOverHero;
 
   const toggleMobileMenu = (label: string) => {
     setMobileOpenMenus((prev) => {
@@ -81,15 +92,15 @@ export const Header = () => {
 
   // Dynamic styles based on scroll position
   const headerStyles = {
-    backgroundColor: isOverHero
+    backgroundColor: shouldUseTransparentHeader
       ? 'transparent'
       : 'rgba(255, 255, 255, 0.95)',
-    backdropFilter: isOverHero ? 'none' : 'blur(20px)',
-    WebkitBackdropFilter: isOverHero ? 'none' : 'blur(20px)',
-    borderBottom: isOverHero
+    backdropFilter: shouldUseTransparentHeader ? 'none' : 'blur(20px)',
+    WebkitBackdropFilter: shouldUseTransparentHeader ? 'none' : 'blur(20px)',
+    borderBottom: shouldUseTransparentHeader
       ? 'none'
       : '1px solid rgba(229, 231, 235, 0.5)',
-    boxShadow: isOverHero
+    boxShadow: shouldUseTransparentHeader
       ? 'none'
       : isScrolled
         ? '0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03)'
@@ -100,11 +111,11 @@ export const Header = () => {
   };
 
   // Text color based on position
-  const textColor = isOverHero ? '#ffffff' : '#374151';
-  const hoverBgColor = isOverHero
+  const textColor = shouldUseTransparentHeader ? '#ffffff' : '#374151';
+  const hoverBgColor = shouldUseTransparentHeader
     ? 'rgba(255, 255, 255, 0.15)'
     : 'rgba(0, 166, 206, 0.1)';
-  const hoverTextColor = isOverHero ? '#ffffff' : '#00a6ce';
+  const hoverTextColor = shouldUseTransparentHeader ? '#ffffff' : '#00a6ce';
 
   return (
     <header
@@ -132,7 +143,7 @@ export const Header = () => {
               className="relative"
             >
               <Image
-                src={isOverHero ? "/shetech-assets/Shetech logo White.svg" : "/logo.png"}
+                src={shouldUseTransparentHeader ? "/shetech-assets/Shetech logo White.svg" : "/logo.png"}
                 alt="SheTech Women Tech Council"
                 width={180}
                 height={60}

@@ -3,8 +3,11 @@
 Legend: `✅ done` `⏳ open` `⚠️ pending external`
 
 ## Cydni follow-up batch (latest requests)
+- ✅ Privacy Policy internal legal-review notes removed from the public page copy.
+- ✅ About Sponsors old-site `Meet our Sponsors` CTA removed; temporary company list hidden until final logos arrive.
 - ✅ Homepage hero buttons updated to `Join student board` and `Apply for Internships` with provided Google Form links.
 - ✅ Homepage Explorer Day section keeps content but removes the `Secure Your Spot` CTA card.
+- ✅ Homepage Explorer Day pink-section lunch bullet removed.
 - ✅ Navigation top label changed from `Tech Careers` to `Content`.
 - ✅ Navigation dropdown item renamed from `Tech Workshops` to `Tech Careers`.
 - ✅ Tech Workshops page button changed to `Explore Careers` and links to `https://she-tech-pathways.vercel.app/` in a new tab.
@@ -21,7 +24,9 @@ Legend: `✅ done` `⏳ open` `⚠️ pending external`
 - ✅ Summer Internship CTA text changed from `Sign Up` to `Apply Now`.
 - ✅ Companies Sponsor both `Become a Sponsor` buttons now link to `https://forms.gle/VTTkoX29foLuocgk8`.
 - ✅ Companies Host Internship top/bottom button text updated to `Host an Internship Session` and both now link to the provided Google Form.
+- ✅ Explorer Day page now uses the 2027 registration form, the plain SheTech logo in the hero, and no hero date badge.
 - ✅ Teachers Register Your Students page date/countdown removed from hero.
+- ✅ Teachers Register Your Students bottom CTA updated to the 2027 registration form.
 - ✅ Sign Up for Information submit now opens a prefilled mailto to `kristin@womentechcouncil.com`.
 - ✅ Arizona, Idaho, and Colorado chapter hero dates/buttons removed as requested.
 - ✅ About Sponsors logo section hidden until final logos are ready.
@@ -31,12 +36,12 @@ Legend: `✅ done` `⏳ open` `⚠️ pending external`
 |---|---|---|---|---|
 | 2 | ✅ | Homepage gallery carousel | `src/app/page.tsx`, `src/components/home/ExplorerGallerySection.tsx` | Shared gallery section added on homepage. |
 | 3 | ✅ | Footer plain SheTech logo | `src/components/layout/Footer.tsx` | Uses `/logo.png`. |
-| 5 | ✅ | Remove lunch mention (Explorer Day) | `src/app/students/explorer-day/page.tsx` | Lunch copy removed. |
+| 5 | ✅ | Remove lunch mention (Explorer Day) | `src/components/home/ExplorerDaySection.tsx` | Lunch bullet removed from the homepage pink Explorer Day section. |
 | 6 | ✅ | View Schedule button anchors to schedule | `src/app/students/explorer-day/page.tsx` | Uses `#event-schedule`. |
 | 7 | ✅ | Remove `Lunch &` from schedule | `src/app/students/explorer-day/page.tsx` | Schedule text updated. |
-| 8 | ✅ | Register Free points to Google Form | `src/app/students/explorer-day/page.tsx` | Form URL applied. |
+| 8 | ✅ | Register Free points to Google Form | `src/app/students/explorer-day/page.tsx` | Updated to the new 2027 SheTech registration form. |
 | 9 | ✅ | Remove Download Full Guide button | `src/app/students/explorer-day/page.tsx` | Button removed. |
-| 10 | ✅ | Secure Your Spot points to Google Form | `src/app/students/explorer-day/page.tsx` | Form URL applied. |
+| 10 | ✅ | Secure Your Spot points to Google Form | `src/app/students/explorer-day/page.tsx` | Updated to the new 2027 SheTech registration form. |
 | 11 | ✅ | Remove Terms; add Privacy Policy page route | `src/components/layout/Footer.tsx`, `src/app/privacy-policy/page.tsx` | Terms removed, privacy page live. |
 | 12 | ✅ | Footer Facebook link | `src/components/layout/Footer.tsx` | Added. |
 | 13 | ✅ | Footer Instagram link | `src/components/layout/Footer.tsx` | Added. |
@@ -112,7 +117,7 @@ Legend: `✅ done` `⏳ open` `⚠️ pending external`
 | 85 | ✅ | Colorado: Register your students destination | `src/app/chapters/colorado/page.tsx` | Hero buttons removed per latest request. |
 | 86 | ✅ | Colorado: Learn More destination | `src/app/chapters/colorado/page.tsx` | Hero buttons removed per latest request. |
 | 87 | ⚠️ | About Sponsors: Become a Sponsor destination | `src/app/about/sponsors/page.tsx` | Mailto fallback + `data-link-pending="about-sponsors-become"`. |
-| 88 | ⚠️ | About Sponsors: Meet Our Sponsors destination | `src/app/about/sponsors/page.tsx` | Existing external fallback + `data-link-pending="about-sponsors-meet"`. |
+| 88 | ✅ | About Sponsors: Meet Our Sponsors destination | `src/app/about/sponsors/page.tsx` | Old-site CTA removed; page is waiting on final logo assets before adding sponsor content back below the hero. |
 | 89 | ✅ | Contact page social links match footer | `src/app/about/contact-us/page.tsx` | Twitter removed from contact/footer per latest request. |
 | 90 | ✅ | Summer Internship `Ideate` -> `Brainstorm` | `src/app/students/summer-internship/page.tsx` | Updated. |
 | 91 | ✅ | Remove `soldering` reference | `src/app/students/summer-internship/page.tsx` | Removed from impact copy. |
@@ -121,8 +126,9 @@ Legend: `✅ done` `⏳ open` `⚠️ pending external`
 ## Dependencies from Kristen / External Inputs
 - 21: Footer Newsroom URL
 - 30: Summer Internship replacement Dropbox image asset
-- About Sponsors final logo assets before re-enabling the logo grid
-- 87, 88: About Sponsors final CTA URLs
+- About Sponsors final logo/image assets before adding the visual sponsor section below the hero
+- ⏳ Footer accessibility link/page removed for now; add back when final accessibility content is approved.
+- 87: About Sponsors final sponsor CTA URL if mailto should be replaced
 
 ## Next verification pass
 1. Validate row 34 (`students/clubs`) mailto behavior on desktop and mobile default mail clients.

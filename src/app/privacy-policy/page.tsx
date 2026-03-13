@@ -29,7 +29,7 @@ const sections = [
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Header />
+      <Header forceSolid />
 
       <main className="flex-1">
         <section className="relative overflow-hidden pt-32 pb-20 bg-gradient-to-br from-[#F0F5FF] to-[#E9E1FF]">
@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
                 <p className="text-sm uppercase tracking-[0.4em] text-[#6F64FF] mb-4">Trust & Safety</p>
                 <h1 className="text-4xl sm:text-6xl font-black text-gray-900 mb-6">Privacy Policy</h1>
                 <p className="text-lg text-slate-700 leading-relaxed">
-                  We respect your privacy and are committed to being transparent about how we use your information. The language below is a starting point; final legal copy is pending Kristen/Legal review.
+                  We respect your privacy and are committed to being transparent about how we use your information.
                 </p>
               </div>
             </AnimatedSection>
@@ -75,9 +75,6 @@ export default function PrivacyPolicyPage() {
                     shetech@womentechcouncil.com
                   </a>{' '}
                   and we will respond as soon as possible.
-                </p>
-                <p className="text-sm text-gray-500">
-                  The information above is subject to approval by Kristen/Legal before going live.
                 </p>
               </div>
             </AnimatedSection>

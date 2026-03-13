@@ -8,7 +8,7 @@ import { StickerHeader, GraphPaperBackground } from '@/components/ui';
 import { GalleryCarousel } from '@/components/ui/GalleryCarousel';
 import { EXPLORER_GALLERY_IMAGES } from '@/components/home/ExplorerGallerySection';
 
-const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd5nlsVX1Bs858OK__EeiEYZqWS4qVKtmgObz7f1KNRP7mvzQ/viewform?usp=header';
+const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6AQ-Z3Go01GI1-OcIt2_cZmdXbU9cKH711yh-SbG1M_SLAg/viewform?usp=publish-editor';
 
 export default function ExplorerDayPage() {
   // Mock Data for Workshop Features
@@ -134,24 +134,14 @@ export default function ExplorerDayPage() {
 
                 <div className="relative transform hover:scale-105 transition-transform duration-500">
                   <Image
-                    src="/shetech-assets/Explorer Day 2026.svg"
-                    alt="Explorer Day"
-                    width={600}
+                    src="/shetech-assets/Shetech logo White.svg"
+                    alt="SheTech"
+                    width={520}
                     height={150}
-                    className="w-full max-w-2xl h-auto drop-shadow-2xl mx-auto"
+                    className="w-full max-w-xl h-auto drop-shadow-2xl mx-auto"
                     priority
                   />
                 </div>
-              </div>
-
-              {/* Date Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white border border-[#00A6CE]/30 text-sm font-bold mb-6 shadow-lg animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-                <svg className="w-4 h-4 text-[#00A6CE]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                </svg>
-                February 24, 2026
-                <span className="mx-2 opacity-50">|</span>
-                Mountain America Expo Center
               </div>
 
               {/* Description */}
@@ -192,7 +182,7 @@ export default function ExplorerDayPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-10 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
-                { label: "Date", value: "Feb 24, 2026", sub: "Mark your calendar", icon: "📅" },
+                { label: "Registration", value: "Now Open", sub: "2027 Explorer Day", icon: "📝" },
                 { label: "Location", value: "Mountain America Expo Center", sub: "Sandy, Utah", icon: "📍" },
                 { label: "Participants", value: "3,000+", sub: "High School Girls", icon: "👯‍♀️" }
               ].map((item, idx) => (
