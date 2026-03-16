@@ -116,7 +116,7 @@ Legend: `✅ done` `⏳ open` `⚠️ pending external`
 | 84 | ✅ | Idaho: Learn More destination | `src/app/chapters/idaho/page.tsx` | Hero buttons removed per latest request. |
 | 85 | ✅ | Colorado: Register your students destination | `src/app/chapters/colorado/page.tsx` | Hero buttons removed per latest request. |
 | 86 | ✅ | Colorado: Learn More destination | `src/app/chapters/colorado/page.tsx` | Hero buttons removed per latest request. |
-| 87 | ⚠️ | About Sponsors: Become a Sponsor destination | `src/app/about/sponsors/page.tsx` | Mailto fallback + `data-link-pending="about-sponsors-become"`. |
+| 87 | ✅ | About Sponsors: Become a Sponsor destination | `src/app/about/sponsors/page.tsx` | Updated to `https://forms.gle/VTTkoX29foLuocgk8`. |
 | 88 | ✅ | About Sponsors: Meet Our Sponsors destination | `src/app/about/sponsors/page.tsx` | Old-site CTA removed; page is waiting on final logo assets before adding sponsor content back below the hero. |
 | 89 | ✅ | Contact page social links match footer | `src/app/about/contact-us/page.tsx` | Twitter removed from contact/footer per latest request. |
 | 90 | ✅ | Summer Internship `Ideate` -> `Brainstorm` | `src/app/students/summer-internship/page.tsx` | Updated. |
@@ -128,7 +128,6 @@ Legend: `✅ done` `⏳ open` `⚠️ pending external`
 - 30: Summer Internship replacement Dropbox image asset
 - About Sponsors final logo/image assets before adding the visual sponsor section below the hero
 - ⏳ Footer accessibility link/page removed for now; add back when final accessibility content is approved.
-- 87: About Sponsors final sponsor CTA URL if mailto should be replaced
 
 ## Next verification pass
 1. Validate row 34 (`students/clubs`) mailto behavior on desktop and mobile default mail clients.

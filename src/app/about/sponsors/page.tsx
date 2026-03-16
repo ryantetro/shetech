@@ -65,7 +65,11 @@ export default function SponsorsPage() {
                     </div>
 
                     <div className="flex justify-center">
-                      <a href="mailto:kristin@womentechcouncil.com" data-link-pending="about-sponsors-become">
+                      <a
+                        href="https://forms.gle/VTTkoX29foLuocgk8"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Button
                           size="lg"
                           className="bg-[#BD1C81] text-white hover:bg-[#a02f99] font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto"
