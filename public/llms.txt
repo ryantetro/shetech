@@ -1,0 +1,36 @@
+# SheTech Explorer
+
+> SheTech Explorer is the public program site for SheTech—a Women Tech Council initiative that helps high school girls discover pathways in STEM through hands-on events, mentorship, internships, and year-round programming in Utah and surrounding regions.
+
+SheTech connects students, educators, and technology employers so girls can explore careers in technology with support from industry role models and real-world experiences.
+
+## Primary audience
+
+- High school girls interested in STEM and technology careers
+- Teachers and schools registering students for programs
+- Companies and volunteers supporting mentorship, internships, and sponsorship
+
+## Key pages
+
+- [Home](https://shetechexplorer.com/)
+- [SheTech Explorer Day (students)](https://shetechexplorer.com/students/explorer-day)
+- [Student Board / Leadership](https://shetechexplorer.com/students/leadership-board)
+- [Summer Internship](https://shetechexplorer.com/students/summer-internship)
+- [Media Internship (TechBuzz)](https://shetechexplorer.com/students/media-internship)
+- [Scholarships](https://shetechexplorer.com/students/scholarships)
+- [Register your students (teachers)](https://shetechexplorer.com/teachers/register-your-students)
+- [Why participate (teachers)](https://shetechexplorer.com/teachers/why-participate)
+- [Host / sponsor / mentor / volunteer (companies)](https://shetechexplorer.com/companies/sponsor)
+- [About Women Tech Council](https://shetechexplorer.com/about/about-women-tech-council)
+- [Sponsors & partners](https://shetechexplorer.com/about/sponsors)
+- [Contact](https://shetechexplorer.com/about/contact-us)
+- [FAQ](https://shetechexplorer.com/faq)
+- [Privacy policy](https://shetechexplorer.com/privacy-policy)
+
+## Organization
+
+SheTech is presented by the **Women Tech Council**. General program inquiries: shetech@womentechcouncil.com.
+
+## Optional
+
+For machine-readable crawl hints, see https://shetechexplorer.com/robots.txt and https://shetechexplorer.com/sitemap.xml

@@ -12,6 +12,7 @@ export const Footer = () => {
 
   const resourceLinks = [
     { label: 'Newsroom', href: '#newsroom', pendingKey: 'footer-newsroom' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'Scholarships', href: '/students/scholarships' },
     { label: 'Partners', href: '/about/sponsors' },
     { label: 'About Us', href: '/about/about-women-tech-council' },
