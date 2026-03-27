@@ -12,7 +12,8 @@ const AI_BOTS: Record<string, string> = {
   "anthropic-ai": "training",
   CCBot: "training",
   "cohere-ai": "training",
-  "Google-Extended": "training",
+  GoogleOther: "training",
+  "Google-CloudVertexBot": "training",
 };
 
 const AI_REFERRERS: Record<string, string> = {
