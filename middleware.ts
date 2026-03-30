@@ -14,6 +14,7 @@ const AI_BOTS: Record<string, string> = {
   "cohere-ai": "training",
   GoogleOther: "training",
   "Google-CloudVertexBot": "training",
+  GrokBot: "indexing",
 };
 
 const AI_REFERRERS: Record<string, string> = {
@@ -22,6 +23,8 @@ const AI_REFERRERS: Record<string, string> = {
   "perplexity.ai": "perplexity",
   "gemini.google.com": "gemini",
   "claude.ai": "claude",
+  "grok.com": "grok",
+  "x.ai": "grok",
 };
 
 export function middleware(request: NextRequest) {
