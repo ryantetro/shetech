@@ -15,6 +15,9 @@ const AI_BOTS: Record<string, string> = {
   GoogleOther: "training",
   "Google-CloudVertexBot": "training",
   GrokBot: "indexing",
+  "xAI-Bot": "indexing",
+  "xai-grok": "indexing",
+  Grok: "indexing",
 };
 
 const AI_REFERRERS: Record<string, string> = {
