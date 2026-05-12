@@ -88,7 +88,7 @@ const PROGRAMS_DATA: Program[] = [
         title: 'Thanksgiving Point Internship',
         description: 'Hands-on experience in agriculture technology, entomology, exhibit design, STEM education, and more at Thanksgiving Point museums and gardens.',
         ctaText: 'Apply Now',
-        ctaHref: '/students/thanksgiving-point-internship',
+        ctaHref: 'https://docs.google.com/forms/d/e/1FAIpQLSe9v1hLQj79zx6sxYeKrk5PtXSleVGh-BBCHd2tG4Kti4TUig/viewform',
         icon: (
             <div className="relative w-full h-full">
                 <Image

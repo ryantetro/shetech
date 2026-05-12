@@ -63,7 +63,7 @@ const fieldsOfFocus = [
   },
 ];
 
-const APPLICATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfRNOcwWDFwLLwe9pvEeItG4XVxcRGb9yCvLTlmIasck7Hw-w/viewform';
+const APPLICATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe9v1hLQj79zx6sxYeKrk5PtXSleVGh-BBCHd2tG4Kti4TUig/viewform';
 
 export default function ThanksgivingPointInternshipPage() {
   return (
