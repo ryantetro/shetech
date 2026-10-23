@@ -51,7 +51,15 @@ export const HeroSection = () => {
 
                     {/* CTA Buttons */}
                     <AnimatedSection direction="up" delay={700} initialLoad={true}>
-                        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full sm:w-auto">
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSe6AQ-Z3Go01GI1-OcIt2_cZmdXbU9cKH711yh-SbG1M_SLAg/viewform?usp=header"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center px-8 py-4 rounded-md bg-[#00008B] text-white font-bold text-lg text-center hover:bg-[#000066] transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-wide w-full sm:w-auto"
+                            >
+                                Register for Explorer Day
+                            </a>
                             <a
                                 href="https://docs.google.com/forms/d/e/1FAIpQLScV3u6I45duINo2lJUEhGlsURy9uMdY6wTJb9jdZm5hU2SvTw/viewform"
                                 target="_blank"

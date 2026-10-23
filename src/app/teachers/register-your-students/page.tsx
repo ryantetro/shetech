@@ -34,7 +34,7 @@ export default function RegisterYourStudentsPage() {
                   <p className="text-lg text-slate-600 mb-8 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
                     Register your school for SheTech Explorer Day—Utah’s largest hands-on STEM experience for high school girls.
                     <span className="block mt-4 font-bold text-[#0064BA]">
-                      Mountain America Expo Center | Free for all high schools
+                      March 2, 2027 | Mountain America Expo Center | Free for all high schools
                     </span>
                   </p>
 

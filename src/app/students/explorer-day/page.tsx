@@ -37,12 +37,12 @@ export default function ExplorerDayPage() {
 
   // Mock Data for Schedule
   const schedule = [
-    { time: "9:00 AM", title: "Registration & Expo", description: "Check-in, grab your swag, and explore the TechZone expo." },
-    { time: "10:00 AM", title: "Opening Kickoff", description: "High-energy welcome with special guest speakers." },
-    { time: "10:45 AM", title: "Workshop Session 1", description: "First round of hands-on STEM workshops." },
-    { time: "11:45 AM", title: "Networking", description: "Connect with mentors, partners, and peers." },
-    { time: "12:30 PM", title: "TechChallenge", description: "Team-based problem solving competition." },
-    { time: "1:30 PM", title: "Awards & Closing", description: "Celebrate the day's achievements and win prizes!" }
+    { time: "8:00 AM", title: "Check-In & Registration", description: "Check in and grab your swag." },
+    { time: "9:00 AM", title: "Opening Kickoff", description: "High-energy welcome with special guest speakers." },
+    { time: "9:30 AM", title: "Workshops & TechZone", description: "3 sessions of hands-on STEM workshops and TechZone." },
+    { time: "11:40 AM", title: "Networking", description: "Connect with mentors, partners, and peers." },
+    { time: "12:00 PM", title: "TechChallenge", description: "Team-based problem solving competition." },
+    { time: "1:00 PM", title: "Awards & Closing", description: "Celebrate the day's achievements and win prizes!" }
   ];
 
   return (
@@ -144,6 +144,11 @@ export default function ExplorerDayPage() {
                 </div>
               </div>
 
+              {/* Event Date */}
+              <p className="text-2xl sm:text-3xl font-black text-white uppercase tracking-wide mb-4 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+                March 2, 2027
+              </p>
+
               {/* Description */}
               <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-10 font-medium animate-fade-in-up" style={{ animationDelay: '200ms' }}>
                 Join more than 3,000 girls from hundreds of schools around the state for this free, hands-on day of STEM, partners, mentors, and more.
@@ -182,7 +187,7 @@ export default function ExplorerDayPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-10 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
-                { label: "Registration", value: "Now Open", sub: "2027 Explorer Day", icon: "📝" },
+                { label: "Registration", value: "Now Open", sub: "Explorer Day: March 2, 2027", icon: "📝" },
                 { label: "Location", value: "Mountain America Expo Center", sub: "Sandy, Utah", icon: "📍" },
                 { label: "Participants", value: "3,000+", sub: "High School Girls", icon: "👯‍♀️" }
               ].map((item, idx) => (
