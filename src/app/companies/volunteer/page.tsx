@@ -107,7 +107,7 @@ export default function VolunteerPage() {
                         <div className="flex items-center gap-4 mb-2">
                           <div className="flex flex-col">
                             <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">Date</span>
-                            <span className="font-bold text-slate-900 text-lg">Monday, Feb 23</span>
+                            <span className="font-bold text-slate-900 text-lg">Monday, March 1</span>
                           </div>
                           <div className="h-8 w-px bg-slate-200 mx-2"></div>
                           <div className="flex flex-col">

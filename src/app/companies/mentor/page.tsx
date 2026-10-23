@@ -120,13 +120,12 @@ export default function MentorPage() {
                       <div className="space-y-6">
                         <div>
                           <div className="text-xs font-bold uppercase tracking-wider text-blue-200 mb-1">Virtual Training (Zoom)</div>
-                          <div className="font-bold text-lg">Feb 12, 4–5pm <span className="text-blue-300 mx-1">OR</span></div>
-                          <div className="font-bold text-lg">Feb 13, 8–9am</div>
+                          <div className="font-bold text-lg">Dates coming soon</div>
                         </div>
 
                         <div className="pt-4 border-t border-white/20">
                           <div className="text-xs font-bold uppercase tracking-wider text-blue-200 mb-1">Live Challenge</div>
-                          <div className="font-bold text-lg">Feb 24, 2026</div>
+                          <div className="font-bold text-lg">March 2, 2027</div>
                           <div className="text-blue-100">10:30am – 1:30pm</div>
                         </div>
                       </div>

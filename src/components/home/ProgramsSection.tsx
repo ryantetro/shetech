@@ -223,6 +223,7 @@ export const ProgramsSection = () => {
                                             <div className="mt-auto pt-6 border-t border-slate-100">
                                                 <Link
                                                     href={selectedProgram.ctaHref}
+                                                    {...(selectedProgram.ctaHref.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
                                                     className="inline-block bg-[#BD1C81] text-white font-bold text-lg px-8 py-3 rounded-md shadow-md hover:bg-[#A0156B] transition-colors uppercase tracking-wide"
                                                 >
                                                     {selectedProgram.ctaText}

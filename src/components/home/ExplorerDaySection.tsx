@@ -23,7 +23,7 @@ export const ExplorerDaySection = () => {
                                 />
                             </div>
                             <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-wide">
-                                <span className="whitespace-nowrap">March 2, 2027</span> <span className="mx-2 text-white/60">/</span> <span className="whitespace-nowrap">9-1<sup className="text-xl sm:text-2xl">PM</sup></span> <span className="mx-2 text-white/60">/</span> Sandy
+                                <span className="whitespace-nowrap">March 2, 2027</span> <span className="mx-2 text-white/60">/</span> <span className="whitespace-nowrap">8<sup className="text-xl sm:text-2xl">AM</sup>-1<sup className="text-xl sm:text-2xl">PM</sup></span> <span className="mx-2 text-white/60">/</span> Sandy
                             </h2>
                         </div>
                     </AnimatedSection>

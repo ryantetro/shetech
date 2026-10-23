@@ -8,7 +8,7 @@ import { StickerHeader, GraphPaperBackground } from '@/components/ui';
 import { GalleryCarousel } from '@/components/ui/GalleryCarousel';
 import { EXPLORER_GALLERY_IMAGES } from '@/components/home/ExplorerGallerySection';
 
-const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6AQ-Z3Go01GI1-OcIt2_cZmdXbU9cKH711yh-SbG1M_SLAg/viewform?usp=publish-editor';
+const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6AQ-Z3Go01GI1-OcIt2_cZmdXbU9cKH711yh-SbG1M_SLAg/viewform?usp=header';
 
 export default function ExplorerDayPage() {
   // Mock Data for Workshop Features

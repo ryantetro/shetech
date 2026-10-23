@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Header, Footer } from '@/components/layout';
 import { AnimatedSection, Button, StickerHeader, GraphPaperBackground } from '@/components/ui';
 
-const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6AQ-Z3Go01GI1-OcIt2_cZmdXbU9cKH711yh-SbG1M_SLAg/viewform?usp=publish-editor';
+const REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6AQ-Z3Go01GI1-OcIt2_cZmdXbU9cKH711yh-SbG1M_SLAg/viewform?usp=header';
 
 export default function RegisterYourStudentsPage() {
   return (
