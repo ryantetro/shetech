@@ -289,7 +289,7 @@ export default function ClubsPage() {
                             </svg>
                           </div>
                           <div>
-                            <div className="text-2xl font-black text-[#00008B]">56+</div>
+                            <div className="text-2xl font-black text-[#00008B]">63</div>
                             <div className="text-sm text-slate-500 font-bold">Partner Schools</div>
                           </div>
                         </div>
@@ -301,7 +301,7 @@ export default function ClubsPage() {
                             </svg>
                           </div>
                           <div>
-                            <div className="text-2xl font-black text-[#00008B]">100+</div>
+                            <div className="text-2xl font-black text-[#00008B]">125+</div>
                             <div className="text-sm text-slate-500 font-bold">Student Leaders</div>
                           </div>
                         </div>
