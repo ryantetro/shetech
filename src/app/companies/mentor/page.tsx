@@ -30,7 +30,7 @@ export default function MentorPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-4">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5JcKITadKPzNXuuF2GbOy8K2yN2homMJ3agKqPVd9_AhjCA/viewform" target="_blank" rel="noopener noreferrer">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgZqb9p63NrXbVMv9O1kdMlDqRbCQlhtzdH_WbYEcYgooevA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
                       <Button
                         size="lg"
                         className="bg-[#010193] text-white hover:bg-[#000070] font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"
@@ -120,7 +120,10 @@ export default function MentorPage() {
                       <div className="space-y-6">
                         <div>
                           <div className="text-xs font-bold uppercase tracking-wider text-blue-200 mb-1">Virtual Training (Zoom)</div>
-                          <div className="font-bold text-lg">Dates coming soon</div>
+                          <div className="font-bold text-lg">Feb 19</div>
+                          <div className="text-blue-100">12:00 – 1:00pm</div>
+                          <div className="font-bold text-lg mt-3">Feb 23</div>
+                          <div className="text-blue-100">8:00 – 9:00am</div>
                         </div>
 
                         <div className="pt-4 border-t border-white/20">
@@ -209,7 +212,7 @@ export default function MentorPage() {
                 <p className="text-slate-600 font-medium italic mb-8">
                   &quot;Ongoing mentorship builds connection and confidence—helping girls continue their journey in STEM long after the event ends.&quot;
                 </p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf5JcKITadKPzNXuuF2GbOy8K2yN2homMJ3agKqPVd9_AhjCA/viewform" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgZqb9p63NrXbVMv9O1kdMlDqRbCQlhtzdH_WbYEcYgooevA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="bg-[#010193] text-white hover:bg-[#000070] font-bold px-10 py-5 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all cursor-pointer border-0 uppercase tracking-wide"

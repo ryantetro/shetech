@@ -4,11 +4,6 @@
  */
 export const HOME_FAQ_ITEMS = [
   {
-    question: "What is SheTech Explorer?",
-    answer:
-      "SheTech Explorer is the program website for SheTech, a Women Tech Council initiative that helps high school girls explore STEM education and technology careers through hands-on experiences, mentorship, internships, and events such as SheTech Explorer Day.",
-  },
-  {
     question: "What is SheTech Explorer Day?",
     answer:
       "SheTech Explorer Day is a hands-on tech conference for high school girls. It is designed to spark interest in STEM through interactive workshops, tech challenges, and connections with industry mentors and female role models in fields like robotics, coding, digital media, and health sciences.",
